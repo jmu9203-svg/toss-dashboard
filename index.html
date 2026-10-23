@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>토스증권 AI 실전계좌 대시보드</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="toss-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="toss-favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="toss-icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="토스 AI">
+  <meta name="theme-color" content="#0b101b">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --bg: #0b101b;
+      --card-bg: #151b26;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f0f6fc;
+      --text-sub: #8b949e;
+      --toss-blue: #3182F6;
+      --toss-blue-bg: rgba(49, 130, 246, 0.15);
+      --profit: #f04452; /* 토스 상승 레드 */
+      --loss: #3182F6;   /* 토스 하락 블루 */
+      --pill-bg: #1e2638;
+      --warn-bg: rgba(210, 153, 34, 0.15);
+      --warn-border: #d29922;
+      --warn-text: #e3b341;
+      --action-box-bg: rgba(49, 130, 246, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background-color: var(--bg); color: var(--text-main); padding: 16px; max-width: 640px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
+    
+    /* Header */
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 12px 0 20px 0; }
+    .title-group h1 { font-size: 20px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+    .toss-tag { background: var(--toss-blue); color: #fff; font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+    .title-group p { font-size: 13px; color: var(--text-sub); margin-top: 2px; }
+    .status-badge { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--toss-blue); }
+    .pulse-dot { width: 8px; height: 8px; background: var(--toss-blue); border-radius: 50%; box-shadow: 0 0 8px var(--toss-blue); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+
+    /* Summary Card */
+    .summary-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .summary-title { font-size: 13px; color: var(--text-sub); font-weight: 500; display: flex; justify-content: space-between; }
+    .total-eval { font-size: 30px; font-weight: 800; margin: 8px 0; letter-spacing: -0.5px; }
+    .pnl-row { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; flex-wrap: wrap; }
+    .profit-text { color: var(--profit); }
+    .loss-text { color: var(--loss); }
+    
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--card-border); }
+    .stat-item { font-size: 13px; }
+    .stat-label { color: var(--text-sub); margin-bottom: 4px; }
+    .stat-value { font-weight: 600; color: var(--text-main); }
+
+    /* Filter Tabs */
+    .filter-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tab-btn { background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-sub); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .tab-btn.active { background: var(--toss-blue); color: #fff; border-color: var(--toss-blue); }
+
+    /* Section Title */
+    .section-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+    .section-count { font-size: 13px; color: var(--text-sub); font-weight: 400; }
+
+    /* Holdings List */
+    .holdings-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+    .holding-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 18px; }
+    .holding-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .stock-title { display: flex; align-items: center; gap: 6px; }
+    .country-tag { font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+    .country-kr { background: rgba(49, 130, 246, 0.2); color: #58a6ff; }
+    .country-us { background: rgba(35, 134, 54, 0.2); color: #3fb950; }
+    .stock-name { font-size: 16px; font-weight: 700; }
+    .stock-code { font-size: 12px; color: var(--text-sub); font-weight: 400; }
+    .stock-qty { font-size: 13px; color: var(--text-sub); margin-top: 3px; }
+    .stock-val-box { text-align: right; }
+    .stock-cur-price { font-size: 16px; font-weight: 700; }
+    .stock-pnl { font-size: 13px; font-weight: 700; margin-top: 2px; }
+
+    /* AI Decision Banner */
+    .ai-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; margin-top: 6px; }
+    .badge-buy { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.4); }
+    .badge-sell { background: rgba(248, 81, 73, 0.2); color: #f85149; border: 1px solid rgba(248, 81, 73, 0.4); }
+    .badge-hold { background: rgba(210, 153, 34, 0.2); color: #e3b341; border: 1px solid rgba(227, 179, 65, 0.4); }
+
+    /* Action Tip Box */
+    .action-tip-box { background: var(--action-box-bg); border-left: 3px solid var(--toss-blue); padding: 10px 12px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: 12px; line-height: 1.5; }
+    .action-tip-title { font-weight: 700; color: var(--toss-blue); margin-bottom: 2px; display: flex; align-items: center; gap: 4px; }
+    .action-tip-text { color: var(--text-main); font-weight: 500; }
+    .action-reason { color: var(--text-sub); font-size: 11px; margin-top: 4px; }
+
+    /* Indicator Pills */
+    .indicator-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .indicator-pill { background: var(--pill-bg); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--text-sub); display: flex; gap: 4px; }
+    .pill-val { color: var(--text-main); font-weight: 600; }
+
+    /* Footer Info */
+    .footer { text-align: center; color: var(--text-sub); font-size: 12px; padding: 20px 0; border-top: 1px solid var(--card-border); margin-top: 10px; }
+    .footer-detail { display: flex; justify-content: center; gap: 12px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title-group">
+      <h1>토스증권 실전계좌 <span class="toss-tag">AI PB</span></h1>
+      <p>토스 공식 Open API & 실시간 퀀트 타점 대시보드</p>
+    </div>
+    <div class="status-badge" id="systemStatus">
+      <div class="pulse-dot"></div>
+      <span id="statusText">토스 실전 연동 중</span>
+    </div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-title">
+      <span>토스증권 실전 총 평가금액 (국내 + 미국)</span>
+      <span id="accountNoTag">계좌: --</span>
+    </div>
+    <div class="total-eval" id="totalEval">--원</div>
+    <div class="pnl-row" id="pnlRow">
+      <span id="pnlAmt">--원</span>
+      <span id="pnlPct">(--%)</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-label">🇰🇷 국내주식 평가금 (원금)</div>
+        <div class="stat-value" id="krwStockInfo">--원</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">🇺🇸 미국주식 평가금 (원금)</div>
+        <div class="stat-value" id="usdStockInfo">$--</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">💵 원화 주문가능 예수금</div>
+        <div class="stat-value" id="krwCash">--원</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">💵 달러 주문가능 예수금</div>
+        <div class="stat-value" id="usdCash">$--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-tabs">
+    <button class="tab-btn active" onclick="setFilter('ALL')">전체 보유 종목</button>
+    <button class="tab-btn" onclick="setFilter('KR')">🇰🇷 국내 주식</button>
+    <button class="tab-btn" onclick="setFilter('US')">🇺🇸 미국 주식</button>
+  </div>
+
+  <div class="section-title">
+    <span>실시간 보유 포트폴리오 & AI 추천 타점</span>
+    <span class="section-count" id="holdingCount">0개 종목</span>
+  </div>
+  <div class="holdings-list" id="holdingsList">
+    <!-- 동적 렌더링 -->
+  </div>
+
+  <div class="footer">
+    <div id="lastUpdated">최근 업데이트: 조회 중...</div>
+    <div class="footer-detail">
+      <span>100% 안전한 조회 전용</span>
+      <span>•</span>
+      <span>자동 새로고침: 15초</span>
+    </div>
+  </div>
+
+  <script>
+    let globalData = null;
+    let currentFilter = 'ALL';
+
+    async function loadDashboard() {
+      try {
+        const res = await fetch('toss_data.json?t=' + new Date().getTime());
+        if (!res.ok) throw new Error('데이터 로드 대기 중');
+        globalData = await res.json();
+        renderData(globalData);
+      } catch (err) {
+        console.warn('데이터 로드 대기 중:', err);
+      }
+    }
+
+    function setFilter(filterType) {
+      currentFilter = filterType;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      if (globalData) renderData(globalData);
+    }
+
+    function renderData(d) {
+      document.getElementById('accountNoTag').textContent = '계좌: ' + (d.account_no || '17601069723');
+      
+      const krwEval = d.mkt_val_krw || 0;
+      const usdEval = d.mkt_val_usd || 0;
+      const krwPchs = d.tot_pchs_krw || 0;
+      const usdPchs = d.tot_pchs_usd || 0;
+      const totRate = d.tot_rate || 0;
+      const krwPnl = d.pnl_krw || 0;
+
+      document.getElementById('totalEval').textContent = krwEval.toLocaleString() + '원 + $' + usdEval.toFixed(2);
+      
+      const pnlEl = document.getElementById('pnlRow');
+      const isProfit = totRate >= 0;
+      pnlEl.className = 'pnl-row ' + (isProfit ? 'profit-text' : 'loss-text');
+      document.getElementById('pnlAmt').textContent = (krwPnl >= 0 ? '+' : '') + krwPnl.toLocaleString() + '원';
+      document.getElementById('pnlPct').textContent = '(' + (totRate >= 0 ? '+' : '') + totRate.toFixed(2) + '%)';
+
+      document.getElementById('krwStockInfo').textContent = krwEval.toLocaleString() + '원 (' + krwPchs.toLocaleString() + '원)';
+      document.getElementById('usdStockInfo').textContent = '$' + usdEval.toFixed(2) + ' ($' + usdPchs.toFixed(2) + ')';
+      document.getElementById('krwCash').textContent = (d.krw_cash || 0).toLocaleString() + '원';
+      document.getElementById('usdCash').textContent = '$' + (d.usd_cash || 0).toFixed(2);
+      document.getElementById('lastUpdated').textContent = '최근 감시 동기화: ' + (d.updated_at || '--');
+
+      const items = d.items || [];
+      const filtered = items.filter(it => {
+        if (currentFilter === 'ALL') return true;
+        return it.marketCountry === currentFilter;
+      });
+
+      document.getElementById('holdingCount').textContent = filtered.length + '개 종목';
+      const hList = document.getElementById('holdingsList');
+
+      hList.innerHTML = filtered.map(it => {
+        const isKr = it.currency === 'KRW';
+        const pnlRate = it.profitLossRate || 0;
+        const isProfitItem = pnlRate >= 0;
+        const priceStr = isKr ? (it.lastPrice || 0).toLocaleString() + '원' : '$' + (it.lastPrice || 0).toFixed(2);
+        const avgStr = isKr ? (it.averagePurchasePrice || 0).toLocaleString() + '원' : '$' + (it.averagePurchasePrice || 0).toFixed(2);
+        const pnlAmtStr = isKr ? (it.profitLossAmount || 0).toLocaleString() + '원' : '$' + (it.profitLossAmount || 0).toFixed(2);
+        
+        const decision = it.ai_decision || '홀딩 관망';
+        const score = it.ai_score || 50;
+        let badgeClass = 'badge-hold';
+        if (decision.includes('추매') || decision.includes('매수')) badgeClass = 'badge-buy';
+        else if (decision.includes('매도')) badgeClass = 'badge-sell';
+
+        const countryBadge = it.marketCountry === 'KR' 
+          ? '<span class="country-tag country-kr">🇰🇷 국내</span>' 
+          : '<span class="country-tag country-us">🇺🇸 미국</span>';
+
+        return `
+          <div class="holding-card">
+            <div class="holding-top">
+              <div>
+                <div class="stock-title">
+                  ${countryBadge}
+                  <span class="stock-name">${it.name}</span>
+                  <span class="stock-code">${it.symbol}</span>
+                </div>
+                <div class="stock-qty">${it.quantity}주 보유 (내 평단 ${avgStr})</div>
+              </div>
+              <div class="stock-val-box">
+                <div class="stock-cur-price">${priceStr}</div>
+                <div class="stock-pnl ${isProfitItem ? 'profit-text' : 'loss-text'}">
+                  ${isProfitItem ? '+' : ''}${pnlRate.toFixed(2)}% (${(isProfitItem ? '+' : '')}${pnlAmtStr})
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
+            </div>
+
+            <div class="action-tip-box">
+              <div class="action-tip-title">💡 실전 행동 팁</div>
+              <div class="action-tip-text">${it.ai_action_tip || '토스 앱에서 현재 포지션을 유지하며 관망하세요.'}</div>
+              <div class="action-reason">📌 ${it.ai_reason || ''}</div>
+            </div>
+
+            <div class="indicator-row">
+              <div class="indicator-pill">14일 RSI: <span class="pill-val">${it.rsi !== null ? it.rsi : '--'}</span></div>
+              <div class="indicator-pill">수급: <span class="pill-val">${it.investor_summary || '분석 중'}</span></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    loadDashboard();
+    setInterval(loadDashboard, 15000);
+  </script>
+</body>
+</html>
