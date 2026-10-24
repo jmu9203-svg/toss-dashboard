@@ -106,9 +106,14 @@
       <h1>토스증권 실전계좌 <span class="toss-tag">AI PB</span></h1>
       <p>토스 공식 Open API & 실시간 퀀트 타점 대시보드</p>
     </div>
-    <div class="status-badge" id="systemStatus">
-      <div class="pulse-dot"></div>
-      <span id="statusText">토스 실전 연동 중</span>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <div class="status-badge" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border);">
+        <span id="deviceBattery">🔋 --</span>
+      </div>
+      <div class="status-badge" id="systemStatus">
+        <div class="pulse-dot"></div>
+        <span id="statusText">토스 실전 연동 중</span>
+      </div>
     </div>
   </div>
 
@@ -143,13 +148,14 @@
   </div>
 
   <div class="filter-tabs">
-    <button class="tab-btn active" onclick="setFilter('ALL')">전체 보유 종목</button>
-    <button class="tab-btn" onclick="setFilter('KR')">🇰🇷 국내 주식</button>
-    <button class="tab-btn" onclick="setFilter('US')">🇺🇸 미국 주식</button>
+    <button class="tab-btn active" onclick="setFilter('ALL', this)">전체 보유 종목</button>
+    <button class="tab-btn" onclick="setFilter('KR', this)">🇰🇷 국내 주식</button>
+    <button class="tab-btn" onclick="setFilter('US', this)">🇺🇸 미국 주식</button>
+    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">✨ AI 추천 유망주</button>
   </div>
 
   <div class="section-title">
-    <span>실시간 보유 포트폴리오 & AI 추천 타점</span>
+    <span id="sectionTitleText">실시간 보유 포트폴리오 & AI 추천 타점</span>
     <span class="section-count" id="holdingCount">0개 종목</span>
   </div>
   <div class="holdings-list" id="holdingsList">
@@ -180,15 +186,19 @@
       }
     }
 
-    function setFilter(filterType) {
+    function setFilter(filterType, btnEl) {
       currentFilter = filterType;
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      if (btnEl) btnEl.classList.add('active');
+      else if (event && event.target) event.target.classList.add('active');
       if (globalData) renderData(globalData);
     }
 
     function renderData(d) {
       document.getElementById('accountNoTag').textContent = '계좌: ' + (d.account_no || '17601069723');
+      if (d.battery) {
+        document.getElementById('deviceBattery').textContent = '🔋 ' + d.battery;
+      }
       
       const krwEval = d.mkt_val_krw || 0;
       const usdEval = d.mkt_val_usd || 0;
@@ -211,6 +221,60 @@
       document.getElementById('usdCash').textContent = '$' + (d.usd_cash || 0).toFixed(2);
       document.getElementById('lastUpdated').textContent = '최근 감시 동기화: ' + (d.updated_at || '--');
 
+      const hList = document.getElementById('holdingsList');
+
+      // 1. AI 추천 유망주 탭 선택 시
+      if (currentFilter === 'RECOMMEND') {
+        const recs = d.ai_recommendations || [];
+        document.getElementById('sectionTitleText').textContent = '✨ AI 포트폴리오 맞춤 추천 유망주';
+        document.getElementById('holdingCount').textContent = recs.length + '개 유망주';
+
+        const bannerHtml = `
+          <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-bottom: 6px; padding: 12px 14px; background: rgba(49, 130, 246, 0.08); border-radius: 12px; border: 1px dashed rgba(49, 130, 246, 0.35);">
+            🎯 <b>AI 추천 선정 기준 (포트폴리오 밸런스 원칙)</b><br>
+            현재 보유 종목(국내 반도체 대형주 + 미국 배당/채권)의 편중을 분산시키고, <b>글로벌 빅테크 성장성, S&P 500 지수 코어, K-전력인프라 슈퍼사이클, 밸류업 방어력</b>을 보완하도록 엄선한 국내/해외 우량주 바스켓입니다.
+          </div>
+        `;
+
+        hList.innerHTML = bannerHtml + recs.map(rec => {
+          const isKr = rec.marketCountry === 'KR';
+          const countryBadge = isKr 
+            ? '<span class="country-tag country-kr">🇰🇷 국내</span>' 
+            : '<span class="country-tag country-us">🇺🇸 미국</span>';
+
+          return `
+            <div class="holding-card">
+              <div class="holding-top">
+                <div>
+                  <div class="stock-title">
+                    ${countryBadge}
+                    <span class="stock-name">${rec.name}</span>
+                    <span class="stock-code">${rec.symbol}</span>
+                  </div>
+                  <div class="stock-qty" style="color: var(--toss-blue); font-weight: 600; margin-top: 4px;">🏷️ ${rec.sector}</div>
+                </div>
+                <div class="stock-val-box">
+                  <span style="background: rgba(49, 130, 246, 0.15); color: #58a6ff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">${rec.theme_tag}</span>
+                </div>
+              </div>
+
+              <div>
+                <span class="ai-badge badge-buy">✨ AI 적합도: ${rec.ai_score}점 (${rec.badge})</span>
+              </div>
+
+              <div class="action-tip-box" style="border-left-color: #3fb950; margin-top: 10px;">
+                <div class="action-tip-title" style="color: #3fb950;">💡 AI 선정 근거 & 포트폴리오 보완 효과</div>
+                <div class="action-tip-text">${rec.rationale}</div>
+                <div class="action-reason" style="color: #58a6ff; font-weight: 600; margin-top: 6px;">📌 토스 앱 실전 팁: ${rec.action_tip}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+        return;
+      }
+
+      // 2. 일반 보유 종목 탭 선택 시
+      document.getElementById('sectionTitleText').textContent = '실시간 보유 포트폴리오 & AI 추천 타점';
       const items = d.items || [];
       const filtered = items.filter(it => {
         if (currentFilter === 'ALL') return true;
@@ -218,7 +282,6 @@
       });
 
       document.getElementById('holdingCount').textContent = filtered.length + '개 종목';
-      const hList = document.getElementById('holdingsList');
 
       hList.innerHTML = filtered.map(it => {
         const isKr = it.currency === 'KRW';
