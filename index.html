@@ -14,29 +14,35 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <style>
     :root {
-      --bg: #0b101b;
-      --card-bg: #151b26;
-      --card-border: rgba(255, 255, 255, 0.08);
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --card-border: #30363d;
       --text-main: #f0f6fc;
       --text-sub: #8b949e;
       --toss-blue: #3182F6;
       --toss-blue-bg: rgba(49, 130, 246, 0.15);
       --profit: #f04452; /* 토스 상승 레드 */
       --loss: #3182F6;   /* 토스 하락 블루 */
-      --pill-bg: #1e2638;
+      --pill-bg: #21262d;
       --warn-bg: rgba(210, 153, 34, 0.15);
       --warn-border: #d29922;
       --warn-text: #e3b341;
       --action-box-bg: rgba(49, 130, 246, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif; }
-    body { background-color: var(--bg); color: var(--text-main); padding: 16px; max-width: 640px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg); color: var(--text-main); padding: 16px; max-width: 680px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
+
+    /* Top Family Navigation Bar (Unified 4 Sites) */
+    .nav-tabs { display: flex; gap: 4px; background: #161b22; padding: 4px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--card-border); overflow-x: auto; }
+    .nav-tab-item { flex: 1; text-align: center; padding: 8px 6px; font-size: 12px; font-weight: 600; color: var(--text-sub); text-decoration: none; border-radius: 8px; transition: all 0.2s; white-space: nowrap; }
+    .nav-tab-item:hover { color: var(--text-main); }
+    .nav-tab-item.active { background: #21262d; color: #fff; border: 1px solid rgba(255,255,255,0.12); }
     
     /* Header */
-    .header { display: flex; justify-content: space-between; align-items: center; padding: 12px 0 20px 0; }
-    .title-group h1 { font-size: 20px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
-    .toss-tag { background: var(--toss-blue); color: #fff; font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
-    .title-group p { font-size: 13px; color: var(--text-sub); margin-top: 2px; }
+    .header { display: flex; justify-content: space-between; align-items: center; padding: 6px 0 16px 0; }
+    .title-group h1 { font-size: 21px; font-weight: 800; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+    .toss-tag { background: var(--toss-blue-bg); color: #60a5fa; border: 1px solid rgba(49, 130, 246, 0.4); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+    .title-group p { font-size: 13px; color: var(--text-sub); margin-top: 3px; }
     .status-badge { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--toss-blue); }
     .pulse-dot { width: 8px; height: 8px; background: var(--toss-blue); border-radius: 50%; box-shadow: 0 0 8px var(--toss-blue); animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
@@ -101,12 +107,12 @@
   </style>
 </head>
 <body>
-  <!-- Top Family Navigation (4 Sites) -->
-  <div style="display: flex; gap: 4px; background: #161b22; padding: 4px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--card-border); overflow-x: auto;">
-    <a href="https://jmu9203-svg.github.io/kis-dashboard/" style="flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-decoration: none; border-radius: 8px; white-space: nowrap;">💼 한투 500만 펀드</a>
-    <a href="https://jmu9203-svg.github.io/toss-dashboard/" style="flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; font-weight: 600; color: #fff; text-decoration: none; border-radius: 8px; background: #21262d; border: 1px solid rgba(255,255,255,0.1); white-space: nowrap;">💙 토스 실전 비서</a>
-    <a href="https://jmu9203-svg.github.io/dividend-calendar/" style="flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-decoration: none; border-radius: 8px; white-space: nowrap;">📅 배당 캘린더</a>
-    <a href="https://jmu9203-svg.github.io/system-architecture/" style="flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-decoration: none; border-radius: 8px; white-space: nowrap;">🧠 전략 백서</a>
+  <!-- Top Family Navigation (Unified 4 Sites) -->
+  <div class="nav-tabs">
+    <a href="https://jmu9203-svg.github.io/kis-dashboard/" class="nav-tab-item">💼 한투 500만 펀드</a>
+    <a href="https://jmu9203-svg.github.io/toss-dashboard/" class="nav-tab-item active">💙 토스 실전 비서</a>
+    <a href="https://jmu9203-svg.github.io/dividend-calendar/" class="nav-tab-item">📅 배당 캘린더</a>
+    <a href="https://jmu9203-svg.github.io/system-architecture/" class="nav-tab-item">🧠 전략 백서</a>
   </div>
 
   <div class="header">
@@ -114,15 +120,21 @@
       <h1>토스증권 실전계좌 <span class="toss-tag">AI PB</span></h1>
       <p>토스 공식 Open API & 실시간 퀀트 타점 대시보드</p>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center;">
-      <div class="status-badge" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border);">
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
         <span id="deviceBattery">🔋 --</span>
       </div>
       <div class="status-badge" id="systemStatus">
         <div class="pulse-dot"></div>
-        <span id="statusText">토스 실전 연동 중</span>
+        <span id="statusText">조회 전용 안전모드</span>
       </div>
     </div>
+  </div>
+
+  <!-- Watchdog & External Dead-Server Siren Banner -->
+  <div id="watchdogBanner" style="background: rgba(49, 130, 246, 0.10); border: 1px solid rgba(49, 130, 246, 0.30); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
+    <span id="watchdogText">🛡️ <b>100% 안전한 조회 전용(Read-Only) 자문</b> — 오주문 리스크 0% · 트랙 격리 완료</span>
+    <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600;">방금 동기화</span>
   </div>
 
   <div class="summary-card">
@@ -205,7 +217,14 @@
     function renderData(d) {
       document.getElementById('accountNoTag').textContent = '계좌: ' + (d.account_no || '17601069723');
       if (d.battery) {
-        document.getElementById('deviceBattery').textContent = '🔋 ' + d.battery;
+        document.getElementById('deviceBattery').textContent = '🔋 ' + d.battery.split(' ')[0];
+      }
+      if (d.updated_at && document.getElementById('watchdogSyncAge')) {
+        const parsed = new Date(d.updated_at.replace(' ', 'T'));
+        if (!isNaN(parsed.getTime())) {
+          const diffMin = Math.max(0, Math.round((Date.now() - parsed.getTime()) / 60000));
+          document.getElementById('watchdogSyncAge').textContent = diffMin <= 1 ? '방금 동기화' : `${diffMin}분 전 동기화`;
+        }
       }
       
       const krwEval = d.mkt_val_krw || 0;
@@ -299,8 +318,19 @@
         const avgStr = isKr ? (it.averagePurchasePrice || 0).toLocaleString() + '원' : '$' + (it.averagePurchasePrice || 0).toFixed(2);
         const pnlAmtStr = isKr ? (it.profitLossAmount || 0).toLocaleString() + '원' : '$' + (it.profitLossAmount || 0).toFixed(2);
         
-        const decision = it.ai_decision || '홀딩 관망';
-        const score = it.ai_score || 50;
+        let decision = it.ai_decision || '홀딩 관망';
+        let score = it.ai_score || 50;
+        let actionTip = it.ai_action_tip || '토스 앱에서 현재 포지션을 유지하며 관망하세요.';
+        let reasonText = it.ai_reason || '';
+
+        // 배당주/파킹 ETF (KO, SCHD, SGOV) 매도 차단 프론트엔드 안전망
+        if (['KO', 'SCHD', 'SGOV'].includes(it.symbol) && decision.includes('매도')) {
+          decision = '홀딩 관망';
+          score = 65;
+          actionTip = '현재 보유 수량을 매도하지 말고 배당 재투자용으로 계속 홀딩하세요.';
+          reasonText = '[배당주 보존 원칙] 안정적인 현금흐름을 창출하는 배당 코어 자산이므로 단기 차익실현 매도를 보류하고 장기 보유합니다.';
+        }
+
         let badgeClass = 'badge-hold';
         if (decision.includes('추매') || decision.includes('매수')) badgeClass = 'badge-buy';
         else if (decision.includes('매도')) badgeClass = 'badge-sell';
@@ -334,8 +364,8 @@
 
             <div class="action-tip-box">
               <div class="action-tip-title">💡 실전 행동 팁</div>
-              <div class="action-tip-text">${it.ai_action_tip || '토스 앱에서 현재 포지션을 유지하며 관망하세요.'}</div>
-              <div class="action-reason">📌 ${it.ai_reason || ''}</div>
+              <div class="action-tip-text">${actionTip}</div>
+              <div class="action-reason">📌 ${reasonText}</div>
             </div>
 
             <div class="indicator-row">
