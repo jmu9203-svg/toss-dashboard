@@ -331,6 +331,21 @@
           reasonText = '[배당주 보존 원칙] 안정적인 현금흐름을 창출하는 배당 코어 자산이므로 단기 차익실현 매도를 보류하고 장기 보유합니다.';
         }
 
+        // 국내주식 과다 보유(10주↑) 시 1주 물타기 실효성 미달(<1.5%) 및 섹터 편중 가드레일 안전망
+        if (isKr && (decision.includes('추매') || decision.includes('매수')) && (it.quantity || 0) >= 10 && (it.averagePurchasePrice || 0) > 0) {
+          const q = it.quantity;
+          const avgP = it.averagePurchasePrice;
+          const curP = it.lastPrice || avgP;
+          const newAvg = Math.round(((q * avgP) + curP) / (q + 1));
+          const dropPct = Math.abs((newAvg - avgP) / avgP * 100);
+          if (dropPct < 1.5) {
+            decision = '홀딩 관망';
+            score = 64;
+            actionTip = `현재 ${q}주 보유 중으로 1주 추매 시 평단 인하 폭이 -${dropPct.toFixed(2)}%(${avgP.toLocaleString()}원→${newAvg.toLocaleString()}원)에 불과하고 반도체 비중이 과다하므로 원화 예수금을 아끼고 홀딩 관망하세요.`;
+            reasonText = `[5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일] 개별 차트 RSI(${it.rsi || '--'})는 과매도 구간이나, 이미 ${q}주를 보유 중이어서 마지막 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -${dropPct.toFixed(2)}%로 미미하며, 계좌 내 반도체 100% 편중 및 공식 실적 발표 임박 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.`;
+          }
+        }
+
         let badgeClass = 'badge-hold';
         if (decision.includes('추매') || decision.includes('매수')) badgeClass = 'badge-buy';
         else if (decision.includes('매도')) badgeClass = 'badge-sell';
