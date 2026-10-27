@@ -167,6 +167,22 @@
     </div>
   </div>
 
+  <!-- Portfolio Health & Balance Card -->
+  <div id="portfolioHealthCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid #ef4444; border-radius: 14px; padding: 16px; margin-bottom: 18px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+      <span style="font-size:14px; font-weight:800; color:var(--text-main); display:flex; align-items:center; gap:6px;">
+        <span>🩺 포트폴리오 밸런스 &amp; 건강도 진단</span>
+      </span>
+      <span id="healthGradeBadge" style="font-size:11px; font-weight:700; background:rgba(239,68,68,0.18); color:#f87171; border:1px solid rgba(239,68,68,0.4); padding:3px 8px; border-radius:8px;">진단 중...</span>
+    </div>
+    <div id="healthDiagnoses" style="font-size:12px; color:#fca5a5; line-height:1.6; margin-bottom:8px;">
+      포트폴리오 자산 배분 상태를 분석 중입니다...
+    </div>
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:8px 10px; font-size:11.5px; color:var(--text-sub); line-height:1.5;">
+      <span style="color:#60a5fa; font-weight:700;">📋 AI 리밸런싱 처방전:</span> <span id="healthPrescription">자산 배분 분석 중...</span>
+    </div>
+  </div>
+
   <!-- Master Cash Action Plan Card (Middle of Page) -->
   <div id="cashMasterPlanCard" style="background: linear-gradient(145deg, rgba(49, 130, 246, 0.14), rgba(22, 27, 34, 0.95)); border: 1px solid rgba(49, 130, 246, 0.45); border-radius: 16px; padding: 18px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
@@ -279,6 +295,29 @@
       document.getElementById('krwCash').textContent = (d.krw_cash || 0).toLocaleString() + '원';
       document.getElementById('usdCash').textContent = '$' + (d.usd_cash || 0).toFixed(2);
       document.getElementById('lastUpdated').textContent = '최근 감시 동기화: ' + (d.updated_at || '--');
+
+      // 포트폴리오 밸런스 & 건강도 진단 렌더링
+      const hInfo = d.portfolio_health;
+      if (hInfo) {
+        const sc = hInfo.score || 70;
+        const cardEl = document.getElementById('portfolioHealthCard');
+        const badgeEl = document.getElementById('healthGradeBadge');
+        const isGood = sc >= 85;
+        const isWarn = sc >= 65 && sc < 85;
+
+        cardEl.style.borderLeftColor = isGood ? '#10b981' : (isWarn ? '#fbbf24' : '#ef4444');
+        badgeEl.textContent = `${sc}점 (${hInfo.grade || '보통'})`;
+        badgeEl.style.color = isGood ? '#34d399' : (isWarn ? '#fbbf24' : '#f87171');
+        badgeEl.style.background = isGood ? 'rgba(16,185,129,0.18)' : (isWarn ? 'rgba(251,191,36,0.18)' : 'rgba(239,68,68,0.18)');
+        badgeEl.style.borderColor = isGood ? 'rgba(16,185,129,0.4)' : (isWarn ? 'rgba(251,191,36,0.4)' : 'rgba(239,68,68,0.4)');
+
+        const diags = (hInfo.diagnoses || []).map(dg => `• ${dg}`).join('<br>');
+        document.getElementById('healthDiagnoses').innerHTML = diags || '• 포트폴리오 자산 구성 정상';
+        document.getElementById('healthDiagnoses').style.color = isGood ? '#93c5fd' : (isWarn ? '#fde68a' : '#fca5a5');
+
+        const rx = (hInfo.prescriptions || []).join(' / ') || '현재 자산 배분 비중을 안정적으로 유지하세요.';
+        document.getElementById('healthPrescription').textContent = rx;
+      }
 
       // 오늘의 예수금 운용 최종 실전 행동 팁 렌더링 (백엔드 cash_master_plan 또는 프론트엔드 실시간 계산)
       const kCash = d.krw_cash || 0;
