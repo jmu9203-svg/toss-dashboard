@@ -438,7 +438,7 @@
             </div>
 
             <div class="indicator-row">
-              <div class="indicator-pill">14일 RSI: <span class="pill-val">${it.rsi !== null ? it.rsi : '--'}</span></div>
+              <div class="indicator-pill">14일 RSI: <span class="pill-val">${['SGOV', 'BIL', 'USFR', 'SHV'].includes(it.symbol) ? '<span style="color:#34d399;font-weight:600;">초단기 국채 (변동 없음)</span>' : (it.rsi !== null && it.rsi !== undefined ? it.rsi : '--')}</span></div>
               <div class="indicator-pill">수급: <span class="pill-val">${it.investor_summary || '분석 중'}</span></div>
             </div>
           </div>
