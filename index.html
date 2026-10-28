@@ -118,7 +118,7 @@
   <div class="header">
     <div class="title-group">
       <h1>토스증권 실전계좌 <span class="toss-tag">AI PB</span></h1>
-      <p>토스 공식 Open API & 실시간 퀀트 타점 대시보드</p>
+      <p>토스 공식 Open API & 미국 3대 빅테크 이종 앙상블 AI 실시간 자문·대화형 주문</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -126,14 +126,14 @@
       </div>
       <div class="status-badge" id="systemStatus">
         <div class="pulse-dot"></div>
-        <span id="statusText">조회 전용 안전모드</span>
+        <span id="statusText">대화형 자문 모드 (무단자동매매 0% 차단)</span>
       </div>
     </div>
   </div>
 
   <!-- Watchdog & External Dead-Server Siren Banner -->
   <div id="watchdogBanner" style="background: rgba(49, 130, 246, 0.10); border: 1px solid rgba(49, 130, 246, 0.30); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
-    <span id="watchdogText">🛡️ <b>100% 안전한 조회 전용(Read-Only) 자문</b> — 오주문 리스크 0% · 트랙 격리 완료</span>
+    <span id="watchdogText">🛡️ <b>무단 자동 매매 0% 영구 동결 + 대화형 스마트 수동 매매</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%</span>
     <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600;">방금 동기화</span>
   </div>
 
@@ -351,8 +351,8 @@
 
         const bannerHtml = `
           <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-bottom: 6px; padding: 12px 14px; background: rgba(49, 130, 246, 0.08); border-radius: 12px; border: 1px dashed rgba(49, 130, 246, 0.35);">
-            🎯 <b>AI 추천 선정 기준 (포트폴리오 밸런스 원칙)</b><br>
-            현재 보유 종목(국내 반도체 대형주 + 미국 배당/채권)의 편중을 분산시키고, <b>글로벌 빅테크 성장성, S&P 500 지수 코어, K-전력인프라 슈퍼사이클, 밸류업 방어력</b>을 보완하도록 엄선한 국내/해외 우량주 바스켓입니다.
+            🎯 <b>미국 3대 빅테크 AI 앙상블 & 5단계 퀀트 가드 추천</b><br>
+            <b>Google Gemini + Meta Llama 3.3 70B + DeepSeek V3</b> 이종 3사 교차 검증과 <b>5단계 퀀트 전략(20일선·14일 RSI·메이저 수급·실적 D-Day·예수금 한도)</b>으로 계좌 편중을 분산시키고 포트폴리오를 보완할 우량주를 실시간 채점합니다.
           </div>
         `;
 
