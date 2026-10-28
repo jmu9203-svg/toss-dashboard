@@ -416,6 +416,11 @@
         let actionTip = it.ai_action_tip || '토스 앱에서 현재 포지션을 유지하며 관망하세요.';
         let reasonText = it.ai_reason || '';
 
+        // 구버전 'Gemini 3대/3종' 잔존 문구를 최신 미국 3대 빅테크 이종 앙상블 표기로 자동 실시간 전환
+        if (reasonText) {
+          reasonText = reasonText.replace(/\[(?:🤖|🧠)?\s*Gemini\s*3(?:종|대)[^\]]*\]/gi, '[🌐 미국 3대 빅테크 이종 앙상블(Google+Meta+DeepSeek)]');
+        }
+
         // 배당주/파킹 ETF (KO, SCHD, SGOV) 매도 차단 프론트엔드 안전망
         if (['KO', 'SCHD', 'SGOV'].includes(it.symbol) && decision.includes('매도')) {
           decision = '홀딩 관망';
