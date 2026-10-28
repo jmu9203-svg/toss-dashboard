@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-28 10:05:46",
+  "updated_at": "2026-10-28 10:06:10",
   "account_no": "17601069723",
   "battery": "83% (⚡ DISCHARGING)",
-  "tot_rate": -9.83,
-  "mkt_val_krw": 6528800,
+  "tot_rate": -9.78,
+  "mkt_val_krw": 6533300,
   "tot_pchs_krw": 7377100,
-  "pnl_krw": -848300,
-  "mkt_val_usd": 1009.3,
+  "pnl_krw": -843800,
+  "mkt_val_usd": 1009.34,
   "tot_pchs_usd": 992.69,
-  "pnl_usd": 16.61,
+  "pnl_usd": 16.65,
   "krw_cash": 166617,
   "usd_cash": 314.44,
   "holding_count": 6,
@@ -28,7 +28,7 @@
       "ai_decision": "관망",
       "ai_score": 69,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 69점 · 편차 20점 | flash-lite-latest(62점 관망), 3.5-flash-lite(62점 관망), 3.5-flash(82점 관망))] 메리츠금융지주는 성장·경기민감주(GROWTH_CYCLICAL)이나 20일선 아래 단기 조정 국면이며 RSI 31.5 과매도 구간입니다. 현재 남은 예수금 16.6만 원으로 딱 1주 매수가 가능하지만, 기관의 연속 매도세와 최희문 임기 만료 등 불확실성이 상존하므로 무리한 추매보다는 바닥 확인 후 타이밍을 조절해야 합니다."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 69점 · 편차 18점 | flash-lite-latest(62점 관망), 3.5-flash-lite(62점 관망), 3.5-flash(80점 관망))] 메리츠금융지주는 경기민감 성장주(GROWTH_CYCLICAL)로 현재 20일선 하회 및 RSI 30.8의 과매도 국면이나, 기관의 지속적인 순매도와 최고경영진 임기 만료 등 노이즈가 있어 외국인의 3일 연속 매수세에도 불구하고 바닥 확인을 위한 신중한 홀딩 관망이 필요합니다."
     },
     {
       "symbol": "005930",
@@ -43,9 +43,9 @@
       "rsi": 38.9,
       "investor_summary": "최근(10/27) 순매수: 외국인 +1,052,520주, 기관 +412,198주(3일연속매수🔥) | [5일누적 합계: 외인 +668,578주, 기관 +1,580,010주]",
       "ai_decision": "관망",
-      "ai_score": 62,
+      "ai_score": 65,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 62점 · 편차 0점 | 3.5-flash-lite(62점 관망), flash-lite-latest(62점 관망), 3.5-flash(62점 관망))] 삼성전자는 경기민감주(GROWTH_CYCLICAL)로 RSI(30.7)가 과매도 구간이나 외국인 대량 매도와 3분기 실적 발표 슈퍼위크가 겹쳐 변동성이 큽니다. 따라서 남은 예수금(1주 분량)을 성급히 투입하기보다 실적 발표 이후 외인 수급 전환과 바닥 확인을 거쳐 신중히 집행해야 합니다."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 65점 · 편차 6점 | flash-lite-latest(68점 관망), 3.5-flash-lite(65점 관망), 3.5-flash(62점 관망))] 삼성전자는 경기민감주(GROWTH_CYCLICAL)로 내일(10/29) 3분기 공식 실적 발표를 앞두고 있어 D-1 변동성 확대가 예상됩니다. 현재 가용 예수금으로는 1주 매수가 물리적으로 불가능하며, 외인·기관의 수급 유입세와 실적 가이던스를 먼저 확인한 후 대응해야 합니다."
     },
     {
       "symbol": "000660",
@@ -53,16 +53,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 1.0,
-      "lastPrice": 1419500.0,
+      "lastPrice": 1424000.0,
       "averagePurchasePrice": 1710000.0,
-      "profitLossRate": -16.98,
-      "profitLossAmount": -290500.0,
-      "rsi": 35.1,
+      "profitLossRate": -16.72,
+      "profitLossAmount": -286000.0,
+      "rsi": 35.2,
       "investor_summary": "최근(10/27) 순매수: 외국인 -51,049주(3일연속매도⚠️), 기관 +113,396주(3일연속매수🔥) | [5일누적 합계: 외인 -656,006주, 기관 +605,555주]",
       "ai_decision": "관망",
-      "ai_score": 61,
+      "ai_score": 62,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 61점 · 편차 4점 | flash-lite-latest(62점 관망), 3.5-flash-lite(62점 관망), 3-flash-preview(58점 관망))] SK하이닉스는 경기민감주(GROWTH_CYCLICAL)로 현재 20일선 아래 단기 조정 및 외국인 5일 누적 대량 매도세를 보이고 있어 내일(28일) 3분기 실적 발표와 주주환원 정책을 확인한 후 바닥을 다질 때까지 신중한 홀딩이 필요합니다. 현재 가용 예수금으로는 1주 온주 매수가 물리적으로 불가능하므로 성급한 자금 투입을 자제해야 합니다."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 62점 · 편차 0점 | 3.5-flash-lite(62점 관망), flash-lite-latest(62점 관망), 3.5-flash(62점 관망))] SK하이닉스는 3분기 영업이익 83조 원과 2029년 HBM 물량 완판이라는 강력한 펀더멘털에도 불구하고, 외국인 3일 연속 대량 순매도세와 D-0 실적 발표 직전의 변동성이 겹쳐 추가 매수보다는 관망이 유리합니다. 현재 원화 예수금으로는 국내 주식 분할 매수가 불가능하므로 1주 온주 매수를 위한 추가 입금 전까지는 현재 포지션을 유지하며 추이를 지켜봐야 합니다."
     },
     {
       "symbol": "KO",
@@ -79,7 +79,7 @@
       "ai_decision": "관망",
       "ai_score": 67,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 67점 · 편차 3점 | 3.5-flash-lite(68점 관망), flash-lite-latest(68점 관망), 3-flash-preview(65점 관망))] 코카콜라는 포트폴리오의 든든한 장기 배당 안전판으로, 단기 RSI 과열이나 +5.60%의 소폭 수익률을 이유로 매도하는 것은 불리합니다. 추후 증시 조정으로 RSI가 낮아질 때까지 홀딩하며 배당 수령과 자산 방어에 집중하십시오."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 67점 · 편차 3점 | 3.5-flash-lite(68점 관망), flash-lite-latest(68점 관망), 3.5-flash(65점 관망))] 코카콜라는 포트폴리오의 든든한 배당 안전판(DIVIDEND_DEFENSIVE)이자 장기 코어 자산으로, 단기 RSI 62.4 및 소폭 상승(+3.78%) 구간에서 매도할 이유가 없습니다. 향후 시장 조정으로 RSI가 낮아질 때까지 현재 물량을 유지하며 배당 수익을 확보하는 홀딩 전략이 유효합니다."
     },
     {
       "symbol": "SCHD",
@@ -87,16 +87,16 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 35.1,
+      "lastPrice": 35.11,
       "averagePurchasePrice": 34.3786,
-      "profitLossRate": 2.09,
-      "profitLossAmount": 2.8856,
-      "rsi": null,
+      "profitLossRate": 2.12,
+      "profitLossAmount": 2.9256,
+      "rsi": 81.4,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
       "ai_score": 66,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 66점 · 편차 6점 | 3.5-flash-lite(68점 관망), flash-lite-latest(68점 관망), 3.5-flash(62점 관망))] SCHD는 포트폴리오의 핵심 배당 방어주이자 안전판으로, 단기 RSI 과열(88.9)에도 불구하고 절대 매도하지 않고 장기 보유해야 합니다. 현재 달러 주문가능 예수금($314.44)으로 온주 매수가 가능하나, 향후 증시 조정으로 RSI가 낮아질 때까지 추매를 아끼고 홀딩 관망하는 것이 유리합니다."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 66점 · 편차 6점 | flash-lite-latest(68점 관망), 3.5-flash-lite(68점 관망), 3.5-flash(62점 관망))] 본 종목은 포트폴리오의 핵심 배당 안전판(DIVIDEND_DEFENSIVE)으로, +2.12% 소폭 수익이나 단기 RSI 과열(81.4)을 이유로 매도하는 것은 부적절합니다. 향후 시장 조정으로 RSI가 안정될 때까지 달러 예수금을 보유하며 홀딩 관망하는 것이 유리합니다."
     },
     {
       "symbol": "SGOV",
@@ -111,19 +111,19 @@
       "rsi": 100.0,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
-      "ai_score": 85,
+      "ai_score": 86,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 85점 · 편차 0점 | flash-lite-latest(85점 관망), 3.5-flash-lite(85점 관망), 3.5-flash(85점 관망))] SGOV는 주가 차익용이 아닌 초단기 미국채 기반의 안전한 달러 파킹 통장으로, RSI 100은 금리 누적에 따른 자연스러운 현상입니다. 현재 달러 예수금($314.44)으로 3주 이상 추가 매수가 가능하므로 글로벌 빅테크 실적 발표 주간의 변동성에 대비해 현금을 효율적으로 묶어두기에 최적의 타이밍입니다."
+      "ai_reason": "[🤖 Gemini 3종 교차검증 [3:0 관망 우세] (평균 86점 · 편차 3점 | 3.5-flash-lite(85점 관망), flash-lite-latest(85점 관망), 3.5-flash(88점 관망))] SGOV는 주가 차익용이 아닌 초단기 미국채 달러 파킹 ETF로 RSI 100은 금리 누적에 따른 정상 현상입니다. 현재 달러 예수금($314.44)으로 추가 매수가 충분히 가능하며 빅테크 실적 발표 주간의 안전한 달러 자산 방어 및 대기 자금(Dry Powder)으로 매우 유효합니다."
     }
   ],
   "portfolio_health": {
     "score": 55,
     "grade": "🔴 리스크 경고",
     "semi_ratio": 98.1,
-    "kr_eval": 6528800.0,
-    "us_eval": 1009.3,
+    "kr_eval": 6533300.0,
+    "us_eval": 1009.34,
     "growth_eval": 0.0,
-    "div_eval": 505.8,
+    "div_eval": 505.84,
     "park_eval": 503.5,
     "diagnoses": [
       "🚨 국내 계좌 반도체 극단 편중 (98.1%)",
