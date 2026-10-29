@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-29 14:32:25",
+  "updated_at": "2026-10-29 14:36:19",
   "account_no": "17601069723",
   "battery": "74% (⚡ DISCHARGING)",
-  "tot_rate": -9.28,
-  "mkt_val_krw": 6555500,
+  "tot_rate": -8.99,
+  "mkt_val_krw": 6581000,
   "tot_pchs_krw": 7377100,
-  "pnl_krw": -821600,
+  "pnl_krw": -796100,
   "mkt_val_usd": 1016.1,
   "tot_pchs_usd": 992.69,
   "pnl_usd": 23.41,
@@ -19,16 +19,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 1.0,
-      "lastPrice": 130500.0,
+      "lastPrice": 131000.0,
       "averagePurchasePrice": 123100.0,
-      "profitLossRate": 6.01,
-      "profitLossAmount": 7400.0,
-      "rsi": 57.8,
+      "profitLossRate": 6.41,
+      "profitLossAmount": 7900.0,
+      "rsi": 58.6,
       "investor_summary": "최근(10/28) 순매수: 외국인 +51,291주(4일연속매수🔥), 기관 -61,126주(2일연속매도⚠️) | [5일누적 합계: 외인 +110,760주, 기관 -58,744주]",
       "ai_decision": "관망",
-      "ai_score": 67,
+      "ai_score": 66,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 67점 · 편차 27점 | qwen/qwen3.8-27b(55점 관망), 3.5-flash(82점 관망), 3.5-flash-lite(62점 관망))] 기관이 5일 연속 대량 순매도(-6만 주) 중이며, 금주 국내 핵심 대기업 실적 발표로 인한 변동성 확대 리스크가 상존합니다. RSI 33의 과매도 신호에도 불구하고 수급 안정화(기관 매도 진정)가 확인되기 전까지 마지막 가용 자금은 보존하는 것이 안전합니다."
+      "ai_reason": "[🤖 이종 2사 앙상블(Google+Meta) 교차검증 [3:0 관망 우세] (평균 66점 · 편차 8점 | Google:3.5-flash-lite(68점 관망), Meta:llama-3.3-70b-instruct(60점 관망), Google:flash-lite-latest(68점 관망))] 메리츠금융지주는 성장·경기민감주(GROWTH_CYCLICAL)로 현재 20일선을 상회하며 +6.41% 수익권이나, 외국인의 4일 연속 순매수에도 불구하고 기관이 이틀 연속 순매도하며 수급 엇갈림을 보이고 있습니다. 원화 예수금으로 딱 1주 매수할 수 있는 물리적 한계가 있는 만큼, 성급한 추가 매수보다는 현 포지션을 유지하며 추세를 관망하는 것이 안전합니다."
     },
     {
       "symbol": "005930",
@@ -36,16 +36,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 21.0,
-      "lastPrice": 232000.0,
+      "lastPrice": 233000.0,
       "averagePurchasePrice": 264000.0,
-      "profitLossRate": -12.12,
-      "profitLossAmount": -672000.0,
-      "rsi": 40.3,
+      "profitLossRate": -11.74,
+      "profitLossAmount": -651000.0,
+      "rsi": 40.5,
       "investor_summary": "최근(10/28) 순매수: 외국인 +1,522,344주(2일연속매수🔥), 기관 +1,620,180주(4일연속매수🔥) | [5일누적 합계: 외인 +135,681주, 기관 +2,887,163주]",
       "ai_decision": "관망",
-      "ai_score": 61,
+      "ai_score": 59,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 61점 · 편차 2점 | openai/gpt-oss-120b(60점 관망), 3.5-flash(62점 관망), 3.5-flash-lite(62점 관망))] 삼성전자는 성장·주기성(반도체) 종목으로 외인·기관 순매수가 강하지만 현재 예수금으로는 1주도 매수할 수 없습니다. RSI 41.6으로 과매도는 아니며, 실적 발표 전이므로 추가 매수는 보류하고 현 포지션을 유지하는 것이 바람직합니다."
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 59점 · 편차 4점 | Groq:gpt-oss-120b(58점 관망), Google:3.5-flash-lite(62점 관망), Meta:llama-3.3-70b-instruct(58점 관망))] 삼성전자는 성장·주기성 종목으로 현재 RSI 40.5는 과매도 수준이 아니며 외국인·기관 순매수에도 불구하고 현금으로는 1주도 매수할 수 없습니다. 실적 발표 전까지는 추가 매수를 보류하고 기존 보유를 관망하는 것이 바람직합니다. (단, 현재 원화 예수금 166,617원으로는 1주 추가 매수가 물리적으로 불가능하여 보유 관망합니다.)"
     },
     {
       "symbol": "000660",
@@ -53,16 +53,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 1.0,
-      "lastPrice": 1553000.0,
+      "lastPrice": 1557000.0,
       "averagePurchasePrice": 1710000.0,
-      "profitLossRate": -9.18,
-      "profitLossAmount": -157000.0,
-      "rsi": 44.0,
+      "profitLossRate": -8.94,
+      "profitLossAmount": -153000.0,
+      "rsi": 44.3,
       "investor_summary": "최근(10/28) 순매수: 외국인 +258,356주, 기관 +149,385주(4일연속매수🔥) | [5일누적 합계: 외인 -547,777주, 기관 +771,825주]",
       "ai_decision": "관망",
-      "ai_score": 62,
+      "ai_score": 60,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 62점 · 편차 0점 | openai/gpt-oss-120b(62점 관망), 3.5-flash(62점 관망), 3.5-flash-lite(62점 관망))] 반도체 성장주인 SK하이닉스는 현재 과매도 RSI 39.9와 외인·기관 순매수에도 불구하고 현금 부족으로 추가 매수가 불가능합니다. 실적 발표 전까지 손실을 확대하지 않도록 관망하고, 실적 후 변동성을 확인하세요. (단, 현재 원화 예수금 166,617원으로는 1주 추가 매수가 물리적으로 불가능하여 보유 관망합니다.)"
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 60점 · 편차 4점 | Meta:llama-3.3-70b-instruct(60점 관망), Groq:gpt-oss-120b(58점 관망), Google:3.5-flash-lite(62점 관망))] SK하이닉스는 성장주로 분류되며, 현재 원화 예수금이 1주 가격보다 부족해 추가 입금 없이는 매수할 수 없습니다. 또한, 최근 외국인과 기관의 수급 동향을 고려하여慎重하게 대응해야 하며, 현재 수익률이 음수이므로 홀딩 관망이 적절한 전략입니다."
     },
     {
       "symbol": "KO",
@@ -77,9 +77,9 @@
       "rsi": 65.2,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
-      "ai_score": 65,
+      "ai_score": 64,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 65점 · 편차 6점 | openai/gpt-oss-120b(62점 관망), 3.5-flash(65점 관망), 3.5-flash-lite(68점 관망))] 배당 방어주인 KO는 현재 RSI 60.6으로 과매도 구간이 아니며, 추가 매수 신호가 부족합니다. 현금으로 1주 매수가 가능하지만, 수급과 RSI 상황을 고려해 관망이 최선입니다."
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 64점 · 편차 8점 | Google:3.5-flash-lite(68점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 코카콜라는 포트폴리오의 든든한 배당방어주로, 현재 단기 RSI 65.2 및 20일선 상회 상태이나 장기 코어 자산이므로 소폭 수익권에서 매도하지 않고 보유를 유지합니다. 달러 주문가능 예수금($314.44)으로 추후 증시 조정 시(RSI 40~50대 진입) 추가 매수를 고려하는 것이 유리합니다."
     },
     {
       "symbol": "SCHD",
@@ -91,12 +91,12 @@
       "averagePurchasePrice": 34.3786,
       "profitLossRate": 2.82,
       "profitLossAmount": 3.8856,
-      "rsi": 85.3,
+      "rsi": 85.4,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
       "ai_score": 64,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 64점 · 편차 6점 | openai/gpt-oss-120b(62점 관망), 3.5-flash-lite(68점 관망), 3.5-flash(62점 관망))] SCHD는 배당 방어주로 장기 안전판 역할을 하며, 현재 RSI 79.1로 과열 상태이지만 단기 매도는 금지됩니다. 가용 현금으로 추가 매수가 가능하지만 과매도 신호가 없어 보유를 유지하는 것이 바람직합니다."
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 64점 · 편차 8점 | Groq:gpt-oss-120b(62점 관망), Google:3.5-flash-lite(68점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 배당 방어주인 SCHD는 장기 코어 자산으로 단기 과열(RSI 85.4)에도 매도 금지이며, 현 현금으로는 매수가 가능하지만 과매도 신호가 없어 보류합니다."
     },
     {
       "symbol": "SGOV",
@@ -113,14 +113,14 @@
       "ai_decision": "관망",
       "ai_score": 85,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 이종 2사 앙상블(Google+Groq) 교차검증 [3:0 관망 우세] (평균 85점 · 편차 1점 | openai/gpt-oss-120b(84점 관망), 3.5-flash(85점 관망), 3.5-flash-lite(85점 관망))] SGOV는 초단기 국채 파킹 ETF로 현금 보유 시 이자 수익을 제공하며, RSI 100은 정상적인 누적 이자 현상입니다. 현재 $314.44의 예수금으로 충분히 추가 매수가 가능하고, 가격이 MA20 위에 있어 상승 추세를 유지하고 있습니다."
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 85점 · 편차 1점 | Groq:gpt-oss-120b(84점 관망), Meta:llama-3.3-70b-instruct(85점 관망), Google:3.5-flash-lite(85점 관망))] SGOV는 초단기 미국채 파킹 ETF로 현금 보관 목적에 적합하며, 현재 예수금으로 최소 1주 이상 매수가 가능하고 가격이 MA20 위에 있어 안정적 추세입니다. RSI 100은 이 ETF 특성상 정상이며, 추가 매수로 이자 수익을 극대화하는 것이 바람직합니다"
     }
   ],
   "portfolio_health": {
     "score": 55,
     "grade": "🔴 리스크 경고",
     "semi_ratio": 98.0,
-    "kr_eval": 6555500.0,
+    "kr_eval": 6581000.0,
     "us_eval": 1016.1,
     "growth_eval": 0.0,
     "div_eval": 512.6,
