@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-29 19:38:48",
+  "updated_at": "2026-10-29 19:49:24",
   "account_no": "17601069723",
   "battery": "63% (⚡ DISCHARGING)",
-  "tot_rate": -10.05,
-  "mkt_val_krw": 6487100,
+  "tot_rate": -10.19,
+  "mkt_val_krw": 6474600,
   "tot_pchs_krw": 7377100,
-  "pnl_krw": -890000,
-  "mkt_val_usd": 1017.4,
+  "pnl_krw": -902500,
+  "mkt_val_usd": 1017.68,
   "tot_pchs_usd": 992.69,
-  "pnl_usd": 24.71,
+  "pnl_usd": 24.99,
   "krw_cash": 166617,
   "usd_cash": 314.44,
   "holding_count": 6,
@@ -36,11 +36,11 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 21.0,
-      "lastPrice": 230500.0,
+      "lastPrice": 230000.0,
       "averagePurchasePrice": 264000.0,
-      "profitLossRate": -12.68,
-      "profitLossAmount": -703500.0,
-      "rsi": 39.9,
+      "profitLossRate": -12.87,
+      "profitLossAmount": -714000.0,
+      "rsi": 39.7,
       "investor_summary": "최근(10-29) 순매수: 외인 -619,468주, 기관 +221,270주 (개인 +729,955주) | [5일누적: 외인 +1,536,841주, 기관 +4,472,027주]",
       "ai_decision": "관망",
       "ai_score": 59,
@@ -53,11 +53,11 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 1.0,
-      "lastPrice": 1515000.0,
+      "lastPrice": 1513000.0,
       "averagePurchasePrice": 1710000.0,
-      "profitLossRate": -11.4,
-      "profitLossAmount": -195000.0,
-      "rsi": 42.0,
+      "profitLossRate": -11.52,
+      "profitLossAmount": -197000.0,
+      "rsi": 41.9,
       "investor_summary": "최근(10-29) 순매수: 외인 +292,233주, 기관 -167,952주 (개인 -368,001주) | [5일누적: 외인 -263,426주, 기관 +841,283주]",
       "ai_decision": "관망",
       "ai_score": 60,
@@ -70,11 +70,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 93.06,
+      "lastPrice": 93.12,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 5.72,
-      "profitLossAmount": 20.16,
-      "rsi": 65.8,
+      "profitLossRate": 5.79,
+      "profitLossAmount": 20.4,
+      "rsi": 65.9,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
       "ai_score": 64,
@@ -87,10 +87,10 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 35.39,
+      "lastPrice": 35.4,
       "averagePurchasePrice": 34.3786,
-      "profitLossRate": 2.94,
-      "profitLossAmount": 4.0456,
+      "profitLossRate": 2.97,
+      "profitLossAmount": 4.0856,
       "rsi": 85.5,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
@@ -117,20 +117,21 @@
     }
   ],
   "portfolio_health": {
-    "score": 65,
-    "grade": "🟡 보통 (개선 권장)",
+    "score": 55,
+    "grade": "🔴 리스크 경고",
     "semi_ratio": 98.0,
-    "kr_eval": 6487100.0,
-    "us_eval": 1017.4,
+    "kr_eval": 6474600.0,
+    "us_eval": 1017.68,
     "growth_eval": 0.0,
-    "div_eval": 513.8,
+    "div_eval": 514.08,
     "park_eval": 503.6,
     "diagnoses": [
       "🚨 국내 계좌 반도체 극단 편중 (98.0%)",
-      "✅ 미국 성장-배당 밸런스 유지 중"
+      "⚠️ 미국 빅테크 성장주 0% (배당·채권 100% 편중)"
     ],
     "prescriptions": [
-      "원화 예수금으로 삼성전자 추가 물타기를 즉시 멈추고, 금융·밸류업(메리츠/KB)으로 업종 분산 권장"
+      "원화 예수금으로 삼성전자 추가 물타기를 즉시 멈추고, 금융·밸류업(메리츠/KB)으로 업종 분산 권장",
+      "달러 예수금으로 SGOV 파킹과 함께 S&P500(VOO) 또는 엔비디아(NVDA) 소수점 적립으로 성장성 보강 권장"
     ]
   },
   "ai_recommendations": [
@@ -167,7 +168,7 @@
       "theme_tag": "빅테크 밸류에이션 매력 🔍",
       "ai_score": 80,
       "badge": "🎯 지금 분할매수 적기 (타점 양호)",
-      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 16.8 과매도·눌림목 매력 구간] 미국 M7 빅테크 중 PER 밸류에이션 부담이 가장 낮으면서 검색·유튜브 캐시카우와 클라우드 수익성이 동시에 성장하는 핵심 AI 빅테크입니다.",
+      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 16.9 과매도·눌림목 매력 구간] 미국 M7 빅테크 중 PER 밸류에이션 부담이 가장 낮으면서 검색·유튜브 캐시카우와 클라우드 수익성이 동시에 성장하는 핵심 AI 빅테크입니다.",
       "action_tip": "과열 부담이 없는 좋은 타점입니다. 토스 달러 예수금($314.44)을 활용해 1회 $50~$100(또는 소수점 5만 원) 분할 적립 추천"
     },
     {
@@ -179,7 +180,7 @@
       "theme_tag": "AI 반도체 1위 🔥",
       "ai_score": 80,
       "badge": "🎯 지금 분할매수 적기 (타점 양호)",
-      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 35.0 과매도·눌림목 매력 구간] 전 세계 AI 가속기 시장을 독점하는 대장주이나, 이미 국내 계좌에 삼성전자·SK하이닉스 비중이 높으므로 단기 과열 시 추격매수를 피하고 RSI 눌림목 구간에서만 소수점 적립이 유리합니다.",
+      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 35.1 과매도·눌림목 매력 구간] 전 세계 AI 가속기 시장을 독점하는 대장주이나, 이미 국내 계좌에 삼성전자·SK하이닉스 비중이 높으므로 단기 과열 시 추격매수를 피하고 RSI 눌림목 구간에서만 소수점 적립이 유리합니다.",
       "action_tip": "과열 부담이 없는 좋은 타점입니다. 토스 달러 예수금($314.44)을 활용해 1회 $50~$100(또는 소수점 5만 원) 분할 적립 추천"
     },
     {
@@ -191,7 +192,7 @@
       "theme_tag": "방어 & 분기배당 🛡️",
       "ai_score": 79,
       "badge": "⏳ 실적발표(D-0) 확인 후 진입",
-      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 38.4 과매도·눌림목 매력 구간 | 메이저 수급 유입 | 🚨 공식 실적발표 임박(2026-10-29 D-0)] 외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.",
+      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 37.7 과매도·눌림목 매력 구간 | 메이저 수급 유입 | 🚨 공식 실적발표 임박(2026-10-29 D-0)] 외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.",
       "action_tip": "공식 실적 발표(2026-10-29)가 코앞이므로 지금 당장 추격 매수하지 마시고, 실적 발표 후 변동성이 진정되면 분할 진입하세요."
     },
     {
@@ -203,7 +204,7 @@
       "theme_tag": "지수 코어 자산 🇺🇸",
       "ai_score": 74,
       "badge": "👀 관심 등록 · 눌림목 대기",
-      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 42.7 과열 없는 안정 구간] 개별 기업 실적 쇼크나 반독점 소송 리스크 없이 미국 최우량 500개 기업(애플·엔비디아·MS·알파벳 등)의 성장을 통째로 담는 핵심 지수 ETF입니다.",
+      "rationale": "[실시간 전략 판정: 20일선 하회(단기조정) | RSI 43.0 과열 없는 안정 구간] 개별 기업 실적 쇼크나 반독점 소송 리스크 없이 미국 최우량 500개 기업(애플·엔비디아·MS·알파벳 등)의 성장을 통째로 담는 핵심 지수 ETF입니다.",
       "action_tip": "지금 당장 무리해서 살 타이밍은 아닙니다. 달러 예수금($314.44)을 SGOV에 파킹해 두었다가 조정 시 소수점 분할 매수하세요."
     }
   ],
