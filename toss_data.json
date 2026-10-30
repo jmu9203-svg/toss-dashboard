@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-31 08:00:48",
+  "updated_at": "2026-10-31 08:11:23",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
-  "tot_rate": -13.92,
+  "tot_rate": -13.91,
   "mkt_val_krw": 6142700,
   "tot_pchs_krw": 7377100,
   "pnl_krw": -1234400,
-  "mkt_val_usd": 1023.37,
+  "mkt_val_usd": 1023.49,
   "tot_pchs_usd": 992.69,
-  "pnl_usd": 30.68,
+  "pnl_usd": 30.8,
   "krw_cash": 168453,
   "usd_cash": 314.72,
   "holding_count": 6,
@@ -70,10 +70,10 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 94.15,
+      "lastPrice": 94.18,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 6.96,
-      "profitLossAmount": 24.52,
+      "profitLossRate": 6.99,
+      "profitLossAmount": 24.64,
       "rsi": 64.1,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
@@ -117,20 +117,21 @@
     }
   ],
   "portfolio_health": {
-    "score": 65,
-    "grade": "🟡 보통 (개선 권장)",
+    "score": 55,
+    "grade": "🔴 리스크 경고",
     "semi_ratio": 97.9,
     "kr_eval": 6142700.0,
-    "us_eval": 1023.37,
+    "us_eval": 1023.49,
     "growth_eval": 0.0,
-    "div_eval": 519.72,
+    "div_eval": 519.84,
     "park_eval": 503.65,
     "diagnoses": [
       "🚨 국내 계좌 반도체 극단 편중 (97.9%)",
-      "✅ 미국 성장-배당 밸런스 유지 중"
+      "⚠️ 미국 빅테크 성장주 0% (배당·채권 100% 편중)"
     ],
     "prescriptions": [
-      "원화 예수금으로 삼성전자 추가 물타기를 즉시 멈추고, 금융·밸류업(메리츠/KB)으로 업종 분산 권장"
+      "원화 예수금으로 삼성전자 추가 물타기를 즉시 멈추고, 금융·밸류업(메리츠/KB)으로 업종 분산 권장",
+      "달러 예수금으로 SGOV 파킹과 함께 S&P500(VOO) 또는 엔비디아(NVDA) 소수점 적립으로 성장성 보강 권장"
     ]
   },
   "ai_recommendations": [
