@@ -125,7 +125,7 @@
     </div>
     <div style="display: flex; gap: 6px; align-items: center;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
-        <span id="headerBattery">🔋 --</span>
+        <span id="deviceBattery">🔋 --</span>
       </div>
       <div class="status-badge" id="systemStatus">
         <div class="pulse-dot"></div>
@@ -234,10 +234,8 @@
   </div>
 
   <div class="footer">
-    <div id="lastUpdated">최근 감시 동기화: 조회 중...</div>
+    <div id="lastUpdated">최근 업데이트: 조회 중...</div>
     <div class="footer-detail">
-      <span>스케줄: 평일 10:05 / 14:35</span>
-      <span>•</span>
       <span>실시간 관제: 장중 5분 / 휴장 10분</span>
       <span>•</span>
       <span>자동 새로고침: 15초</span>
@@ -310,17 +308,6 @@
         if (!isNaN(parsed.getTime())) {
           const diffMin = Math.max(0, Math.round((Date.now() - parsed.getTime()) / 60000));
           document.getElementById('watchdogSyncAge').textContent = diffMin <= 1 ? '방금 동기화' : `${diffMin}분 전 동기화`;
-          const wdBanner = document.getElementById('watchdogBanner');
-          const wdText = document.getElementById('watchdogText');
-          if (diffMin > 25 && wdBanner && wdText) {
-            wdBanner.style.background = 'rgba(240, 68, 82, 0.18)';
-            wdBanner.style.borderColor = '#f04452';
-            wdText.innerHTML = '🚨 <b>[경보] 공기계 홈서버 응답 지연!</b> — 25분 이상 갱신이 없습니다 (전원/와이파이 확인)';
-          } else if (wdBanner && wdText) {
-            wdBanner.style.background = 'rgba(49, 130, 246, 0.10)';
-            wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
-            wdText.innerHTML = '🛡️ <b>무단 자동 매매 0% 영구 동결 + 대화형 스마트 수동 매매</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
-          }
         }
       }
       
