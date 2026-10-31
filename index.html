@@ -2,6 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>토스증권 AI 실전계좌 대시보드</title>
   <link rel="apple-touch-icon" sizes="180x180" href="toss-apple-touch-icon.png">
@@ -262,6 +265,39 @@
       if (globalData) renderData(globalData);
     }
 
+
+    function renderTossModelChips(models, consensus) {
+      if (!models || models.length === 0) return '';
+      const chipsHtml = models.map(m => {
+        let mColor = '#e3b341';
+        if ((m.decision || '').includes('매수') || (m.decision || '').includes('추매')) mColor = '#3fb950';
+        else if ((m.decision || '').includes('매도')) mColor = '#f85149';
+
+        let icon = '🏛️';
+        if (m.provider === 'Groq') icon = '⚡';
+        else if (m.provider === 'Meta') icon = '🌐';
+
+        return `
+          <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 4px 8px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #c9d1d9;">${icon} ${m.provider}</span>
+            <span style="color: ${mColor}; font-weight: 700;">${m.score}점 <span style="font-size: 10px; font-weight: 600;">${m.decision}</span></span>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 8px; padding: 8px 10px; margin: 8px 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 11px; font-weight: 700; color: #c4b5fd;">🤖 미국 3대 빅테크 AI 앙상블</span>
+            <span style="font-size: 10px; color: #8b949e;">· ${consensus || '3사 합의'}</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+            ${chipsHtml}
+          </div>
+        </div>
+      `;
+    }
+
     function renderData(d) {
       document.getElementById('accountNoTag').textContent = '계좌: ' + (d.account_no || '17601069723');
       if (d.battery) {
@@ -378,9 +414,11 @@
                 </div>
               </div>
 
-              <div>
-                <span class="ai-badge badge-buy">✨ AI 적합도: ${rec.ai_score}점 (${rec.badge})</span>
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
+                <span class="ai-badge badge-buy">✨ 미국 3대 AI 앙상블 적합도: ${rec.ai_score}점 (${rec.badge})</span>
+                <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${rec.checked_at || d.updated_at || '최근'}</span>
               </div>
+              ${renderTossModelChips(rec.ai_models, rec.consensus)}
 
               <div class="action-tip-box" style="border-left-color: #3fb950; margin-top: 10px;">
                 <div class="action-tip-title" style="color: #3fb950;">💡 AI 선정 근거 & 포트폴리오 보완 효과</div>
@@ -471,9 +509,11 @@
               </div>
             </div>
 
-            <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
               <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
+              <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
             </div>
+            ${renderTossModelChips(it.ai_models, it.consensus)}
 
             <div class="action-tip-box">
               <div class="action-tip-title">💡 실전 행동 팁</div>
