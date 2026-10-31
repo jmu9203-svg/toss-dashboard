@@ -398,18 +398,6 @@
             ? '<span class="country-tag country-kr">🇰🇷 국내</span>' 
             : '<span class="country-tag country-us">🇺🇸 미국</span>';
 
-          const isBuy = rec.badge && rec.badge.includes('매수');
-          const isWarn = rec.badge && (rec.badge.includes('이견') || rec.badge.includes('과열') || rec.badge.includes('실적발표'));
-          const badgeClass = isBuy ? 'badge-buy' : (isWarn ? 'badge-sell' : 'badge-hold');
-
-          const isAuditPass = rec.audit_status === 'PASS';
-          const isAuditWarn = rec.audit_status === 'WARN_GAP';
-          const auditBg = isAuditPass ? 'rgba(63, 185, 80, 0.08)' : (isAuditWarn ? 'rgba(248, 81, 73, 0.08)' : 'rgba(210, 153, 34, 0.08)');
-          const auditBorder = isAuditPass ? 'rgba(63, 185, 80, 0.3)' : (isAuditWarn ? 'rgba(248, 81, 73, 0.35)' : 'rgba(210, 153, 34, 0.3)');
-          const auditTextColor = isAuditPass ? '#3fb950' : (isAuditWarn ? '#f85149' : '#e3b341');
-          const auditText = rec.audit_badge || `🧮 5대 팩트 정량 ${rec.quant_score || rec.ai_score}점 ↔ 🤖 3대 AI 앙상블 ${rec.ai_score}점`;
-          const tipBorderColor = isBuy ? '#3fb950' : (isWarn ? '#f85149' : '#e3b341');
-
           return `
             <div class="holding-card">
               <div class="holding-top">
@@ -427,16 +415,17 @@
               </div>
 
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
-                <span class="ai-badge ${badgeClass}">✨ 미국 3대 AI 앙상블 평균: ${rec.ai_score}점 (${rec.badge})</span>
+                <span class="ai-badge badge-buy">✨ 미국 3대 AI 앙상블 평균: ${rec.ai_score}점 (${rec.badge})</span>
                 <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${rec.checked_at || d.updated_at || '최근'}</span>
               </div>
               ${renderTossModelChips(rec.ai_models, rec.consensus)}
-              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; margin-top: 4px; padding: 5px 10px; background: ${auditBg}; border-radius: 6px; border: 1px solid ${auditBorder};">
-                <span style="color: ${auditTextColor}; font-weight: 600;">${auditText}</span>
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; margin-top: 4px; padding: 4px 8px; background: rgba(56, 139, 253, 0.08); border-radius: 6px; border: 1px solid rgba(56, 139, 253, 0.15);">
+                <span style="color: #58a6ff; font-weight: 600;">🧮 5대 팩트 정량 ${rec.quant_score || rec.ai_score}점 ↔ 🤖 3대 AI 앙상블 ${rec.ai_score}점</span>
+                <span style="color: #3fb950; font-size: 10px; font-weight: 600;">● 교차검증 완료</span>
               </div>
 
-              <div class="action-tip-box" style="border-left-color: ${tipBorderColor}; margin-top: 10px;">
-                <div class="action-tip-title" style="color: ${tipBorderColor};">💡 AI 선정 근거 & 포트폴리오 보완 효과</div>
+              <div class="action-tip-box" style="border-left-color: #3fb950; margin-top: 10px;">
+                <div class="action-tip-title" style="color: #3fb950;">💡 AI 선정 근거 & 포트폴리오 보완 효과</div>
                 <div class="action-tip-text">${rec.rationale}</div>
                 <div class="action-reason" style="color: #58a6ff; font-weight: 600; margin-top: 6px;">📌 토스 앱 실전 팁: ${rec.action_tip}</div>
               </div>
