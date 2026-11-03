@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-03 14:30:16",
+  "updated_at": "2026-11-03 14:35:56",
   "account_no": "17601069723",
-  "battery": "74% (⚡ DISCHARGING)",
-  "tot_rate": -13.91,
-  "mkt_val_krw": 6130200,
+  "battery": "73% (⚡ DISCHARGING)",
+  "tot_rate": -14.07,
+  "mkt_val_krw": 6115700,
   "tot_pchs_krw": 7377100,
-  "pnl_krw": -1246900,
-  "mkt_val_usd": 1028.91,
+  "pnl_krw": -1261400,
+  "mkt_val_usd": 1028.95,
   "tot_pchs_usd": 992.69,
-  "pnl_usd": 36.22,
+  "pnl_usd": 36.26,
   "krw_cash": 668453,
   "usd_cash": 314.72,
   "holding_count": 6,
@@ -28,7 +28,7 @@
       "ai_decision": "관망",
       "ai_score": 62,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:qwen/qwen3.8-27b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 메리츠금융지주는 경기민감/성장주(GROWTH_CYCLICAL)로 현재 20일선 위에서 양봉을 유지하며 +5.68% 수익권이나, 최근 외국인과 기관의 단기 순매도 전환 및 14일 RSI 48.6의 중립적 모멘텀을 고려할 때 성급한 추매보다는 신중한 홀딩 관망이 유리합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 메리츠금융지주는 성장·경기민감주(GROWTH_CYCLICAL) 성격을 지니며, 현재 1주(129,700원) 매수가 물리적으로 가능하지만 외국인 수급이 단기 이탈 조짐을 보이고 20일선 부근에서 윗꼬리가 형성되어 추가 타이밍 확인이 필요합니다. RSI(47.7)가 중립 구간인 만큼 현재 예수금(66.8만 원, 최대 5주 가능)을 아끼며 외국인 순매수 전환 시점까지 보수적으로 접근하는 것이 안전합니다.",
       "checked_at": "2026-11-01 00:39:52",
       "ai_models": [
         {
@@ -58,16 +58,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 21.0,
-      "lastPrice": 219500.0,
+      "lastPrice": 219000.0,
       "averagePurchasePrice": 264000.0,
-      "profitLossRate": -16.85,
-      "profitLossAmount": -934500.0,
-      "rsi": 45.3,
+      "profitLossRate": -17.04,
+      "profitLossAmount": -945000.0,
+      "rsi": 45.1,
       "investor_summary": "최근(11/02 마감) 순매수: 외국인 +515,900주, 기관 +733,138주(5일연속매수🔥) | [5일누적 합계: 외인 +1,499,182주, 기관 +4,753,935주]",
       "ai_decision": "관망",
-      "ai_score": 68,
+      "ai_score": 62,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 68점 · 편차 20점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-120b(80점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 삼성전자는 경기민감형 성장주로 현재 20일선 하회 및 -16.28% 손실 구간에 있으나, 기관 5일 연속 순매수세 유입과 미국 빅테크 실적 발표를 앞두고 있어 성급한 추매보다는 홀딩 관망이 유리합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 삼성전자는 경기민감주(GROWTH_CYCLICAL)로 최근 기관의 5일 연속 순매수와 20일선 하회 구간에 있으나, 미 반도체 실적 발표 앞서 외인 수급 밀집 여부를 확인해야 합니다. 예수금 제약과 대외 불확실성을 감안해 성급한 추매 대신 바닥 확인 후 신중히 접근하십시오.",
       "checked_at": "2026-11-01 00:39:53",
       "ai_models": [
         {
@@ -79,7 +79,7 @@
         {
           "provider": "Groq",
           "model": "Groq 120B",
-          "score": 80,
+          "score": 62,
           "decision": "관망"
         },
         {
@@ -97,16 +97,16 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 1.0,
-      "lastPrice": 1391000.0,
+      "lastPrice": 1387000.0,
       "averagePurchasePrice": 1710000.0,
-      "profitLossRate": -18.65,
-      "profitLossAmount": -319000.0,
-      "rsi": null,
+      "profitLossRate": -18.88,
+      "profitLossAmount": -323000.0,
+      "rsi": 48.2,
       "investor_summary": "최근(11/02 마감) 순매수: 외국인 -160,311주(2일연속매도⚠️), 기관 +171,970주 | [5일누적 합계: 외인 +42,125주, 기관 +136,076주]",
       "ai_decision": "관망",
-      "ai_score": 59,
+      "ai_score": 61,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 59점 · 편차 4점 | Google:3.5-flash-lite(62점 관망), Groq:gpt-oss-120b(58점 관망), Meta:llama-3.3-70b-instruct(58점 관망))] SK하이닉스는 경기민감 성장주(GROWTH_CYCLICAL)로 현재 20일선 하회 및 외국인 2일 연속 순매도세로 단기 변동성이 확대된 국면입니다. 물리적 예수금 한계와 더불어 AMD 등 미 빅테크 실적 발표에 따른 반도체 섹터의 방향성을 확인하기 전까지는 현 보유 수량(1주)을 유지하며 관망하는 것이 안전합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 61점 · 편차 2점 | Google:3.5-flash-lite(62점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] SK하이닉스는 경기민감형 반도체주로 현재 20일선 하회 및 외국인 2일 연속 매도세로 단기 조정 국면에 있습니다. 현재 가용 예수금으로는 1주 온주 매수가 물리적으로 불가능하므로, AMD 및 퀄컴 등 빅테크 실적 발표와 외인 수급 전환을 확인하며 보유 물량을 유지하는 것이 안전합니다.",
       "checked_at": "2026-11-01 00:39:53",
       "ai_models": [
         {
@@ -118,13 +118,13 @@
         {
           "provider": "Groq",
           "model": "Groq 120B",
-          "score": 58,
+          "score": 62,
           "decision": "관망"
         },
         {
           "provider": "Meta",
           "model": "Llama 3.3",
-          "score": 58,
+          "score": 60,
           "decision": "관망"
         }
       ],
@@ -143,9 +143,9 @@
       "rsi": 63.5,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
-      "ai_score": 63,
+      "ai_score": 65,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 63점 · 편차 8점 | Google:3.5-flash-lite(68점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 코카콜라는 포트폴리오를 지탱하는 대표적인 배당 방어주(DIVIDEND_DEFENSIVE)로, 현재 단기 RSI(63.3)와 소폭의 음봉 조정에도 불구하고 절대 매도하지 않고 코어 자산으로 가져가야 합니다. 현재 달러 예수금($314.72)으로 소수점 적립 매수가 물리적으로 가능하이나, 당장의 기계적 추매보다는 환율(1,346원)과 글로벌 빅테크 실적발표에 따른 시장 변동성을 관망하며 현금을 보유하는 것이 유리합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 65점 · 편차 6점 | Meta:llama-3.3-70b-instruct(65점 관망), Google:3.5-flash-lite(68점 관망), Groq:gpt-oss-120b(62점 관망))] 코카콜라는 배당 방어주로서 단기 RSI 과열이나 소폭 수익을 이유로 매도할 이유가 없으며, 현재 RSI가 63.5로 높아 추매보다는 홀딩 관망을 유지하여 배당 수령과 안전판을 유지하는 것이 좋습니다. 또한, 미 필라델피아 반도체 지수(SOXX)와 나스닥 반도체 섹터의 변동성 확대가 예상되는 상황에서 신중한 접근이 필요합니다.",
       "checked_at": "2026-11-01 00:39:53",
       "ai_models": [
         {
@@ -163,7 +163,7 @@
         {
           "provider": "Meta",
           "model": "Llama 3.3",
-          "score": 60,
+          "score": 65,
           "decision": "관망"
         }
       ],
@@ -175,16 +175,16 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 35.88,
+      "lastPrice": 35.89,
       "averagePurchasePrice": 34.3786,
-      "profitLossRate": 4.36,
-      "profitLossAmount": 6.0056,
-      "rsi": 84.2,
+      "profitLossRate": 4.39,
+      "profitLossAmount": 6.0456,
+      "rsi": 84.8,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
       "ai_score": 63,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 63점 · 편차 8점 | Google:3.5-flash-lite(68점 관망), Groq:gpt-oss-120b(62점 관망), Meta:llama-3.3-70b-instruct(60점 관망))] 본 종목(SCHD)은 포트폴리오의 장기 코어 자산이자 배당 안전판으로, 단기 RSI 과열(84.9)이나 소폭 수익률(+4.51%)을 이유로 매도하지 않고 보유를 이어가야 합니다. 현재 달러 가용 예수금이 있으나 단기 과열 구간이 진정되는 조정 시점까지 추가 매수를 유보하고 홀딩 관망하는 것이 현명합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 63점 · 편차 8점 | Google:3.5-flash-lite(68점 관망), Meta:llama-3.3-70b-instruct(60점 관망), Groq:gpt-oss-120b(62점 관망))] SCHD는 포트폴리오의 든든한 배당 방어주이자 장기 코어 자산으로, 단기 RSI 과열(84.8)이나 소폭 수익(+4.39%)을 이유로 매도하는 것은 적절하지 않습니다. 따라서 추후 증시 조정으로 RSI가 낮아질 때를 대비해 달러 예수금을 보유하며 안정적으로 홀딩 관망하는 것이 유리합니다.",
       "checked_at": "2026-11-01 00:39:54",
       "ai_models": [
         {
@@ -218,24 +218,24 @@
       "averagePurchasePrice": 100.62,
       "profitLossRate": -0.18,
       "profitLossAmount": -0.95,
-      "rsi": 38.8,
+      "rsi": 40.0,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "관망",
       "ai_score": 84,
       "ai_action_tip": "현재 포지션 유지 및 추세 관망 권장",
-      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 84점 · 편차 3점 | Groq:gpt-oss-120b(82점 관망), Google:3.5-flash-lite(85점 관망), Meta:llama-3.3-70b-instruct(85점 관망))] SGOV는 초단기 미국채 파킹 ETF로 현금 보유 목적에 적합하고, 현재 $314.72의 가용 예수금으로 최소 1주를 추가 매수할 수 있습니다. RSI 40으로 과매도 신호는 없으며, 단기 변동성도 낮아 추가 파킹을 권장합니다.",
+      "ai_reason": "[🤖 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta) 교차검증 [3:0 관망 우세] (평균 84점 · 편차 8점 | Google:3.5-flash-lite(88점 관망), Meta:llama-3.3-70b-instruct(85점 관망), Groq:gpt-oss-20b(80점 관망))] SGOV는 주가 차익이 아닌 월배당과 달러 파킹을 위한 초단기 미국채 ETF로 단기 조정은 오히려 매수 기회입니다. 현재 넉넉한 달러 예수금으로 추가 매수하여 배당 재원을 늘리거나 향후 빅테크 조정 시의 탄약(Dry Powder)으로 활용하기에 최적입니다.",
       "checked_at": "2026-11-01 00:39:54",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
-          "score": 85,
+          "score": 88,
           "decision": "관망"
         },
         {
           "provider": "Groq",
           "model": "Groq 120B",
-          "score": 82,
+          "score": 80,
           "decision": "관망"
         },
         {
@@ -252,10 +252,10 @@
     "score": 65,
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 97.9,
-    "kr_eval": 6130200.0,
-    "us_eval": 1028.91,
+    "kr_eval": 6115700.0,
+    "us_eval": 1028.95,
     "growth_eval": 0.0,
-    "div_eval": 526.76,
+    "div_eval": 526.8,
     "park_eval": 502.15,
     "diagnoses": [
       "🚨 국내 계좌 반도체 극단 편중 (97.9%)",
