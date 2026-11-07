@@ -62,7 +62,7 @@
       "ai_score": 64,
       "ai_action_tip": "현재 22주 보유 중으로 1주 추매 시 평단 인하 폭이 -1.13%(261,136원→258,191원)에 불과하고 국내 계좌 내 반도체 비중이 과다하므로, 원화 예수금(4,717,955원)을 아끼고 홀딩 관망하세요.",
       "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 0점 | Groq:gpt-oss-120b(62점 관망), Google:3.5-flash-lite(62점 관망))] [5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일 작동] 최근 단기 조정(최근 5거래일 -12.2%)으로 Wilder 14일 RSI(35.6)가 과매도 근접 구간에 진입했으나, 이미 22주를 보유 중이어서 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -1.13%로 미미하며, 국내 계좌 내 반도체 고비중 편중 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.",
-      "checked_at": "2026-11-08 03:03:36",
+      "checked_at": "2026-11-08 03:04:55",
       "ai_models": [
         {
           "provider": "Google",
@@ -489,5 +489,36 @@
     "usd_verdict": "🎯 엔비디아 $216.37 소수점 분할 적립",
     "usd_detail": "• 보유 중인 배당주(*코카콜라·SCHD*) 및 파킹 ETF(*SGOV*)는 *홀딩 유지*하세요.\n• 달러 예수금 *$216.37*은 5단계 퀀트 추천 우량주 *'엔비디아'*에 $50~$100씩 소수점 분할 매수하세요."
   },
-  "last_successful_sync": "2026-11-08 03:02:45"
+  "last_successful_sync": "2026-11-08 03:02:45",
+  "market_calendar": {
+    "kr": {
+      "success": true,
+      "market": "KR",
+      "date": "2026-11-08",
+      "is_open": false,
+      "reason": "주말 휴장",
+      "is_half_day": false,
+      "daylight_saving": false,
+      "open_time": "09:00",
+      "close_time": "15:30"
+    },
+    "us": {
+      "success": true,
+      "market": "US",
+      "date": "2026-11-08",
+      "is_open": false,
+      "reason": "주말 휴장",
+      "is_half_day": false,
+      "daylight_saving": false,
+      "open_time": "23:30",
+      "close_time": "06:00"
+    }
+  },
+  "recent_orders": [],
+  "friction_policy": {
+    "domestic_fee_pct": 0.015,
+    "domestic_tax_pct": 0.18,
+    "overseas_fee_pct": 0.1,
+    "overseas_tax_pct": 0.0
+  }
 }
