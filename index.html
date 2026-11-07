@@ -61,6 +61,8 @@
     .loss-text { color: var(--loss); }
     
     .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--card-border); }
+    .rsi-oversold { color: #34d399 !important; font-weight: 700 !important; }
+    .rsi-overbought { color: #f85149 !important; font-weight: 700 !important; }
     .stat-item { font-size: 13px; }
     .stat-label { color: var(--text-sub); margin-bottom: 4px; }
     .stat-value { font-weight: 600; color: var(--text-main); }
@@ -150,6 +152,32 @@
     <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600; font-size: 11px; white-space: nowrap; flex-shrink: 0;">방금 동기화</span>
   </div>
 
+  <!-- Toss Realtime Market Calendar Card -->
+  <div id="marketCalendarCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 14px 16px; margin-bottom: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <span style="font-size: 13.5px; font-weight: 800; color: var(--text-main); display: flex; align-items: center; gap: 6px;">
+        <span>📅 토스증권 한·미 증시 공식 마켓 캘린더</span>
+      </span>
+      <span id="calendarDateTag" style="font-size: 11px; font-weight: 600; color: #8b949e;">실시간 공식 데이터</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span style="font-size: 12px; font-weight: 700; color: #58a6ff;">🇰🇷 국내 증시 (KRX)</span>
+          <span id="krMarketStatus" style="font-size: 11px; font-weight: 700; color: #34d399;">개장일</span>
+        </div>
+        <div style="font-size: 11.5px; color: var(--text-sub);" id="krMarketHours">09:00 ~ 15:30 (정규장)</div>
+      </div>
+      <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+          <span style="font-size: 12px; font-weight: 700; color: #34d399;">🇺🇸 미국 증시 (NYSE)</span>
+          <span id="usMarketStatus" style="font-size: 11px; font-weight: 700; color: #34d399;">개장일</span>
+        </div>
+        <div style="font-size: 11.5px; color: var(--text-sub);" id="usMarketHours">23:30 ~ 06:00 (표준시)</div>
+      </div>
+    </div>
+  </div>
+
   <div class="summary-card">
     <div class="summary-title">
       <span>토스증권 실전 총 평가금액 (국내 + 미국)</span>
@@ -226,6 +254,12 @@
         미국 배당주 및 빅테크 어닝 일정을 종합 분석 중입니다...
       </div>
     </div>
+
+    <!-- Toss Friction & Order Safeguard Badge -->
+    <div style="margin-top: 10px; padding: 9px 12px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(49, 130, 246, 0.35); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--text-sub);">
+      <span>🛡️ <b>토스 실전 수수료 가드</b>: 국내 0.015% (제세금 0.18%) · 미국 0.1% 우대 마찰비용 실시간 산출</span>
+      <span style="color: #60a5fa; font-weight: 700;">대화형 2중 승인 안전 주문 연동 🛒</span>
+    </div>
   </div>
 
   <div class="filter-tabs">
@@ -233,6 +267,7 @@
     <button class="tab-btn" onclick="setFilter('KR', this)">🇰🇷 국내 주식</button>
     <button class="tab-btn" onclick="setFilter('US', this)">🇺🇸 미국 주식</button>
     <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">✨ AI 추천 유망주</button>
+    <button class="tab-btn" onclick="setFilter('ORDERS', this)">📋 실시간 주문·체결</button>
   </div>
 
   <div class="section-title">
@@ -336,6 +371,25 @@
           }
         }
       }
+
+      // 토스 한·미 마켓 캘린더 위젯 반영
+      if (d.market_calendar) {
+        const kr = d.market_calendar.kr || {};
+        const us = d.market_calendar.us || {};
+        if (document.getElementById('krMarketStatus')) {
+          const krStatusEl = document.getElementById('krMarketStatus');
+          krStatusEl.textContent = kr.is_open ? '🟢 정상 개장' : `🔴 휴장 (${kr.reason || '휴장일'})`;
+          krStatusEl.style.color = kr.is_open ? '#34d399' : '#f87171';
+          document.getElementById('krMarketHours').textContent = `운영: ${kr.open_time || '09:00'} ~ ${kr.close_time || '15:30'}`;
+        }
+        if (document.getElementById('usMarketStatus')) {
+          const usStatusEl = document.getElementById('usMarketStatus');
+          usStatusEl.textContent = us.is_open ? '🟢 정상 개장' : `🔴 휴장 (${us.reason || '휴장일'})`;
+          usStatusEl.style.color = us.is_open ? '#34d399' : '#f87171';
+          const dstText = us.daylight_saving ? ' (서머타임 ☀️)' : ' (표준시 ❄️)';
+          document.getElementById('usMarketHours').textContent = `운영: ${us.open_time || '23:30'} ~ ${us.close_time || '06:00'}${dstText}`;
+        }
+      }
       
       const krwEval = d.mkt_val_krw || 0;
       const usdEval = d.mkt_val_usd || 0;
@@ -404,6 +458,55 @@
       }
 
       const hList = document.getElementById('holdingsList');
+
+      // 0. 당일 실시간 주문/체결 내역 탭 선택 시
+      if (currentFilter === 'ORDERS') {
+        document.getElementById('sectionTitleText').textContent = '📋 토스증권 당일 실시간 주문 및 체결 내역';
+        const orders = d.recent_orders || [];
+        document.getElementById('holdingCount').textContent = orders.length + '건 접수';
+
+        if (orders.length === 0) {
+          hList.innerHTML = `
+            <div class="empty-state-box">
+              <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">당일 체결 및 대기 중인 주문이 없습니다</div>
+              <div style="font-size: 12.5px; color: var(--text-sub);">
+                텔레그램 토스 AI 봇에서 대화형으로 종목 매수/매도 요청 시 실전 주문 카드가 발행됩니다.
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        hList.innerHTML = orders.map(ord => {
+          const isBuy = ord.side === 'BUY';
+          const sideColor = isBuy ? 'var(--profit)' : 'var(--loss)';
+          const sideKr = isBuy ? '매수' : '매도';
+          const statusKr = ord.status === 'FILLED' ? '체결 완료 🟢' : (ord.status === 'PENDING' ? '체결 대기 ⏳' : ord.status);
+          return `
+            <div class="holding-card">
+              <div class="holding-top">
+                <div>
+                  <div class="stock-title">
+                    <span class="country-tag" style="background: ${isBuy ? 'rgba(240,68,82,0.15)' : 'rgba(49,130,246,0.15)'}; color: ${sideColor}; font-weight: 700;">${sideKr}</span>
+                    <span class="stock-name">${ord.name || ord.symbol}</span>
+                    <span class="stock-code">${ord.symbol}</span>
+                  </div>
+                  <div class="stock-qty" style="color: var(--text-sub); margin-top: 4px;">주문수량: ${ord.order_qty || 0}주 (체결 ${ord.filled_qty || 0}주)</div>
+                </div>
+                <div class="stock-val-box">
+                  <div class="stock-cur-price">${ord.avg_filled_price ? Number(ord.avg_filled_price).toLocaleString() + '원' : (ord.price ? Number(ord.price).toLocaleString() + '원' : '시장가')}</div>
+                  <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-top: 2px;">${statusKr}</div>
+                </div>
+              </div>
+              <div style="font-size: 11px; color: var(--text-sub); margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
+                <span>주문번호: #${ord.order_id || '--'}</span>
+                <span>접수시각: ${ord.created_at || '--'}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+        return;
+      }
 
       // 1. AI 추천 유망주 탭 선택 시
       if (currentFilter === 'RECOMMEND') {
@@ -563,7 +666,7 @@
             </div>
 
             <div class="indicator-row">
-              <div class="indicator-pill">14일 RSI: <span class="pill-val">${['SGOV', 'BIL', 'USFR', 'SHV'].includes(it.symbol) ? '<span style="color:#34d399;font-weight:600;">초단기 국채 (변동 없음)</span>' : (it.rsi !== null && it.rsi !== undefined ? it.rsi : '--')}</span></div>
+              <div class="indicator-pill">Wilder RSI (14): <span class="pill-val">${['SGOV', 'BIL', 'USFR', 'SHV'].includes(it.symbol) ? '<span style="color:#34d399;font-weight:600;">초단기 국채 (변동 없음)</span>' : (it.rsi !== null && it.rsi !== undefined ? `<span class="${it.rsi <= 30 ? 'rsi-oversold' : (it.rsi >= 70 ? 'rsi-overbought' : '')}">${it.rsi} ${it.rsi <= 30 ? '(과매도 🟢)' : (it.rsi >= 70 ? '(과열 ⚠️)' : '(중립)')}</span>` : '--')}</span></div>
               <div class="indicator-pill">수급: <span class="pill-val">${it.investor_summary || '분석 중'}</span></div>
             </div>
           </div>
