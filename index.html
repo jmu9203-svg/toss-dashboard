@@ -17,40 +17,55 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --card-border: #30363d;
-      --text-main: #f0f6fc;
-      --text-sub: #8b949e;
-      --toss-blue: #3182F6;
-      --toss-blue-bg: rgba(49, 130, 246, 0.15);
-      --profit: #f04452; /* 토스 상승 레드 */
-      --loss: #3182F6;   /* 토스 하락 블루 */
-      --pill-bg: #21262d;
-      --warn-bg: rgba(210, 153, 34, 0.15);
-      --warn-border: #d29922;
-      --warn-text: #e3b341;
-      --action-box-bg: rgba(49, 130, 246, 0.08);
+      --bg: #0b0f17;
+      --card-bg: #141a24;
+      --card-border: #232c3d;
+      --text-main: #f1f5f9;
+      --text-sub: #94a3b8;
+      --text-muted: #64748b;
+      --toss-blue: #3b82f6;
+      --toss-blue-bg: rgba(59, 130, 246, 0.12);
+      --profit: #f43f5e; /* 상승 레드 */
+      --loss: #3b82f6;   /* 하락 블루 */
+      --pill-bg: #1a2230;
+      --warn-bg: rgba(245, 158, 11, 0.12);
+      --warn-border: rgba(245, 158, 11, 0.35);
+      --warn-text: #fbbf24;
+      --action-box-bg: rgba(59, 130, 246, 0.06);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif; }
     body { background-color: var(--bg); color: var(--text-main); padding: 16px; max-width: 680px; margin: 0 auto; -webkit-font-smoothing: antialiased; }
 
     /* Top Family Navigation Bar (Unified 4 Sites) */
-    /* Top Family Navigation Bar (Unified 4 Sites) */
-    .nav-tabs { display: flex; gap: 5px; background: #161b22; padding: 5px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--card-border); overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+    .nav-tabs { display: flex; gap: 6px; background: #131924; padding: 6px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--card-border); overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
     .nav-tabs::-webkit-scrollbar { display: none; }
     .nav-tab-item { flex: 1; text-align: center; padding: 8px 6px; font-size: 12px; font-weight: 600; color: var(--text-sub); text-decoration: none; border-radius: 8px; transition: all 0.2s; white-space: nowrap; }
-    .nav-tab-item:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.04); }
-    .nav-tab-item.active { background: #21262d; color: #58a6ff; font-weight: 700; border: 1px solid rgba(49, 130, 246, 0.45); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+    .nav-tab-item:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
+    .nav-tab-item.active { background: #1e2638; color: #60a5fa; font-weight: 700; border: 1px solid rgba(96, 165, 250, 0.4); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
     
     /* Header */
     .header { display: flex; justify-content: space-between; align-items: center; padding: 6px 0 16px 0; gap: 10px; flex-wrap: wrap; }
     .title-group h1 { font-size: 21px; font-weight: 800; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
-    .toss-tag { background: var(--toss-blue-bg); color: #60a5fa; border: 1px solid rgba(49, 130, 246, 0.4); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
-    .title-group p { font-size: 13px; color: var(--text-sub); margin-top: 3px; }
-    .status-badge { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--toss-blue); }
-    .pulse-dot { width: 8px; height: 8px; background: var(--toss-blue); border-radius: 50%; box-shadow: 0 0 8px var(--toss-blue); animation: pulse 2s infinite; }
+    .toss-tag { background: var(--toss-blue-bg); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.35); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.2px; }
+    .title-group p { font-size: 12.5px; color: var(--text-sub); margin-top: 4px; }
+    .status-badge { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #60a5fa; }
+    .pulse-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 8px #10b981; animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+
+    /* Account Chip */
+    .account-chip { font-size: 11px; background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 6px; color: var(--text-sub); font-weight: 600; border: 1px solid rgba(255,255,255,0.08); }
+
+    /* Strategy & Health Compact Card */
+    .strategy-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 14px 16px; margin-bottom: 16px; }
+    .strategy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .strategy-title { font-size: 13.5px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px; }
+    .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+    .strategy-col { background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 10px 12px; }
+    .strategy-col-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .strategy-col-title { font-size: 11.5px; font-weight: 700; color: #60a5fa; }
+    .strategy-col-verdict { font-size: 11px; font-weight: 700; color: var(--warn-text); }
+    .strategy-col-desc { font-size: 11.5px; color: var(--text-sub); line-height: 1.45; }
+    .strategy-footer { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); flex-wrap: wrap; gap: 4px; }
 
     /* Summary Card */
     .summary-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
@@ -124,16 +139,16 @@
 <body>
   <!-- Top Family Navigation (Unified 4 Sites) -->
   <div class="nav-tabs">
-    <a href="https://jmu9203-svg.github.io/kis-dashboard/" class="nav-tab-item">💼 한투 실전 계좌</a>
-    <a href="https://jmu9203-svg.github.io/toss-dashboard/" class="nav-tab-item active">💙 토스 실전 비서</a>
-    <a href="https://jmu9203-svg.github.io/dividend-calendar/" class="nav-tab-item">📅 배당 캘린더</a>
+    <a href="https://jmu9203-svg.github.io/kis-dashboard/" class="nav-tab-item">💼 한투 운용</a>
+    <a href="https://jmu9203-svg.github.io/toss-dashboard/" class="nav-tab-item active">💙 토스 운용</a>
+    <a href="https://jmu9203-svg.github.io/dividend-calendar/" class="nav-tab-item">📅 배당 관리</a>
     <a href="https://jmu9203-svg.github.io/system-architecture/" class="nav-tab-item">🧠 전략 백서</a>
   </div>
 
   <div class="header">
     <div class="title-group">
-      <h1>토스증권 실전계좌 <span class="toss-tag">AI PB</span></h1>
-      <p>토스 공식 Open API & 미국 3대 빅테크 이종 앙상블 AI 실시간 자문·대화형 주문</p>
+      <h1>토스 실전 운용 <span class="toss-tag">AI PB</span></h1>
+      <p>토스증권 실전 계좌(17601069723) · B-플랜 자율 리밸런싱</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -141,47 +156,42 @@
       </div>
       <div class="status-badge" id="systemStatus">
         <div class="pulse-dot"></div>
-        <span id="statusText">100% 완전 자율 PB</span>
+        <span id="statusText">B-플랜 자율 가동</span>
       </div>
     </div>
   </div>
 
   <!-- Watchdog & External Dead-Server Siren Banner -->
-  <div id="watchdogBanner" style="background: rgba(49, 130, 246, 0.10); border: 1px solid rgba(49, 130, 246, 0.30); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-    <span id="watchdogText">⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행</span>
+  <div id="watchdogBanner" style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+    <span id="watchdogText">🟢 <b>토스 B-플랜 자율 운용 가동 중</b> — 4중 안전 가드레일(예수금 50만 원 하한선) 관제</span>
     <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600; font-size: 11px; white-space: nowrap; flex-shrink: 0;">방금 동기화</span>
   </div>
 
-  <!-- Toss Realtime Market Calendar Card -->
-  <div id="marketCalendarCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 14px 16px; margin-bottom: 16px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-      <span style="font-size: 13.5px; font-weight: 800; color: var(--text-main); display: flex; align-items: center; gap: 6px;">
-        <span>📅 토스증권 한·미 증시 공식 마켓 캘린더</span>
-      </span>
-      <span id="calendarDateTag" style="font-size: 11px; font-weight: 600; color: #8b949e;">실시간 공식 데이터</span>
+  <!-- Market Status Compact Card -->
+  <div id="marketCalendarCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 12px; font-weight: 700; color: var(--text-main);">증시 개장 현황</span>
+      <span id="calendarDateTag" style="font-size: 11px; color: var(--text-muted);">실시간</span>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-      <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-size: 12px; font-weight: 700; color: #58a6ff;">🇰🇷 국내 증시 (KRX)</span>
-          <span id="krMarketStatus" style="font-size: 11px; font-weight: 700; color: #34d399;">개장일</span>
-        </div>
-        <div style="font-size: 11.5px; color: var(--text-sub);" id="krMarketHours">09:00 ~ 15:30 (정규장)</div>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
+        <span style="color: #60a5fa; font-weight: 700;">KRX</span>
+        <span id="krMarketStatus" style="font-weight: 700; color: #34d399;">개장일</span>
+        <span id="krMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(09:00~15:30)</span>
       </div>
-      <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <span style="font-size: 12px; font-weight: 700; color: #34d399;">🇺🇸 미국 증시 (NYSE)</span>
-          <span id="usMarketStatus" style="font-size: 11px; font-weight: 700; color: #34d399;">개장일</span>
-        </div>
-        <div style="font-size: 11.5px; color: var(--text-sub);" id="usMarketHours">23:30 ~ 06:00 (표준시)</div>
+      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
+        <span style="color: #34d399; font-weight: 700;">NYSE</span>
+        <span id="usMarketStatus" style="font-weight: 700; color: #34d399;">개장일</span>
+        <span id="usMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(23:30~06:00)</span>
       </div>
     </div>
   </div>
 
+  <!-- Summary Card -->
   <div class="summary-card">
     <div class="summary-title">
-      <span>토스증권 실전 총 평가금액 (국내 + 미국)</span>
-      <span id="accountNoTag">계좌: --</span>
+      <span>총 운용 자산 (NAV)</span>
+      <span id="accountNoTag" class="account-chip">계좌 17601069723</span>
     </div>
     <div class="total-eval" id="totalEval">--원</div>
     <div class="pnl-row" id="pnlRow">
@@ -190,88 +200,72 @@
     </div>
     <div class="stat-grid">
       <div class="stat-item">
-        <div class="stat-label">🇰🇷 국내주식 평가금 (원금)</div>
+        <div class="stat-label">국내 주식 평가금</div>
         <div class="stat-value" id="krwStockInfo">--원</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">🇺🇸 미국주식 평가금 (원금)</div>
+        <div class="stat-label">해외 주식 평가금</div>
         <div class="stat-value" id="usdStockInfo">$--</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">💵 원화 주문가능 예수금</div>
+        <div class="stat-label">원화 가용 예수금</div>
         <div class="stat-value" id="krwCash">--원</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">💵 달러 주문가능 예수금</div>
+        <div class="stat-label">달러 가용 예수금</div>
         <div class="stat-value" id="usdCash">$--</div>
       </div>
     </div>
   </div>
 
-  <!-- Portfolio Health & Balance Card -->
-  <div id="portfolioHealthCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-left: 4px solid #ef4444; border-radius: 14px; padding: 16px; margin-bottom: 18px;">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-      <span style="font-size:14px; font-weight:800; color:var(--text-main); display:flex; align-items:center; gap:6px;">
-        <span>🩺 포트폴리오 밸런스 &amp; 건강도 진단</span>
-      </span>
-      <span id="healthGradeBadge" style="font-size:11px; font-weight:700; background:rgba(239,68,68,0.18); color:#f87171; border:1px solid rgba(239,68,68,0.4); padding:3px 8px; border-radius:8px;">진단 중...</span>
+  <!-- Portfolio Health & Strategy Summary (Integrated Compact Card) -->
+  <div class="strategy-card" id="portfolioHealthCard" style="border-left: 3px solid #10b981;">
+    <div class="strategy-header">
+      <span class="strategy-title">🎯 포트폴리오 밸런스 &amp; B-플랜 지침</span>
+      <span id="healthGradeBadge" style="font-size: 11px; font-weight: 700; background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); padding: 2px 7px; border-radius: 6px;">진단 중...</span>
     </div>
-    <div id="healthDiagnoses" style="font-size:12px; color:#fca5a5; line-height:1.6; margin-bottom:8px;">
-      포트폴리오 자산 배분 상태를 분석 중입니다...
-    </div>
-    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:8px 10px; font-size:11.5px; color:var(--text-sub); line-height:1.5;">
-      <span style="color:#60a5fa; font-weight:700;">📋 AI 리밸런싱 처방전:</span> <span id="healthPrescription">자산 배분 분석 중...</span>
-    </div>
-  </div>
-
-  <!-- Master Cash Action Plan Card (Middle of Page) -->
-  <div id="cashMasterPlanCard" style="background: linear-gradient(145deg, rgba(49, 130, 246, 0.14), rgba(22, 27, 34, 0.95)); border: 1px solid rgba(49, 130, 246, 0.45); border-radius: 16px; padding: 18px; margin-bottom: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.25);">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
-      <div style="font-size: 15px; font-weight: 800; color: #58a6ff; display:flex; align-items:center; gap:6px;">
-        <span>🧭 오늘의 예수금 운용 최종 실전 행동 팁</span>
-      </div>
-      <span style="font-size: 11px; background: rgba(49, 130, 246, 0.2); color: #93c5fd; padding: 3px 8px; border-radius: 8px; font-weight: 700;">5단계 퀀트 결론</span>
+    
+    <div id="healthDiagnoses" style="font-size: 12px; color: #93c5fd; line-height: 1.5; margin-bottom: 8px;">
+      포트폴리오 자산 배분 상태 분석 중...
     </div>
 
-    <!-- KRW Cash Plan -->
-    <div style="background: rgba(13, 17, 23, 0.65); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
-        <span style="font-size: 12px; font-weight: 700; color: #93c5fd;" id="mpKrwTitle">🇰🇷 원화 예수금 운용 지침</span>
-        <span style="font-size: 12px; font-weight: 800; color: #fbbf24;" id="mpKrwVerdict">계산 중...</span>
+    <div class="strategy-grid" id="cashMasterPlanCard">
+      <div class="strategy-col">
+        <div class="strategy-col-header">
+          <span class="strategy-col-title" id="mpKrwTitle">국내 원화 지침</span>
+          <span class="strategy-col-verdict" id="mpKrwVerdict">계산 중...</span>
+        </div>
+        <div class="strategy-col-desc" id="mpKrwDetail">
+          보유 종목 및 추천 유망주 타점을 분석 중입니다...
+        </div>
       </div>
-      <div style="font-size: 12.5px; color: var(--text-main); line-height: 1.55;" id="mpKrwDetail">
-        보유 종목 및 추천 유망주 타점을 종합 분석 중입니다...
+      <div class="strategy-col">
+        <div class="strategy-col-header">
+          <span class="strategy-col-title" id="mpUsdTitle" style="color: #34d399;">해외 달러 지침</span>
+          <span class="strategy-col-verdict" id="mpUsdVerdict" style="color: #34d399;">계산 중...</span>
+        </div>
+        <div class="strategy-col-desc" id="mpUsdDetail">
+          미국 배당주 및 빅테크 일정을 분석 중입니다...
+        </div>
       </div>
     </div>
 
-    <!-- USD Cash Plan -->
-    <div style="background: rgba(13, 17, 23, 0.65); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px;">
-        <span style="font-size: 12px; font-weight: 700; color: #34d399;" id="mpUsdTitle">🇺🇸 달러 예수금 운용 지침</span>
-        <span style="font-size: 12px; font-weight: 800; color: #34d399;" id="mpUsdVerdict">계산 중...</span>
-      </div>
-      <div style="font-size: 12.5px; color: var(--text-main); line-height: 1.55;" id="mpUsdDetail">
-        미국 배당주 및 빅테크 어닝 일정을 종합 분석 중입니다...
-      </div>
-    </div>
-
-    <!-- Toss Friction & Order Safeguard Badge -->
-    <div style="margin-top: 10px; padding: 9px 12px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(49, 130, 246, 0.35); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 11.5px; color: var(--text-sub);">
-      <span>🛡️ <b>토스 실전 수수료 가드</b>: 국내 0.015% (제세금 0.18%) · 미국 0.1% 우대 마찰비용 실시간 산출</span>
-      <span style="color: #60a5fa; font-weight: 700;">대화형 2중 승인 안전 주문 연동 🛒</span>
+    <div class="strategy-footer">
+      <span id="healthPrescription">자산 배분 분석 중...</span>
+      <span>🛡️ 예수금 50만원 하한선 안전 가드 가동</span>
     </div>
   </div>
 
   <div class="filter-tabs">
-    <button class="tab-btn active" onclick="setFilter('ALL', this)">전체 보유 종목</button>
-    <button class="tab-btn" onclick="setFilter('KR', this)">🇰🇷 국내 주식</button>
-    <button class="tab-btn" onclick="setFilter('US', this)">🇺🇸 미국 주식</button>
-    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">✨ AI 추천 유망주</button>
-    <button class="tab-btn" onclick="setFilter('ORDERS', this)">📋 실시간 주문·체결</button>
+    <button class="tab-btn active" onclick="setFilter('ALL', this)">전체 종목</button>
+    <button class="tab-btn" onclick="setFilter('KR', this)">국내 주식</button>
+    <button class="tab-btn" onclick="setFilter('US', this)">해외 주식</button>
+    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">추천 유망주</button>
+    <button class="tab-btn" onclick="setFilter('ORDERS', this)">주문·체결</button>
   </div>
 
   <div class="section-title">
-    <span id="sectionTitleText">실시간 보유 포트폴리오 & AI 추천 타점</span>
+    <span id="sectionTitleText">보유 포트폴리오</span>
     <span class="section-count" id="holdingCount">0개 종목</span>
   </div>
   <div class="holdings-list" id="holdingsList">
@@ -279,13 +273,11 @@
   </div>
 
   <div class="footer">
-    <div id="lastUpdated">최근 감시 동기화: 조회 중...</div>
+    <div id="lastUpdated">최근 동기화: 조회 중...</div>
     <div class="footer-detail">
-      <span>스케줄: 평일 10:05 / 14:35</span>
+      <span>장중 5분 실시간 관제</span>
       <span>•</span>
-      <span>실시간 관제: 장중 5분 / 휴장 10분</span>
-      <span>•</span>
-      <span>자동 새로고침: 15초</span>
+      <span>15초 자동 갱신</span>
     </div>
   </div>
 
@@ -447,8 +439,8 @@
       // 오늘의 예수금 운용 최종 실전 행동 팁 렌더링 (백엔드 cash_master_plan 또는 프론트엔드 실시간 계산)
       const kCash = d.krw_cash || 0;
       const uCash = d.usd_cash || 0;
-      document.getElementById('mpKrwTitle').textContent = `🇰🇷 원화 예수금 (${kCash.toLocaleString()}원) 어떻게 할까?`;
-      document.getElementById('mpUsdTitle').textContent = `🇺🇸 달러 예수금 ($${uCash.toFixed(2)}) 어떻게 할까?`;
+      document.getElementById('mpKrwTitle').textContent = `국내 원화 운용 지침 (${kCash.toLocaleString()}원)`;
+      document.getElementById('mpUsdTitle').textContent = `해외 달러 운용 지침 ($${uCash.toFixed(2)})`;
 
       const mp = d.cash_master_plan || {};
       if (mp.krw_verdict && mp.usd_verdict) {
@@ -470,7 +462,7 @@
 
       // 0. 당일 실시간 주문/체결 내역 탭 선택 시
       if (currentFilter === 'ORDERS') {
-        document.getElementById('sectionTitleText').textContent = '📋 토스증권 당일 실시간 주문 및 체결 내역';
+        document.getElementById('sectionTitleText').textContent = '실시간 주문 및 체결 내역';
         const orders = d.recent_orders || [];
         document.getElementById('holdingCount').textContent = orders.length + '건 접수';
 
@@ -585,7 +577,7 @@
       }
 
       // 2. 일반 보유 종목 탭 선택 시
-      document.getElementById('sectionTitleText').textContent = '실시간 보유 포트폴리오 & AI 추천 타점';
+      document.getElementById('sectionTitleText').textContent = '보유 포트폴리오';
       const items = d.items || [];
       const filtered = items.filter(it => {
         if (currentFilter === 'ALL') return true;
