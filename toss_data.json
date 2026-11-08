@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08 23:50:34",
+  "updated_at": "2026-11-09 00:01:36",
   "account_no": "17601069723",
   "battery": "84% (⚡ NOT_CHARGING)",
   "tot_rate": -21.95,
@@ -493,9 +493,9 @@
     "kr": {
       "success": true,
       "market": "KR",
-      "date": "2026-11-08",
-      "is_open": false,
-      "reason": "주말 휴장",
+      "date": "2026-11-09",
+      "is_open": true,
+      "reason": "평일 정상 개장일",
       "is_half_day": false,
       "daylight_saving": false,
       "open_time": "09:00",
@@ -504,9 +504,9 @@
     "us": {
       "success": true,
       "market": "US",
-      "date": "2026-11-08",
-      "is_open": false,
-      "reason": "주말 휴장",
+      "date": "2026-11-09",
+      "is_open": true,
+      "reason": "평일 정상 개장일",
       "is_half_day": false,
       "daylight_saving": false,
       "open_time": "23:30",
