@@ -141,14 +141,14 @@
       </div>
       <div class="status-badge" id="systemStatus">
         <div class="pulse-dot"></div>
-        <span id="statusText">대화형 자문 PB</span>
+        <span id="statusText">100% 완전 자율 PB</span>
       </div>
     </div>
   </div>
 
   <!-- Watchdog & External Dead-Server Siren Banner -->
   <div id="watchdogBanner" style="background: rgba(49, 130, 246, 0.10); border: 1px solid rgba(49, 130, 246, 0.30); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-    <span id="watchdogText">🛡️ <b>무단 자동 매매 0% 영구 동결 + 대화형 스마트 수동 매매</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%</span>
+    <span id="watchdogText">⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행</span>
     <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600; font-size: 11px; white-space: nowrap; flex-shrink: 0;">방금 동기화</span>
   </div>
 
@@ -367,7 +367,16 @@
           } else if (wdBanner && wdText) {
             wdBanner.style.background = 'rgba(49, 130, 246, 0.10)';
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
-            wdText.innerHTML = '🛡️ <b>무단 자동 매매 0% 영구 동결 + 대화형 스마트 수동 매매</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
+            const isAuto = d.auto_trade !== false;
+            if (isAuto) {
+              wdText.innerHTML = '⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행';
+              const stEl = document.getElementById('statusText');
+              if (stEl) stEl.textContent = '100% 완전 자율 PB';
+            } else {
+              wdText.innerHTML = '🛡️ <b>대화형 스마트 수동 승인 매매 (옵션 A)</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
+              const stEl = document.getElementById('statusText');
+              if (stEl) stEl.textContent = '대화형 자문 PB';
+            }
           }
         }
       }
