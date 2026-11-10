@@ -49,10 +49,6 @@
     .toss-tag { background: var(--toss-blue-bg); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.35); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.2px; }
     .title-group p { font-size: 12.5px; color: var(--text-sub); margin-top: 4px; }
     .status-badge { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #60a5fa; }
-    .status-badge-btn { display: flex; align-items: center; gap: 6px; background: var(--toss-blue-bg); border: 1px solid var(--toss-blue); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #60a5fa; cursor: pointer; transition: all 0.2s ease; user-select: none; }
-    .status-badge-btn:hover { background: rgba(59, 130, 246, 0.22); border-color: #60a5fa; transform: translateY(-1px); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); }
-    .status-badge-btn:active { transform: translateY(0); }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
     .pulse-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 8px #10b981; animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
 
@@ -154,41 +150,36 @@
       <h1>토스 실전 운용 <span class="toss-tag">AI PB</span></h1>
       <p>토스증권 실전 계좌(17601069723) · B-플랜 자율 리밸런싱</p>
     </div>
-    <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; gap: 6px; align-items: center;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
         <span id="headerBattery">🔋 --</span>
       </div>
-      <div class="status-badge-btn" id="systemStatus" onclick="toggleMarketCalendar()" title="클릭하여 한·미 증시 운영시간 및 실시간 개장 현황 확인">
-        <div class="pulse-dot" id="systemPulseDot"></div>
-        <span id="statusText">24/7 실시간 관제</span>
-        <span id="marketToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
-      </div>
-      <div class="status-badge-btn" id="watchdogSyncBtn" onclick="toggleWatchdogBanner()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-sub);" title="클릭하여 4중 안전 가드레일 및 자율 운용 정책 확인">
-        <span>🕒 </span><span id="watchdogSyncAge">방금 동기화</span>
-        <span id="watchdogToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
+      <div class="status-badge" id="systemStatus">
+        <div class="pulse-dot"></div>
+        <span id="statusText">B-플랜 자율 가동</span>
       </div>
     </div>
   </div>
 
-  <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
-  <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행</span>
-    <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
+  <!-- Watchdog & External Dead-Server Siren Banner -->
+  <div id="watchdogBanner" style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+    <span id="watchdogText">🟢 <b>토스 B-플랜 자율 운용 가동 중</b> — 4중 안전 가드레일(예수금 50만 원 하한선) 관제</span>
+    <span id="watchdogSyncAge" style="color: var(--text-sub); font-weight: 600; font-size: 11px; white-space: nowrap; flex-shrink: 0;">방금 동기화</span>
   </div>
 
-  <!-- Market Status Compact Card (상단 배지 버튼 클릭 시 부드럽게 토글) -->
-  <div id="marketCalendarCard" style="display: none; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; animation: slideDown 0.25s ease;">
+  <!-- Market Status Compact Card -->
+  <div id="marketCalendarCard" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
     <div style="display: flex; align-items: center; gap: 8px;">
       <span style="font-size: 12px; font-weight: 700; color: var(--text-main);">증시 개장 현황</span>
-      <span id="calendarDateTag" style="font-size: 11px; color: var(--text-muted);">실시간 세션</span>
+      <span id="calendarDateTag" style="font-size: 11px; color: var(--text-muted);">실시간</span>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 4px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
         <span style="color: #60a5fa; font-weight: 700;">KRX</span>
         <span id="krMarketStatus" style="font-weight: 700; color: #94a3b8;">🌙 장 마감</span>
         <span id="krMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(09:00~15:30)</span>
       </div>
-      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 4px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
+      <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
         <span style="color: #34d399; font-weight: 700;">NYSE</span>
         <span id="usMarketStatus" style="font-weight: 700; color: #34d399;">🟢 정규장 거래중</span>
         <span id="usMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(23:30~06:00)</span>
@@ -346,30 +337,13 @@
       `;
     }
 
-    function toggleMarketCalendar() {
-      const card = document.getElementById('marketCalendarCard');
-      const arrow = document.getElementById('marketToggleArrow');
-      if (!card) return;
-      const isHidden = (card.style.display === 'none' || getComputedStyle(card).display === 'none');
-      card.style.display = isHidden ? 'flex' : 'none';
-      if (arrow) arrow.textContent = isHidden ? '▴' : '▾';
-    }
-
-    function toggleWatchdogBanner() {
-      const wb = document.getElementById('watchdogBanner');
-      const arrow = document.getElementById('watchdogToggleArrow');
-      if (!wb) return;
-      const isHidden = (wb.style.display === 'none' || getComputedStyle(wb).display === 'none');
-      wb.style.display = isHidden ? 'flex' : 'none';
-      if (arrow) arrow.textContent = isHidden ? '▴' : '▾';
-    }
-
     function renderData(d) {
       document.getElementById('accountNoTag').textContent = '계좌: ' + (d.account_no || '17601069723');
       if (d.battery) {
         const bShort = '🔋 ' + (d.battery.includes(' ') ? d.battery.split(' ')[0] : d.battery);
         const elH = document.getElementById('headerBattery');
         if (elH) elH.textContent = bShort;
+        
       }
       if (d.updated_at && document.getElementById('watchdogSyncAge')) {
         const parsed = new Date(d.updated_at.replace(' ', 'T'));
@@ -379,7 +353,6 @@
           const wdBanner = document.getElementById('watchdogBanner');
           const wdText = document.getElementById('watchdogText');
           if (diffMin > 25 && wdBanner && wdText) {
-            wdBanner.style.display = 'flex';
             wdBanner.style.background = 'rgba(240, 68, 82, 0.18)';
             wdBanner.style.borderColor = '#f04452';
             wdText.innerHTML = '🚨 <b>[경보] 공기계 홈서버 응답 지연!</b> — 25분 이상 갱신이 없습니다 (전원/와이파이 확인)';
@@ -389,8 +362,12 @@
             const isAuto = d.auto_trade !== false;
             if (isAuto) {
               wdText.innerHTML = '⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행';
+              const stEl = document.getElementById('statusText');
+              if (stEl) stEl.textContent = '100% 완전 자율 PB';
             } else {
               wdText.innerHTML = '🛡️ <b>대화형 스마트 수동 승인 매매 (옵션 A)</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
+              const stEl = document.getElementById('statusText');
+              if (stEl) stEl.textContent = '대화형 자문 PB';
             }
           }
         }
@@ -462,41 +439,6 @@
           usStatusEl.style.color = usColor;
           const dstText = isDst ? ' (서머타임 ☀️)' : ' (표준시 ❄️)';
           document.getElementById('usMarketHours').textContent = `운영: ${us.open_time || '23:30'} ~ ${us.close_time || '06:00'}${dstText}`;
-        }
-
-        // 상단 헤더 통합 요약 텍스트
-        const krInSession = (kr.is_in_session !== undefined) ? kr.is_in_session : (kstMin >= 9 * 60 && kstMin < 15 * 60 + 30 && kstDay >= 1 && kstDay <= 5);
-        const usInSession = (us.is_in_session !== undefined) ? us.is_in_session : ((kstMin < closeMin && kstDay >= 2 && kstDay <= 6) || (kstMin >= openMin && kstDay >= 1 && kstDay <= 5));
-
-        let summary = 'B-플랜 자율 가동';
-        let dotColor = '#10b981';
-
-        if (krInSession && usInSession) {
-          summary = '🟢 한·미 정규장 동시 가동';
-          dotColor = '#10b981';
-        } else if (usInSession) {
-          summary = '🟢 미장 거래중 (국장 대기)';
-          dotColor = '#10b981';
-        } else if (krInSession) {
-          summary = '🟢 국장 거래중 (미장 마감)';
-          dotColor = '#10b981';
-        } else if (kstMin < 9 * 60 && (kstDay >= 1 && kstDay <= 5)) {
-          summary = '⏳ 국장 개장 대기 (09:00)';
-          dotColor = '#fbbf24';
-        } else if (kstDay === 0 || kstDay === 6) {
-          summary = '🔴 주말 휴장 (자체 감사)';
-          dotColor = '#f87171';
-        } else {
-          summary = '🌙 장 마감 (자율 PB 대기)';
-          dotColor = '#94a3b8';
-        }
-
-        const stEl = document.getElementById('statusText');
-        if (stEl) stEl.textContent = summary;
-        const dotEl = document.getElementById('systemPulseDot');
-        if (dotEl) {
-          dotEl.style.background = dotColor;
-          dotEl.style.boxShadow = `0 0 8px ${dotColor}`;
         }
       }
       
@@ -570,18 +512,14 @@
 
       // 0. 당일 실시간 주문/체결 내역 탭 선택 시
       if (currentFilter === 'ORDERS') {
+        document.getElementById('sectionTitleText').textContent = '실시간 주문 및 체결 내역';
         const orders = d.recent_orders || [];
-        const isMasterPlanSource = orders.some(o => o.source === 'MASTER_PLAN' || String(o.order_id).startsWith('STEP_'));
-        
-        document.getElementById('sectionTitleText').textContent = isMasterPlanSource 
-          ? '📋 마스터플랜 전략 집행 및 실시간 주문 내역' 
-          : '실시간 주문 및 체결 내역';
-        document.getElementById('holdingCount').textContent = orders.length + '건 체결·접수';
+        document.getElementById('holdingCount').textContent = orders.length + '건 접수';
 
         if (orders.length === 0) {
           hList.innerHTML = `
             <div class="empty-state-box">
-              <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">체결 및 대기 중인 주문이 없습니다</div>
+              <div style="font-size: 15px; font-weight: 700; margin-bottom: 6px;">당일 체결 및 대기 중인 주문이 없습니다</div>
               <div style="font-size: 12.5px; color: var(--text-sub);">
                 텔레그램 토스 AI 봇에서 대화형으로 종목 매수/매도 요청 시 실전 주문 카드가 발행됩니다.
               </div>
@@ -590,57 +528,30 @@
           return;
         }
 
-        const bannerHtml = `
-          <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-bottom: 12px; padding: 10px 14px; background: rgba(59, 130, 246, 0.08); border-radius: 10px; border: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <span>ℹ️ <b>${isMasterPlanSource ? '471만 원 마스터플랜 전략 집행 이력' : '당일 실시간 WTS 주문·체결'}</b> — 안전 가드레일 승인 체결 기록</span>
-            <span style="color: #60a5fa; font-weight: 600; font-size: 11px;">100% 실체결 동기화</span>
-          </div>
-        `;
-
-        hList.innerHTML = bannerHtml + orders.map(ord => {
+        hList.innerHTML = orders.map(ord => {
           const isBuy = ord.side === 'BUY';
           const sideColor = isBuy ? 'var(--profit)' : 'var(--loss)';
           const sideKr = isBuy ? '매수' : '매도';
           const statusKr = ord.status === 'FILLED' ? '체결 완료 🟢' : (ord.status === 'PENDING' ? '체결 대기 ⏳' : ord.status);
-          
-          const orderQty = ord.order_qty !== undefined ? ord.order_qty : (ord.quantity || ord.executions || 1);
-          const filledQty = ord.filled_qty !== undefined ? ord.filled_qty : (ord.filledQuantity || orderQty || 1);
-          
-          let rawTime = ord.created_at || ord.last_executed_at || '--';
-          if (rawTime.includes('T')) {
-            rawTime = rawTime.replace('T', ' ').split('+')[0].substring(0, 16);
-          }
-          
-          const priceDisplay = (ord.avg_filled_price && Number(ord.avg_filled_price) > 0)
-            ? Number(ord.avg_filled_price).toLocaleString() + '원'
-            : ((ord.price && Number(ord.price) > 0) ? Number(ord.price).toLocaleString() + '원' : '시장가 체결');
-
-          const sourceTag = (ord.source === 'MASTER_PLAN' || String(ord.order_id).startsWith('STEP_'))
-            ? '<span style="font-size: 10.5px; background: rgba(139, 92, 246, 0.2); color: #c4b5fd; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 600;">마스터플랜</span>'
-            : '<span style="font-size: 10.5px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 600;">실시간 WTS</span>';
-
           return `
             <div class="holding-card">
               <div class="holding-top">
                 <div>
-                  <div class="stock-title" style="flex-wrap: wrap; gap: 6px;">
+                  <div class="stock-title">
                     <span class="country-tag" style="background: ${isBuy ? 'rgba(240,68,82,0.15)' : 'rgba(49,130,246,0.15)'}; color: ${sideColor}; font-weight: 700;">${sideKr}</span>
                     <span class="stock-name">${ord.name || ord.symbol}</span>
                     <span class="stock-code">${ord.symbol}</span>
-                    ${sourceTag}
                   </div>
-                  <div class="stock-qty" style="color: var(--text-main); font-size: 13.5px; font-weight: 600; margin-top: 5px;">
-                    주문: <b style="color: #60a5fa;">${orderQty}주</b> · 체결 완료: <b style="color: #34d399;">${filledQty}주</b>
-                  </div>
+                  <div class="stock-qty" style="color: var(--text-sub); margin-top: 4px;">주문수량: ${ord.order_qty || 0}주 (체결 ${ord.filled_qty || 0}주)</div>
                 </div>
                 <div class="stock-val-box">
-                  <div class="stock-cur-price">${priceDisplay}</div>
+                  <div class="stock-cur-price">${ord.avg_filled_price ? Number(ord.avg_filled_price).toLocaleString() + '원' : (ord.price ? Number(ord.price).toLocaleString() + '원' : '시장가')}</div>
                   <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-top: 2px;">${statusKr}</div>
                 </div>
               </div>
-              <div style="font-size: 11px; color: var(--text-sub); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
-                <span>주문번호: <b>#${ord.order_id || '--'}</b></span>
-                <span>체결·접수시각: <b>${rawTime}</b></span>
+              <div style="font-size: 11px; color: var(--text-sub); margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between;">
+                <span>주문번호: #${ord.order_id || '--'}</span>
+                <span>접수시각: ${ord.created_at || '--'}</span>
               </div>
             </div>
           `;
