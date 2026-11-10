@@ -176,12 +176,12 @@
     <div style="display: flex; gap: 8px; align-items: center;">
       <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
         <span style="color: #60a5fa; font-weight: 700;">KRX</span>
-        <span id="krMarketStatus" style="font-weight: 700; color: #34d399;">개장일</span>
+        <span id="krMarketStatus" style="font-weight: 700; color: #94a3b8;">🌙 장 마감</span>
         <span id="krMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(09:00~15:30)</span>
       </div>
       <div style="background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px; font-size: 11.5px; display: flex; gap: 5px; align-items: center;">
         <span style="color: #34d399; font-weight: 700;">NYSE</span>
-        <span id="usMarketStatus" style="font-weight: 700; color: #34d399;">개장일</span>
+        <span id="usMarketStatus" style="font-weight: 700; color: #34d399;">🟢 정규장 거래중</span>
         <span id="usMarketHours" style="color: var(--text-muted); font-size: 10.5px;">(23:30~06:00)</span>
       </div>
     </div>
@@ -236,7 +236,7 @@
           <span class="strategy-col-verdict" id="mpKrwVerdict">계산 중...</span>
         </div>
         <div class="strategy-col-desc" id="mpKrwDetail">
-          보유 종목 및 추천 유망주 타점을 분석 중입니다...
+          보유 종목 및 감시 종목 타점을 분석 중입니다...
         </div>
       </div>
       <div class="strategy-col">
@@ -260,7 +260,7 @@
     <button class="tab-btn active" onclick="setFilter('ALL', this)">전체 종목</button>
     <button class="tab-btn" onclick="setFilter('KR', this)">국내 주식</button>
     <button class="tab-btn" onclick="setFilter('US', this)">해외 주식</button>
-    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">추천 유망주</button>
+    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">감시 종목</button>
     <button class="tab-btn" onclick="setFilter('ORDERS', this)">주문·체결</button>
   </div>
 
@@ -373,21 +373,71 @@
         }
       }
 
-      // 토스 한·미 마켓 캘린더 위젯 반영
+      // 토스 한·미 실시간 마켓 캘린더 세션 반영
       if (d.market_calendar) {
         const kr = d.market_calendar.kr || {};
         const us = d.market_calendar.us || {};
+        
+        // 클라이언트 실시간 시각 기준 보정 (KST)
+        const now = new Date();
+        const kstMin = now.getHours() * 60 + now.getMinutes();
+        const kstDay = now.getDay(); // 0: 일, 6: 토
+
+        // KRX 실시간 상태 판정
+        let krLabel = kr.session_status;
+        let krColor = kr.session_color;
+        if (!krLabel) {
+          if (kstDay === 0 || kstDay === 6 || kr.is_trading_day === false || kr.is_open === false) {
+            krLabel = `🔴 휴장 (${kr.reason || '휴장일'})`;
+            krColor = '#f87171';
+          } else if (kstMin < 9 * 60) {
+            krLabel = '⏳ 장 시작 전 (09:00 개장)';
+            krColor = '#fbbf24';
+          } else if (kstMin >= 9 * 60 && kstMin < 15 * 60 + 30) {
+            krLabel = '🟢 정규장 거래중';
+            krColor = '#34d399';
+          } else {
+            krLabel = '🌙 장 마감 (15:30 종료)';
+            krColor = '#94a3b8';
+          }
+        }
+
+        // US 실시간 상태 판정
+        let usLabel = us.session_status;
+        let usColor = us.session_color;
+        const isDst = us.daylight_saving || false;
+        const openMin = isDst ? (22 * 60 + 30) : (23 * 60 + 30);
+        const closeMin = isDst ? (5 * 60) : (6 * 60);
+
+        if (!usLabel) {
+          const inEarly = (kstMin < closeMin && kstDay >= 2 && kstDay <= 6);
+          const inNight = (kstMin >= openMin && kstDay >= 1 && kstDay <= 5);
+          if (inEarly || inNight) {
+            usLabel = '🟢 정규장 거래중';
+            usColor = '#34d399';
+          } else if (kstDay === 0 || (kstDay === 6 && kstMin >= closeMin)) {
+            usLabel = '🔴 주말 휴장';
+            usColor = '#f87171';
+          } else if (us.is_trading_day === false || us.is_open === false) {
+            usLabel = `🔴 휴장 (${us.reason || '휴장일'})`;
+            usColor = '#f87171';
+          } else {
+            usLabel = `🌙 장 마감 (${isDst ? '22:30' : '23:30'} 개장)`;
+            usColor = '#94a3b8';
+          }
+        }
+
         if (document.getElementById('krMarketStatus')) {
           const krStatusEl = document.getElementById('krMarketStatus');
-          krStatusEl.textContent = kr.is_open ? '🟢 정상 개장' : `🔴 휴장 (${kr.reason || '휴장일'})`;
-          krStatusEl.style.color = kr.is_open ? '#34d399' : '#f87171';
+          krStatusEl.textContent = krLabel;
+          krStatusEl.style.color = krColor;
           document.getElementById('krMarketHours').textContent = `운영: ${kr.open_time || '09:00'} ~ ${kr.close_time || '15:30'}`;
         }
         if (document.getElementById('usMarketStatus')) {
           const usStatusEl = document.getElementById('usMarketStatus');
-          usStatusEl.textContent = us.is_open ? '🟢 정상 개장' : `🔴 휴장 (${us.reason || '휴장일'})`;
-          usStatusEl.style.color = us.is_open ? '#34d399' : '#f87171';
-          const dstText = us.daylight_saving ? ' (서머타임 ☀️)' : ' (표준시 ❄️)';
+          usStatusEl.textContent = usLabel;
+          usStatusEl.style.color = usColor;
+          const dstText = isDst ? ' (서머타임 ☀️)' : ' (표준시 ❄️)';
           document.getElementById('usMarketHours').textContent = `운영: ${us.open_time || '23:30'} ~ ${us.close_time || '06:00'}${dstText}`;
         }
       }
@@ -509,16 +559,16 @@
         return;
       }
 
-      // 1. AI 추천 유망주 탭 선택 시
+      // 1. AI 감시 종목 탭 선택 시
       if (currentFilter === 'RECOMMEND') {
         const recs = d.ai_recommendations || [];
-        document.getElementById('sectionTitleText').textContent = '✨ AI 포트폴리오 맞춤 추천 유망주';
-        document.getElementById('holdingCount').textContent = recs.length + '개 유망주';
+        document.getElementById('sectionTitleText').textContent = '🎯 AI 포트폴리오 감시 종목';
+        document.getElementById('holdingCount').textContent = recs.length + '개 감시 종목';
 
         const bannerHtml = `
           <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-bottom: 6px; padding: 12px 14px; background: rgba(49, 130, 246, 0.08); border-radius: 12px; border: 1px dashed rgba(49, 130, 246, 0.35);">
-            🎯 <b>초고속 2사 듀얼 AI 앙상블 & 5단계 퀀트 가드 추천</b><br>
-            <b>Google Gemini 3.5 Flash-Lite + Groq OpenAI GPT-OSS 120B</b> 이종 2사 교차 검증과 <b>5단계 퀀트 전략(20일선·14일 RSI·메이저 수급·실적 D-Day·예수금 한도)</b>으로 계좌 편중을 분산시키고 포트폴리오를 보완할 우량주를 실시간 채점합니다.
+            🎯 <b>초고속 2사 듀얼 AI 앙상블 & 한투 동일 보수적 5단계 퀀트 가드 감시</b><br>
+            <b>Google Gemini 3.5 Flash-Lite + Groq OpenAI GPT-OSS 120B</b> 이종 2사 교차 검증과 <b>한투 동일 기준 5단계 퀀트 전략(시장 레짐·20일선·거래량 배율·14일 RSI·실적 D-Day)</b>으로 리스크를 철저히 방어하며 실시간 감시합니다.
           </div>
         `;
 
@@ -566,7 +616,7 @@
               </div>
 
               <div class="action-tip-box" style="border-left-color: ${tipBorderColor}; margin-top: 10px;">
-                <div class="action-tip-title" style="color: ${tipBorderColor};">💡 AI 선정 근거 & 포트폴리오 보완 효과</div>
+                <div class="action-tip-title" style="color: ${tipBorderColor};">💡 AI 감시 판정 근거 & 포트폴리오 보완 효과</div>
                 <div class="action-tip-text">${rec.rationale}</div>
                 <div class="action-reason" style="color: #58a6ff; font-weight: 600; margin-top: 6px;">📌 토스 앱 실전 팁: ${rec.action_tip}</div>
               </div>
