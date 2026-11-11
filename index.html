@@ -151,8 +151,8 @@
 
   <div class="header">
     <div class="title-group">
-      <h1>토스 실전 운용 <span class="toss-tag">AI PB</span></h1>
-      <p>토스증권 실전 계좌(17601069723) · B-플랜 자율 리밸런싱</p>
+      <h1>토스 실전 운용 <span class="toss-tag">AI 자율</span></h1>
+      <p>토스증권 실전 계좌(17601069723) · 마스터플랜 우선 &amp; 삼전·하닉 보호 자율운용</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -172,7 +172,7 @@
 
   <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
   <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행</span>
+    <span id="watchdogText">⚡ <b>토스증권 AI 완전 자율 매매 가동 중</b> — 마스터플랜 완료 후 감시종목 75점 자동 매수 · 삼전·하닉·배당코어 손절 제외</span>
     <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
   </div>
 
@@ -388,7 +388,7 @@
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
             const isAuto = d.auto_trade !== false;
             if (isAuto) {
-              wdText.innerHTML = '⚡ <b>토스증권 AI 100% 완전 자율 매매 가동 중 (옵션 B)</b> — 정량 타점 도달 시 4중 가드레일(예수금 50만 원 하한선) 검증 후 즉시 자동 집행';
+              wdText.innerHTML = '⚡ <b>토스증권 AI 완전 자율 매매 가동 중</b> — 마스터플랜 완료 후 감시종목 75점 자동 매수 · 삼전·하닉·배당코어 손절 제외';
             } else {
               wdText.innerHTML = '🛡️ <b>대화형 스마트 수동 승인 매매 (옵션 A)</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
             }
