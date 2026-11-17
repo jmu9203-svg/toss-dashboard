@@ -99,7 +99,8 @@
     /* Holdings List */
     .holdings-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
     .holding-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 18px; }
-    .holding-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .holding-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .holding-top > div:first-child { flex: 1; min-width: 0; }
     .stock-title { display: flex; align-items: center; gap: 6px; }
     .country-tag { font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
     .country-kr { background: rgba(49, 130, 246, 0.2); color: #58a6ff; }
@@ -107,8 +108,8 @@
     .stock-name { font-size: 16px; font-weight: 700; }
     .stock-code { font-size: 12px; color: var(--text-sub); font-weight: 400; }
     .stock-qty { font-size: 13px; color: var(--text-sub); margin-top: 3px; }
-    .stock-val-box { text-align: right; }
-    .stock-cur-price { font-size: 16px; font-weight: 700; }
+    .stock-val-box { text-align: right; flex-shrink: 0; white-space: nowrap; }
+    .stock-cur-price { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .stock-pnl { font-size: 13px; font-weight: 700; margin-top: 2px; }
 
     /* AI Decision Banner */
@@ -576,7 +577,10 @@
         document.getElementById('sectionTitleText').textContent = isMasterPlanSource 
           ? '📋 마스터플랜 전략 집행 및 실시간 주문 내역' 
           : '실시간 주문 및 체결 내역';
-        document.getElementById('holdingCount').textContent = orders.length + '건 체결·접수';
+        const totalExecCount = orders.reduce((acc, o) => acc + (Number(o.executions) || 1), 0);
+        document.getElementById('holdingCount').textContent = isMasterPlanSource && totalExecCount !== orders.length
+          ? `${orders.length}개 전략 · 누적 ${totalExecCount}회 체결`
+          : `${orders.length}건 체결·접수`;
 
         if (orders.length === 0) {
           hList.innerHTML = `
@@ -602,9 +606,15 @@
           const sideColor = isBuy ? 'var(--profit)' : 'var(--loss)';
           const sideKr = isBuy ? '매수' : '매도';
           const statusKr = ord.status === 'FILLED' ? '체결 완료 🟢' : (ord.status === 'PENDING' ? '체결 대기 ⏳' : ord.status);
-          
-          const orderQty = ord.order_qty !== undefined ? ord.order_qty : (ord.quantity || ord.executions || 1);
-          const filledQty = ord.filled_qty !== undefined ? ord.filled_qty : (ord.filledQuantity || orderQty || 1);
+          const isMasterPlanOrder = ord.source === 'MASTER_PLAN' || String(ord.order_id).startsWith('STEP_');
+          const execCnt = Number(ord.executions) || 1;
+          const maxExec = Number(ord.max_executions) || execCnt;
+          const rawOrderQty = Number(ord.order_qty !== undefined ? ord.order_qty : (ord.quantity || execCnt || 1));
+          const rawFilledQty = Number(ord.filled_qty !== undefined ? ord.filled_qty : (ord.filledQuantity !== undefined ? ord.filledQuantity : rawOrderQty));
+          // 구형 toss_data.json(unit_qty 미포함)에서도 다회 체결 시 1회 수량이 아닌 누적 수량으로 일관 표시
+          const orderQty = (isMasterPlanOrder && ord.unit_qty === undefined && execCnt > 1) ? (rawOrderQty * execCnt) : rawOrderQty;
+          const filledQty = (isMasterPlanOrder && ord.unit_qty === undefined && execCnt > 1) ? (rawFilledQty * execCnt) : rawFilledQty;
+          const unitQty = Number(ord.unit_qty) || Math.round(orderQty / Math.max(1, execCnt));
           
           let rawTime = ord.created_at || ord.last_executed_at || '--';
           if (rawTime.includes('T')) {
@@ -614,10 +624,16 @@
           const priceDisplay = (ord.avg_filled_price && Number(ord.avg_filled_price) > 0)
             ? Number(ord.avg_filled_price).toLocaleString() + '원'
             : ((ord.price && Number(ord.price) > 0) ? Number(ord.price).toLocaleString() + '원' : '시장가 체결');
+          const priceSubLabel = (isMasterPlanOrder && ord.price_is_limit_cap)
+            ? '<div style="font-size: 10.5px; color: var(--text-sub); margin-top: 2px;">설정 지정가 상한</div>'
+            : '';
 
-          const sourceTag = (ord.source === 'MASTER_PLAN' || String(ord.order_id).startsWith('STEP_'))
+          const sourceTag = isMasterPlanOrder
             ? '<span style="font-size: 10.5px; background: rgba(139, 92, 246, 0.2); color: #c4b5fd; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 600;">마스터플랜</span>'
             : '<span style="font-size: 10.5px; background: rgba(59, 130, 246, 0.2); color: #60a5fa; padding: 2px 6px; border-radius: 4px; margin-left: 6px; font-weight: 600;">실시간 WTS</span>';
+          const qtyHtml = (isMasterPlanOrder && execCnt > 1)
+            ? `누적 주문: <b style="color: #60a5fa;">${orderQty}주</b> · 체결 완료: <b style="color: #34d399;">${filledQty}주</b> <span style="font-size: 11.5px; color: var(--text-sub); font-weight: 500;">(${unitQty}주 × ${execCnt}/${maxExec}회차)</span>`
+            : `주문: <b style="color: #60a5fa;">${orderQty}주</b> · 체결 완료: <b style="color: #34d399;">${filledQty}주</b>`;
 
           return `
             <div class="holding-card">
@@ -630,11 +646,12 @@
                     ${sourceTag}
                   </div>
                   <div class="stock-qty" style="color: var(--text-main); font-size: 13.5px; font-weight: 600; margin-top: 5px;">
-                    주문: <b style="color: #60a5fa;">${orderQty}주</b> · 체결 완료: <b style="color: #34d399;">${filledQty}주</b>
+                    ${qtyHtml}
                   </div>
                 </div>
                 <div class="stock-val-box">
                   <div class="stock-cur-price">${priceDisplay}</div>
+                  ${priceSubLabel}
                   <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-top: 2px;">${statusKr}</div>
                 </div>
               </div>
