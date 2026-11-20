@@ -89,8 +89,29 @@
     /* Filter Tabs */
     .filter-tabs { display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 4px; }
     .filter-tabs::-webkit-scrollbar { display: none; }
-    .tab-btn { background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-sub); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .tab-btn { background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-sub); padding: 8px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; }
     .tab-btn.active { background: var(--toss-blue); color: #fff; border-color: var(--toss-blue); }
+
+    /* Master Plan v2.0 Cards */
+    .mp-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px; }
+    .mp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+    .mp-title { font-size: 15px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .mp-sub { font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-top: 4px; }
+    .mp-kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 10px; }
+    .mp-kpi { background: rgba(11, 15, 23, 0.65); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 9px 11px; }
+    .mp-kpi-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
+    .mp-kpi-val { font-size: 13.5px; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
+    .mp-progress-track { width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; margin-top: 8px; }
+    .mp-progress-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #3b82f6, #10b981); transition: width 0.3s ease; }
+    .mp-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .mp-chip { background: var(--pill-bg); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 3px 8px; font-size: 11px; color: var(--text-sub); font-weight: 600; }
+    .mp-status-pill { font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 8px; white-space: nowrap; }
+    .mp-pill-done { background: rgba(16, 185, 129, 0.16); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .mp-pill-active { background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .mp-pill-cond { background: rgba(139, 92, 246, 0.18); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
+    .mp-pill-lock { background: rgba(245, 158, 11, 0.16); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+    .mp-alert-row { background: rgba(11, 15, 23, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+    .mp-protect-pill { font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
 
     /* Section Title */
     .section-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
@@ -153,7 +174,7 @@
   <div class="header">
     <div class="title-group">
       <h1>토스 실전 운용 <span class="toss-tag">AI 자율</span></h1>
-      <p>토스증권 실전 계좌(17601069723) · 마스터플랜 우선 &amp; 삼전·하닉 보호 자율운용</p>
+      <p>토스증권 실전 계좌(17601069723) · 마스터플랜 v2.0 비반도체 전환 &amp; 보호종목 자율운용</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -173,7 +194,7 @@
 
   <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
   <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 AI 완전 자율 매매 가동 중</b> — 마스터플랜 완료 후 감시종목 75점 자동 매수 · 삼전·하닉·배당코어 손절 제외</span>
+    <span id="watchdogText">⚡ <b>토스증권 마스터플랜 v2.0 자율 매매 가동 중</b> — 일반 감시종목 영구 잠금 · STEP 5 비반도체 단일 슬롯 · 삼전·하닉·360750·배당코어 손절 제외</span>
     <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
   </div>
 
@@ -266,12 +287,13 @@
     </div>
   </div>
 
-  <div class="filter-tabs">
-    <button class="tab-btn active" onclick="setFilter('ALL', this)">전체 종목</button>
-    <button class="tab-btn" onclick="setFilter('KR', this)">국내 주식</button>
-    <button class="tab-btn" onclick="setFilter('US', this)">해외 주식</button>
-    <button class="tab-btn" onclick="setFilter('RECOMMEND', this)">감시 종목</button>
-    <button class="tab-btn" onclick="setFilter('ORDERS', this)">주문·체결</button>
+  <div class="filter-tabs" role="tablist" aria-label="토스 계좌 보기 필터">
+    <button type="button" class="tab-btn active" role="tab" aria-selected="true" onclick="setFilter('ALL', this)">전체 종목</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('PLAN', this)">📋 마스터플랜</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('KR', this)">국내 주식</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('US', this)">해외 주식</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('RECOMMEND', this)">감시 종목</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('ORDERS', this)">주문·체결</button>
   </div>
 
   <div class="section-title">
@@ -308,10 +330,384 @@
 
     function setFilter(filterType, btnEl) {
       currentFilter = filterType;
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      if (btnEl) btnEl.classList.add('active');
-      else if (event && event.target) event.target.classList.add('active');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+      const targetBtn = btnEl || (typeof event !== 'undefined' && event && event.target ? event.target : null);
+      if (targetBtn) {
+        targetBtn.classList.add('active');
+        targetBtn.setAttribute('aria-selected', 'true');
+      }
       if (globalData) renderData(globalData);
+    }
+
+    function escapeHtml(val) {
+      return String(val ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function normSym(sym) {
+      const raw = String(sym || '').toUpperCase().trim();
+      if (raw.startsWith('A') && raw.length === 7 && /^\d+$/.test(raw.slice(1))) {
+        return raw.slice(1);
+      }
+      return raw;
+    }
+
+    function formatPlanPrice(val, isUs) {
+      const n = Number(val);
+      if (!isFinite(n) || n <= 0) return '--';
+      return isUs ? ('$' + n.toFixed(2)) : (Math.round(n).toLocaleString() + '원');
+    }
+
+    function renderMasterPlanTab(d) {
+      const hList = document.getElementById('holdingsList');
+      const liveMap = {};
+      (d.items || []).forEach(it => {
+        const s = normSym(it.symbol);
+        if (s) liveMap[s] = { price: Number(it.lastPrice || 0), rsi: it.rsi, qty: Number(it.quantity || 0) };
+      });
+      (d.ai_recommendations || []).forEach(r => {
+        const s = normSym(r.symbol);
+        if (!s) return;
+        if (!liveMap[s]) {
+          liveMap[s] = { price: Number(r.lastPrice || 0), rsi: r.rsi, qty: 0 };
+        } else {
+          if (liveMap[s].price <= 0 && Number(r.lastPrice || 0) > 0) liveMap[s].price = Number(r.lastPrice);
+          if (liveMap[s].rsi == null && r.rsi != null) liveMap[s].rsi = r.rsi;
+        }
+      });
+
+      const hasRichPlan = Boolean(d.master_plan && Array.isArray(d.master_plan.steps));
+      const mp = hasRichPlan ? d.master_plan : {
+        schema_version: '2.0.0',
+        plan_name: '토스증권 마스터플랜 v2.0 (비반도체 전환·방어)',
+        account_safety: {
+          krw_hard_floor: 500000,
+          daily_max_buy_krw: 1700000,
+          single_order_max_krw: 500000,
+          watchlist_buy_unlocked: (d.master_plan_gate || {}).watchlist_buy_unlocked === true
+        },
+        daily_stats: { date: '', today_bought_krw: 0 },
+        protected_tickers: (d.protection_policy || {}).protected_symbols || ['005930', '000660', '360750', 'KO', 'SCHD', 'SGOV'],
+        advisory_alert_state: {},
+        steps: ((d.master_plan_gate || {}).remaining_steps || []).map(s => ({
+          step_id: s.step_id,
+          name: s.stock_name || s.step_id,
+          symbol: s.symbol,
+          status: s.status,
+          completed_executions: Number(String(s.progress || '0/1').split('/')[0]) || 0,
+          max_executions: Number(String(s.progress || '0/1').split('/')[1]) || 1,
+          conditions: {}
+        })),
+        quant_swing_slot: d.quant_swing_slot || {},
+        rescue_exit_alerts: d.rescue_exit_alerts || [],
+        sgov_reserve_trigger: d.sgov_reserve_trigger || {}
+      };
+
+      const steps = mp.steps || [];
+      const slot = mp.quant_swing_slot || {};
+      const exitAlerts = mp.rescue_exit_alerts || [];
+      const sgovTrig = mp.sgov_reserve_trigger || {};
+      const safety = mp.account_safety || {};
+      const dailyStats = mp.daily_stats || {};
+      const protectedSet = new Set((mp.protected_tickers || []).map(normSym));
+      const alertState = mp.advisory_alert_state || {};
+
+      document.getElementById('sectionTitleText').textContent = '📋 마스터플랜 v2.0 전략 관제';
+      const activeStepCount = steps.filter(s => ['ACTIVE', 'ACTIVE_CONDITIONAL'].includes(String(s.status || '').toUpperCase())).length;
+      const doneStepCount = steps.filter(s => String(s.status || '').toUpperCase() === 'COMPLETED' || Number(s.completed_executions || 0) >= Number(s.max_executions || 1)).length;
+      document.getElementById('holdingCount').textContent = `${doneStepCount}/${steps.length} 완료 · ${activeStepCount}개 감시중`;
+
+      const krwCash = Number(d.krw_cash || 0);
+      const usdCash = Number(d.usd_cash || 0);
+      const krwFloor = Number(safety.krw_hard_floor || 500000);
+      const singleMax = Number(safety.single_order_max_krw || 500000);
+      const dailyMax = Number(safety.daily_max_buy_krw || 1700000);
+      const todayStr = String(d.updated_at || '').slice(0, 10);
+      const todayBought = (dailyStats.date === todayStr || !todayStr) ? Number(dailyStats.today_bought_krw || 0) : 0;
+      const usableKrw = Math.max(0, krwCash - krwFloor);
+
+      let remainingPlanKrw = 0;
+      steps.forEach(st => {
+        const sMkt = String(st.market || (/^\d{6}$/.test(normSym(st.symbol)) ? 'KR' : 'US')).toUpperCase();
+        if (sMkt !== 'KR') return;
+        const stStatus = String(st.status || '').toUpperCase();
+        const remTranches = Math.max(0, Number(st.max_executions || 1) - Number(st.completed_executions || 0));
+        if (stStatus !== 'COMPLETED' && remTranches > 0) {
+          const cond = st.conditions || {};
+          const stepCap = Number(cond.max_order_krw || (Number(cond.max_price || 0) * Number(st.quantity || 1)) || 0);
+          remainingPlanKrw += remTranches * stepCap;
+        }
+      });
+      if (['ACTIVE', 'ACTIVE_CONDITIONAL'].includes(String(slot.status || '').toUpperCase()) && !slot.active_symbol) {
+        remainingPlanKrw += Number(slot.max_order_krw || 480000);
+      }
+      const reserveKrw = usableKrw - remainingPlanKrw;
+      const allocPct = usableKrw > 0 ? Math.min(100, Math.round((remainingPlanKrw / usableKrw) * 100)) : 100;
+      const watchlistLocked = safety.watchlist_buy_unlocked === false;
+
+      const syncWarnBanner = hasRichPlan ? '' : `
+        <div style="font-size: 11.5px; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 10px; padding: 9px 12px;">
+          ⏳ 공기계(Termux)에서 다음 동기화 주기에 상세 <code>master_plan</code> 스냅샷이 푸시되면 라이브 스텝 진행률이 자동 반영됩니다.
+        </div>
+      `;
+
+      const overviewHtml = `
+        <div class="mp-card" style="border-left: 3px solid #3b82f6;">
+          <div class="mp-header">
+            <div>
+              <div class="mp-title">
+                <span>🧭 ${escapeHtml(mp.plan_name || '토스증권 마스터플랜 v2.0')}</span>
+                <span class="mp-status-pill mp-pill-active">v${escapeHtml(mp.schema_version || '2.0.0')}</span>
+              </div>
+              <div class="mp-sub">삼성전자 추가 물타기(STEP 3) 폐기 · 비반도체 중심 전환 및 보호종목 자동매도 0% 영구 차단</div>
+            </div>
+            <span class="mp-status-pill ${watchlistLocked ? 'mp-pill-lock' : 'mp-pill-done'}">
+              ${watchlistLocked ? '🔒 감시종목 영구 잠금' : '🔓 감시종목 개방'}
+            </span>
+          </div>
+
+          <div class="mp-kpi-grid">
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">원화 비상금 하한선</div>
+              <div class="mp-kpi-val" style="color: #fbbf24;">${krwFloor.toLocaleString()}원</div>
+            </div>
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">단일 / 일일 주문 상한</div>
+              <div class="mp-kpi-val">${(singleMax / 10000).toFixed(0)}만 / ${(dailyMax / 10000).toFixed(0)}만</div>
+            </div>
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">실투입 가용 원화 (하한 제외)</div>
+              <div class="mp-kpi-val" style="color: #60a5fa;">${usableKrw.toLocaleString()}원</div>
+            </div>
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">잔여 v2.0 원화 배정 / 예비</div>
+              <div class="mp-kpi-val" style="color: ${reserveKrw >= 0 ? '#34d399' : '#f87171'};">
+                ${remainingPlanKrw.toLocaleString()}원 <span style="font-size: 11px; color: var(--text-sub);">(여유 ${reserveKrw.toLocaleString()}원)</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-sub);">
+              <span>원화 배정률 (당일 누적 ${todayBought.toLocaleString()}원 · 가용 달러 $${usdCash.toFixed(2)})</span>
+              <span style="font-weight: 700; color: var(--text-main);">${allocPct}%</span>
+            </div>
+            <div class="mp-progress-track">
+              <div class="mp-progress-fill" style="width: ${allocPct}%;"></div>
+            </div>
+          </div>
+
+          <div class="mp-chip-row">
+            <span class="mp-chip" style="color: #34d399; border-color: rgba(16,185,129,0.35);">🛡️ 영구 보호종목: ${Array.from(protectedSet).map(escapeHtml).join(' · ')}</span>
+            <span class="mp-chip">✅ STEP 3 삼성전자 추매 삭제됨</span>
+          </div>
+        </div>
+      `;
+
+      const stepsHtml = steps.map(st => {
+        const sId = String(st.step_id || '');
+        const sym = normSym(st.symbol || '');
+        const isUs = String(st.market || (/^\d{6}$/.test(sym) ? 'KR' : 'US')).toUpperCase() === 'US';
+        const status = String(st.status || 'PENDING').toUpperCase();
+        const compE = Number(st.completed_executions || 0);
+        const maxE = Math.max(1, Number(st.max_executions || 1));
+        const pct = Math.min(100, Math.round((compE / maxE) * 100));
+        const qty = Number(st.quantity || 1);
+        const cond = st.conditions || {};
+        const isProt = st.protected === true || protectedSet.has(sym);
+
+        let pillCls = 'mp-pill-lock';
+        let pillLabel = status;
+        if (status === 'COMPLETED' || compE >= maxE) {
+          pillCls = 'mp-pill-done';
+          pillLabel = '✅ 완료';
+        } else if (status === 'ACTIVE') {
+          pillCls = 'mp-pill-active';
+          pillLabel = '🟢 감시 중';
+        } else if (status === 'ACTIVE_CONDITIONAL') {
+          pillCls = 'mp-pill-cond';
+          pillLabel = '🟣 조건부 감시';
+        } else if (status.includes('LOCKED')) {
+          pillCls = 'mp-pill-lock';
+          pillLabel = '🔒 잠금';
+        }
+
+        const liveInfo = liveMap[sym] || {};
+        const liveP = st.live_price != null ? Number(st.live_price) : (liveInfo.price > 0 ? liveInfo.price : null);
+        const liveRsi = st.live_rsi != null ? st.live_rsi : liveInfo.rsi;
+        const maxP = cond.max_price != null ? Number(cond.max_price) : null;
+        const maxCostTxt = isUs
+          ? (cond.max_order_usd ? `$${Number(cond.max_order_usd).toFixed(2)}` : (maxP ? `$${(maxP * qty).toFixed(2)}` : '--'))
+          : (cond.max_order_krw ? `${Number(cond.max_order_krw).toLocaleString()}원` : (maxP ? `${Math.round(maxP * qty).toLocaleString()}원` : '--'));
+
+        const condChips = [];
+        if (maxP != null) condChips.push(`상한 ${formatPlanPrice(maxP, isUs)}`);
+        if (cond.min_price != null) condChips.push(`하한 ${formatPlanPrice(cond.min_price, isUs)}`);
+        if (cond.max_rsi != null || cond.max_rsi_14 != null) condChips.push(`RSI <= ${cond.max_rsi ?? cond.max_rsi_14}`);
+        if (cond.min_quant_score != null || cond.min_ai_score != null) condChips.push(`정량 >= ${cond.min_quant_score ?? 75} · AI >= ${cond.min_ai_score ?? 75}`);
+        if (cond.max_model_divergence != null) condChips.push(`편차 <= ${cond.max_model_divergence}`);
+        if (cond.require_lockdown_off) condChips.push('폭락장 락다운 해제');
+        if (st.earliest_execution_date) condChips.push(`${st.earliest_execution_date} 이후`);
+        if (st.cooldown_days) condChips.push(`쿨다운 ${st.cooldown_days}일`);
+        if (st.funding_source === 'USD_CASH_ONLY') condChips.push('달러 예수금 전용');
+
+        const liveLine = liveP != null
+          ? `실시간 ${formatPlanPrice(liveP, isUs)}${liveRsi != null ? ` · RSI ${liveRsi}` : ''}`
+          : '실시간 시세 대기';
+
+        return `
+          <div class="mp-card">
+            <div class="mp-header">
+              <div>
+                <div class="mp-title">
+                  <span class="country-tag ${isUs ? 'country-us' : 'country-kr'}">${isUs ? '🇺🇸 US' : '🇰🇷 KR'}</span>
+                  <span>${escapeHtml(st.name || sId)}</span>
+                </div>
+                <div class="mp-sub">${escapeHtml(sId)} · ${escapeHtml(st.stock_name || sym)} (${escapeHtml(sym)}) · ${isProt ? '🛡️ 보호종목' : '⚡ 비보호 스윙'}</div>
+              </div>
+              <span class="mp-status-pill ${pillCls}">${escapeHtml(pillLabel)} (${compE}/${maxE})</span>
+            </div>
+
+            <div class="mp-kpi-grid">
+              <div class="mp-kpi">
+                <div class="mp-kpi-label">목표 주문 규모</div>
+                <div class="mp-kpi-val">${qty}주 · 최대 ${escapeHtml(maxCostTxt)}</div>
+              </div>
+              <div class="mp-kpi">
+                <div class="mp-kpi-label">현재 시세 / RSI</div>
+                <div class="mp-kpi-val">${escapeHtml(liveLine)}</div>
+              </div>
+            </div>
+
+            <div class="mp-progress-track">
+              <div class="mp-progress-fill" style="width: ${pct}%;"></div>
+            </div>
+
+            <div class="mp-chip-row">
+              ${condChips.map(c => `<span class="mp-chip">${escapeHtml(c)}</span>`).join('')}
+            </div>
+            ${st.rationale ? `<div class="action-reason" style="margin-top: 8px;">💡 ${escapeHtml(st.rationale)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      const slEc = slot.entry_conditions || {};
+      const slStatus = String(slot.status || 'INACTIVE').toUpperCase();
+      const slActive = ['ACTIVE', 'ACTIVE_CONDITIONAL'].includes(slStatus);
+      const slotHtml = `
+        <div class="mp-card" style="border-left: 3px solid #8b5cf6;">
+          <div class="mp-header">
+            <div>
+              <div class="mp-title">
+                <span class="country-tag country-kr">🇰🇷 STEP 5</span>
+                <span>${escapeHtml(slot.name || '비반도체 퀀트+AI 스윙 슬롯')}</span>
+              </div>
+              <div class="mp-sub">${escapeHtml(slot.slot_id || 'QUANT_RECOVERY_SLOT_1')} · 삼성전자·SK하이닉스·소부장 전면 제외, 동시 1종목만 회전</div>
+            </div>
+            <span class="mp-status-pill ${slActive ? 'mp-pill-cond' : 'mp-pill-lock'}">
+              ${slActive ? '🟣 1슬롯 가동 중' : escapeHtml(slStatus)}
+            </span>
+          </div>
+
+          <div class="mp-kpi-grid">
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">현재 슬롯 점유 상태</div>
+              <div class="mp-kpi-val" style="color: ${slot.active_symbol ? '#60a5fa' : '#34d399'};">
+                ${slot.active_symbol ? `보유 중 (${escapeHtml(slot.active_symbol)})` : '공석 대기 (진입 가능)'}
+              </div>
+            </div>
+            <div class="mp-kpi">
+              <div class="mp-kpi-label">사이징 / 재진입 쿨다운</div>
+              <div class="mp-kpi-val">${(Number(slot.max_order_krw || 480000) / 10000).toFixed(0)}만 이하 · ${Number(slot.min_order_qty || 2)}주↑ · ${Number(slot.reentry_cooldown_trading_days || 1)}영업일</div>
+            </div>
+          </div>
+
+          <div class="mp-chip-row">
+            <span class="mp-chip">비반도체 전용</span>
+            <span class="mp-chip">단가 ≤ ${Number(slot.max_unit_price_krw || 240000).toLocaleString()}원</span>
+            <span class="mp-chip">정량 ≥ ${Number(slEc.min_quant_score || 80)} · AI ≥ ${Number(slEc.min_ai_score || 80)}</span>
+            <span class="mp-chip">편차 ≤ ${Number(slEc.max_model_divergence || 10)}</span>
+            <span class="mp-chip">ATR 손절 + 50% 반절익절</span>
+          </div>
+        </div>
+      `;
+
+      const alertsRowsHtml = exitAlerts.map(al => {
+        const sym = normSym(al.symbol || '');
+        const info = liveMap[sym] || {};
+        const liveP = al.live_price != null ? Number(al.live_price) : (info.price > 0 ? info.price : null);
+        const trigP = Number(al.trigger_price_krw || 0);
+        const distPct = (al.distance_pct != null)
+          ? Number(al.distance_pct)
+          : ((liveP && trigP > 0) ? ((trigP - liveP) / liveP) * 100 : null);
+        const ratioPct = (liveP && trigP > 0) ? Math.min(100, Math.max(0, Math.round((liveP / trigP) * 100))) : 0;
+        const alertedToday = alertState[al.alert_id] && alertState[al.alert_id] === todayStr;
+
+        return `
+          <div class="mp-alert-row">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap;">
+              <span style="font-size: 13px; font-weight: 700; color: var(--text-main);">
+                🔔 ${escapeHtml(al.name || sym)} (${escapeHtml(sym)}) · 목표 ${trigP.toLocaleString()}원 → ${Number(al.suggested_sell_qty || 1)}주 축소
+              </span>
+              <span class="mp-status-pill ${alertedToday ? 'mp-pill-done' : 'mp-pill-lock'}">
+                ${alertedToday ? '✅ 금일 알림 발송됨' : '⏳ 수동확인 대기'}
+              </span>
+            </div>
+            <div style="font-size: 11.5px; color: var(--text-sub); margin-top: 4px;">
+              현재가: <b>${liveP ? liveP.toLocaleString() + '원' : '--'}</b>
+              ${distPct != null ? ` · 목표까지 <b>${distPct >= 0 ? '+' : ''}${distPct.toFixed(1)}%</b>` : ''}
+              · 달성률 ${ratioPct}% (자동매도 금지)
+            </div>
+            <div class="mp-progress-track">
+              <div class="mp-progress-fill" style="width: ${ratioPct}%; background: linear-gradient(90deg, #f59e0b, #10b981);"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const sgTrigDd = Number(sgovTrig.drawdown_from_high_pct ?? -10.0);
+      const sgLiveDd = sgovTrig.live_drawdown_pct != null ? Number(sgovTrig.live_drawdown_pct) : null;
+      const sgCands = (sgovTrig.target_switch_candidates || ['VOO', 'SCHD']).join(' · ');
+      const sgAlertedToday = sgovTrig.alert_id && alertState[sgovTrig.alert_id] === todayStr;
+      const sgovHtml = sgovTrig.symbol ? `
+        <div class="mp-alert-row">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap;">
+            <span style="font-size: 13px; font-weight: 700; color: var(--text-main);">
+              💵 SGOV 파킹 전환 트리거 (${escapeHtml(sgovTrig.benchmark_index || 'SP500')} ${sgTrigDd.toFixed(1)}%↓)
+            </span>
+            <span class="mp-status-pill ${sgAlertedToday ? 'mp-pill-done' : 'mp-pill-active'}">
+              ${sgAlertedToday ? '✅ 금일 알림 발송됨' : '🛡️ 수동전환 감시'}
+            </span>
+          </div>
+          <div style="font-size: 11.5px; color: var(--text-sub); margin-top: 4px;">
+            ${escapeHtml(sgovTrig.benchmark_symbol || 'SPY')} 52주 고점 대비 현재: <b>${sgLiveDd != null ? (sgLiveDd >= 0 ? '+' : '') + sgLiveDd.toFixed(2) + '%' : '장중 산출 대기'}</b>
+            · 전환 후보: <b>${escapeHtml(sgCands)}</b> (자동매도 금지)
+          </div>
+        </div>
+      ` : '';
+
+      const advisoryHtml = `
+        <div class="mp-card" style="border-left: 3px solid #f59e0b;">
+          <div class="mp-header">
+            <div>
+              <div class="mp-title">🛡️ 보호종목 탈출 알림 &amp; SGOV 위기 전환</div>
+              <div class="mp-sub">보호종목은 봇이 직접 팔지 않고 목표가/급락 도달 시 텔레그램 알림(1일 1회)만 발송합니다.</div>
+            </div>
+            <span class="mp-status-pill mp-pill-done">자동매도 0%</span>
+          </div>
+          ${alertsRowsHtml}
+          ${sgovHtml}
+        </div>
+      `;
+
+      hList.innerHTML = syncWarnBanner + overviewHtml + stepsHtml + slotHtml + advisoryHtml;
     }
 
 
@@ -389,7 +785,7 @@
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
             const isAuto = d.auto_trade !== false;
             if (isAuto) {
-              wdText.innerHTML = '⚡ <b>토스증권 AI 완전 자율 매매 가동 중</b> — 마스터플랜 완료 후 감시종목 75점 자동 매수 · 삼전·하닉·배당코어 손절 제외';
+              wdText.innerHTML = '⚡ <b>토스증권 마스터플랜 v2.0 가동 중</b> — 일반 감시종목 영구 잠금 · STEP 5 비반도체 단일 슬롯 · 삼전·하닉·360750·배당코어 손절 제외';
             } else {
               wdText.innerHTML = '🛡️ <b>대화형 스마트 수동 승인 매매 (옵션 A)</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
             }
@@ -569,6 +965,12 @@
 
       const hList = document.getElementById('holdingsList');
 
+      // 0-A. 마스터플랜 v2.0 전략 탭 선택 시
+      if (currentFilter === 'PLAN') {
+        renderMasterPlanTab(d);
+        return;
+      }
+
       // 0. 당일 실시간 주문/체결 내역 탭 선택 시
       if (currentFilter === 'ORDERS') {
         const orders = d.recent_orders || [];
@@ -594,9 +996,10 @@
           return;
         }
 
+        const planBannerName = (d.master_plan && d.master_plan.plan_name) ? escapeHtml(d.master_plan.plan_name) : '마스터플랜 v2.0 전략 집행 이력';
         const bannerHtml = `
           <div style="font-size: 12px; color: var(--text-sub); line-height: 1.5; margin-bottom: 12px; padding: 10px 14px; background: rgba(59, 130, 246, 0.08); border-radius: 10px; border: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <span>ℹ️ <b>${isMasterPlanSource ? '471만 원 마스터플랜 전략 집행 이력' : '당일 실시간 WTS 주문·체결'}</b> — 안전 가드레일 승인 체결 기록</span>
+            <span>ℹ️ <b>${isMasterPlanSource ? planBannerName : '당일 실시간 WTS 주문·체결'}</b> — 안전 가드레일 승인 체결 기록</span>
             <span style="color: #60a5fa; font-weight: 600; font-size: 11px;">100% 실체결 동기화</span>
           </div>
         `;
@@ -606,7 +1009,7 @@
           const sideColor = isBuy ? 'var(--profit)' : 'var(--loss)';
           const sideKr = isBuy ? '매수' : '매도';
           const statusKr = ord.status === 'FILLED' ? '체결 완료 🟢' : (ord.status === 'PENDING' ? '체결 대기 ⏳' : ord.status);
-          const isMasterPlanOrder = ord.source === 'MASTER_PLAN' || String(ord.order_id).startsWith('STEP_');
+          const isMasterPlanOrder = ord.source === 'MASTER_PLAN' || String(ord.order_id).startsWith('STEP_') || String(ord.source || '').startsWith('QUANT_RECOVERY');
           const execCnt = Number(ord.executions) || 1;
           const maxExec = Number(ord.max_executions) || execCnt;
           const rawOrderQty = Number(ord.order_qty !== undefined ? ord.order_qty : (ord.quantity || execCnt || 1));
@@ -621,9 +1024,12 @@
             rawTime = rawTime.replace('T', ' ').split('+')[0].substring(0, 16);
           }
           
+          const isUsOrd = String(ord.currency || '').toUpperCase() === 'USD' || /^[A-Za-z]+$/.test(String(ord.symbol || '').trim());
           const priceDisplay = (ord.avg_filled_price && Number(ord.avg_filled_price) > 0)
-            ? Number(ord.avg_filled_price).toLocaleString() + '원'
-            : ((ord.price && Number(ord.price) > 0) ? Number(ord.price).toLocaleString() + '원' : '시장가 체결');
+            ? (isUsOrd ? ('$' + Number(ord.avg_filled_price).toFixed(2)) : (Number(ord.avg_filled_price).toLocaleString() + '원'))
+            : ((ord.price && Number(ord.price) > 0)
+              ? (isUsOrd ? ('$' + Number(ord.price).toFixed(2)) : (Number(ord.price).toLocaleString() + '원'))
+              : '시장가 체결');
           const priceSubLabel = (isMasterPlanOrder && ord.price_is_limit_cap)
             ? '<div style="font-size: 10.5px; color: var(--text-sub); margin-top: 2px;">설정 지정가 상한</div>'
             : '';
@@ -760,12 +1166,12 @@
           reasonText = reasonText.replace(/\[(?:🤖|🧠)?\s*Gemini\s*3(?:종|대)[^\]]*\]/gi, '[🌐 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta)]');
         }
 
-        // 배당주/파킹 ETF (KO, SCHD, SGOV) 매도 차단 프론트엔드 안전망
-        if (['KO', 'SCHD', 'SGOV'].includes(it.symbol) && decision.includes('매도')) {
+        // 배당주/파킹/지수코어 ETF (KO, SCHD, SGOV, 360750) 매도 차단 프론트엔드 안전망
+        if (['KO', 'SCHD', 'SGOV', '360750'].includes(normSym(it.symbol)) && decision.includes('매도')) {
           decision = '홀딩 관망';
           score = 65;
-          actionTip = '현재 보유 수량을 매도하지 말고 배당 재투자용으로 계속 홀딩하세요.';
-          reasonText = '[배당주 보존 원칙] 안정적인 현금흐름을 창출하는 배당 코어 자산이므로 단기 차익실현 매도를 보류하고 장기 보유합니다.';
+          actionTip = '마스터플랜 v2.0 영구 보호 종목입니다. 자동 매도/손절 없이 계속 홀딩하세요.';
+          reasonText = '[영구 보호 원칙] 장기 코어·배당 자산이므로 단기 등락과 무관하게 매도를 보류하고 장기 보유합니다.';
         }
 
         // 국내주식 과다 보유(10주↑) 시 1주 물타기 실효성 미달(<1.5%) 및 섹터 편중 가드레일 안전망
@@ -811,7 +1217,14 @@
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
-              <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
+              <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
+                ${it.auto_sell_protected === true
+                  ? '<span class="mp-protect-pill" style="background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35);">🛡️ 영구 보호</span>'
+                  : ((Number(it.quantity) || 0) < 1
+                    ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
+                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>')}
+              </div>
               <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
             </div>
             ${renderTossModelChips(it.ai_models, it.consensus)}
