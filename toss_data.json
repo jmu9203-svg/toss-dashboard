@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-21 04:20:37",
+  "updated_at": "2026-11-21 04:26:43",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
-  "tot_rate": -22.27,
+  "tot_rate": -21.92,
   "mkt_val_krw": 7124400,
   "tot_pchs_krw": 9608600,
   "pnl_krw": -2484200,
-  "mkt_val_usd": 1122.79,
-  "tot_pchs_usd": 1092.59,
-  "pnl_usd": 30.2,
+  "mkt_val_usd": 1258.95,
+  "tot_pchs_usd": 1229.51,
+  "pnl_usd": 29.43,
   "krw_cash": 2476406,
-  "usd_cash": 216.37,
+  "usd_cash": 79.32,
   "holding_count": 7,
   "items": [
     {
@@ -121,11 +121,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 271.42,
+      "lastPrice": 270.55,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -7.58,
-      "profitLossAmount": -7.578386,
-      "rsi": 30.0,
+      "profitLossRate": -7.88,
+      "profitLossAmount": -7.874311,
+      "rsi": 29.6,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 60,
@@ -155,11 +155,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 97.57,
+      "lastPrice": 97.53,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 10.84,
-      "profitLossAmount": 38.2,
-      "rsi": 59.6,
+      "profitLossRate": 10.8,
+      "profitLossAmount": 38.04,
+      "rsi": 59.5,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 62,
@@ -188,33 +188,33 @@
       "name": "SCHD",
       "marketCountry": "US",
       "currency": "USD",
-      "quantity": 4.0,
-      "lastPrice": 34.26,
-      "averagePurchasePrice": 34.3786,
-      "profitLossRate": -0.34,
-      "profitLossAmount": -0.4744,
-      "rsi": 40.1,
+      "quantity": 8.0,
+      "lastPrice": 34.2,
+      "averagePurchasePrice": 34.3043,
+      "profitLossRate": -0.3,
+      "profitLossAmount": -0.8344,
+      "rsi": 39.2,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
-      "ai_score": 62,
-      "ai_action_tip": "현재 포지션 유지 및 향후 20일선 안착 여부 관망",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-20b(60점 관망))] 본 종목은 포트폴리오 배당 안전판이자 장기 코어 자산으로 보호되어 매도 대상이 아니며, 현재 RSI 41.7로 단기 조정 구간에 위치해 있습니다. 가용 예수금은 충분하나 추가 매수 신호(RSI 40 하향 이탈 등)를 기다리며 홀딩을 유지합니다.",
-      "checked_at": "2026-11-21 03:35:54",
+      "ai_score": 74,
+      "ai_action_tip": "배당 안전판 자산으로 단기 조정 국면에서도 매도 없이 홀딩하며 향후 RSI 40 이하 하락 시 추가 매수 준비",
+      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [1:1 의견 분립 (안전 관망 채택)] (평균 74점 · 편차 12점 | Groq:gpt-oss-20b(80점 매수), Google:3.5-flash-lite(68점 관망))] SCHD는 장기 배당 방어주 보호 종목으로 단기 조정 및 20일선 하회 시에도 매도 대상이 아니며, 현재 14일 RSI 39.2로 과매도 근접 구간에 있어 추가 하락 시 달러 예수금을 활용한 저점 매수 기회로 삼아야 합니다.",
+      "checked_at": "2026-11-21 04:26:37",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
-          "score": 65,
+          "score": 68,
           "decision": "관망"
         },
         {
           "provider": "Groq",
           "model": "Groq 20B",
-          "score": 60,
-          "decision": "관망"
+          "score": 80,
+          "decision": "매수"
         }
       ],
-      "consensus": "2:0 관망 우세",
+      "consensus": "1:1 의견 분립 (안전 관망 채택)",
       "auto_sell_protected": true
     },
     {
@@ -223,10 +223,10 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 5.0,
-      "lastPrice": 100.63,
+      "lastPrice": 100.64,
       "averagePurchasePrice": 100.62,
-      "profitLossRate": 0.0,
-      "profitLossAmount": 0.05,
+      "profitLossRate": 0.01,
+      "profitLossAmount": 0.1,
       "rsi": 59.6,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
@@ -257,10 +257,10 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 86.7,
     "kr_eval": 7124400.0,
-    "us_eval": 1122.79,
-    "growth_eval": 92.32,
-    "div_eval": 527.32,
-    "park_eval": 503.15,
+    "us_eval": 1258.95,
+    "growth_eval": 92.03,
+    "div_eval": 663.72,
+    "park_eval": 503.2,
     "diagnoses": [
       "⚠️ 국내 계좌 반도체 비중 과다 (86.7%)",
       "✅ 미국 성장-배당 밸런스 유지 중"
@@ -524,13 +524,13 @@
     }
   ],
   "cash_master_plan": {
-    "headline": "원화(2,476,406원): ⏸️ 원화 2,476,406원 전액 현금 홀딩 (관망 추천) · 달러($216.37): ⏸️ 달러 $216.37 현금 홀딩 (미국 추천주 전원 관망)",
+    "headline": "원화(2,476,406원): ⏸️ 원화 2,476,406원 전액 현금 홀딩 (관망 추천) · 달러($79.32): ⏸️ 달러 $79.32 현금 홀딩 (미국 추천주 전원 관망)",
     "krw_cash": 2476406,
-    "usd_cash": 216.37,
+    "usd_cash": 79.32,
     "krw_verdict": "⏸️ 원화 2,476,406원 전액 현금 홀딩 (관망 추천)",
     "krw_detail": "현재 보유 삼성전자(22주)·SK하이닉스(2주)의 1주 물타기 실익(-1.34%)이 낮고 반도체 비중(86.7%)이 높으므로 원화 예수금 2,476,406원을 쓰지 말고 현금으로 꼭 쥐고 계세요.",
-    "usd_verdict": "⏸️ 달러 $216.37 현금 홀딩 (미국 추천주 전원 관망)",
-    "usd_detail": "• 보유 중인 배당주(*코카콜라·SCHD*) 및 파킹 ETF(*SGOV*)는 *홀딩 유지*하세요.\n• 현재 미국 5단계 퀀트 감시 종목이 전원 관망(매수 적기 0건)이므로, 달러 예수금 *$216.37*은 성급한 저가 매수 없이 현금 보유하며 AI 2사 매수 합의 타점을 대기하세요."
+    "usd_verdict": "⏸️ 달러 $79.32 현금 홀딩 (미국 추천주 전원 관망)",
+    "usd_detail": "• 보유 중인 배당주(*코카콜라·SCHD*) 및 파킹 ETF(*SGOV*)는 *홀딩 유지*하세요.\n• 현재 미국 5단계 퀀트 감시 종목이 전원 관망(매수 적기 0건)이므로, 달러 예수금 *$79.32*은 성급한 저가 매수 없이 현금 보유하며 AI 2사 매수 합의 타점을 대기하세요."
   },
   "market_calendar": {
     "kr": {
@@ -602,6 +602,33 @@
       "created_at": "2026-11-16 10:00",
       "last_executed_at": "2026-11-16T10:00:10.628178",
       "source": "MASTER_PLAN"
+    },
+    {
+      "order_id": "STEP_6_SCHD_USD_DCA_V2",
+      "symbol": "SCHD",
+      "name": "달러 배당 코어 적립 - SCHD 4주",
+      "side": "BUY",
+      "status": "FILLED",
+      "order_qty": 4,
+      "filled_qty": 4,
+      "unit_qty": 4,
+      "price": 34.23,
+      "avg_filled_price": 34.23,
+      "price_is_limit_cap": false,
+      "executions": 1,
+      "max_executions": 1,
+      "execution_history": [
+        {
+          "execution_no": 1,
+          "order_id": "qitJVRbTL0ile5XxkyhM3g-1FX03l_hfIg5KHe6XL0pXCCuQsyUM_ifQDDlE6RII",
+          "qty": 4,
+          "price": 34.23,
+          "executed_at": "2026-11-21T04:25:02.832016"
+        }
+      ],
+      "created_at": "2026-11-21 04:25",
+      "last_executed_at": "2026-11-21T04:25:02.832016",
+      "source": "MASTER_PLAN"
     }
   ],
   "friction_policy": {
@@ -664,7 +691,7 @@
   "master_plan_gate": {
     "watchlist_buy_unlocked": false,
     "total": 5,
-    "done": 1,
+    "done": 2,
     "remaining_steps": [
       {
         "step_id": "STEP_2_SP500_DCA",
@@ -684,13 +711,6 @@
         "step_id": "STEP_4_MERITZ_SWING_V2",
         "stock_name": "메리츠금융지주",
         "symbol": "A138040",
-        "status": "ACTIVE_CONDITIONAL",
-        "progress": "0/1"
-      },
-      {
-        "step_id": "STEP_6_SCHD_USD_DCA_V2",
-        "stock_name": "SCHD",
-        "symbol": "SCHD",
         "status": "ACTIVE_CONDITIONAL",
         "progress": "0/1"
       }
@@ -805,8 +825,8 @@
       "watchlist_buy_unlocked": false
     },
     "daily_stats": {
-      "date": "2026-11-16",
-      "today_bought_krw": 501000
+      "date": "2026-11-21",
+      "today_bought_krw": 183925
     },
     "surplus_budget": {
       "krw_cash": 2476406,
@@ -814,7 +834,7 @@
       "usable_krw": 1976406,
       "reserved_krw": 1363000,
       "surplus_krw": 613406,
-      "daily_remaining_krw": 1700000,
+      "daily_remaining_krw": 1516075,
       "single_order_max_krw": 500000,
       "effective_single_budget_krw": 500000
     },
@@ -958,8 +978,8 @@
         "order_type": "LIMIT",
         "quantity": 4,
         "max_executions": 1,
-        "completed_executions": 0,
-        "status": "ACTIVE_CONDITIONAL",
+        "completed_executions": 1,
+        "status": "COMPLETED",
         "protected": true,
         "funding_source": "USD_CASH_ONLY",
         "conditions": {
@@ -970,8 +990,21 @@
           "require_ai_ensemble": false
         },
         "rationale": "가용 달러 예수금 범위 내 배당 안전판 코어(보호종목) 적립 — $34.50 이하 및 14일 Wilder RSI<=40 과매도 눌림목 충족 시 오늘 밤 미국장부터 4주(최대 $138) 분할 진입 허용",
-        "live_price": 34.26,
-        "live_rsi": 40.1
+        "signal_state": "EXECUTED",
+        "last_signaled_date": "2026-11-21",
+        "execution_history": [
+          {
+            "execution_no": 1,
+            "order_id": "qitJVRbTL0ile5XxkyhM3g-1FX03l_hfIg5KHe6XL0pXCCuQsyUM_ifQDDlE6RII",
+            "qty": 4,
+            "price": 34.23,
+            "executed_at": "2026-11-21T04:25:02.832016"
+          }
+        ],
+        "last_executed_price": 34.23,
+        "last_executed_at": "2026-11-21T04:25:02.832016",
+        "live_price": 34.2,
+        "live_rsi": 39.2
       }
     ],
     "quant_swing_slot": {
