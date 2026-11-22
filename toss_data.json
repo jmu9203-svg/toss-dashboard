@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23 00:10:06",
+  "updated_at": "2026-11-23 00:19:15",
   "account_no": "17601069723",
   "battery": "72% (🔋 DISCHARGING)",
   "tot_rate": -21.99,
@@ -293,9 +293,9 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 15점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-8.3%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 27.7 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 현재 미 증시 폭락과 20일선 하회, 거래량 부족 및 RSI 과매도에도 불구하고 역배열 위험이 커 원금 보호를 위해 관망이 필요합니다. (미국 M7 빅테크 중 PER 밸류에이션 부담이 가장 낮으면서 검색·유튜브 캐시카우와 클라우드 수익성이 동시에 성장하는 핵심 AI 빅테크입니다.)",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-8.3%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 27.7 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 미국 증시 폭락과 20일선 하회·거래량 부족·RSI 과매도 등 복합 리스크가 존재해 현재는 매수를 보류하고 관망해야 합니다. (미국 M7 빅테크 중 PER 밸류에이션 부담이 가장 낮으면서 검색·유튜브 캐시카우와 클라우드 수익성이 동시에 성장하는 핵심 AI 빅테크입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(55점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:24:50",
+      "checked_at": "2026-11-23 00:18:17",
       "ai_models": [
         {
           "provider": "Google",
@@ -335,9 +335,9 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 15점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-7.3%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 34.4 눌림목이나 역배열 주의(+2점)] 미 증시 패닉 폭락장(S&P500 -3.64%) 진입과 20일선 역배열 하회(-7.3%) 상태로 인해 '떨어지는 칼날' 위험이 크므로 신규 매수를 전면 보류하고 관망합니다. (현재 미국 보유주(KO·SCHD·SGOV)에 없는 AI 소프트웨어 코어 성장주로, 압도적인 현금흐름과 안정성을 겸비한 대표 빅테크입니다.)",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-7.3%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 34.4 눌림목이나 역배열 주의(+2점)] 현재 미 증시가 폭락장이고 MSFT가 20일선 아래에 머무르며 거래량은 평균 대비 과도하게 높지만 RSI가 34.4로 과매도 구간에 있어 추가 하락 위험이 크므로 관망이 필요합니다. (현재 미국 보유주(KO·SCHD·SGOV)에 없는 AI 소프트웨어 코어 성장주로, 압도적인 현금흐름과 안정성을 겸비한 대표 빅테크입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(55점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:25:18",
+      "checked_at": "2026-11-23 00:18:35",
       "ai_models": [
         {
           "provider": "Google",
@@ -377,9 +377,9 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 14점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-7.6%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 25.1 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 현재 시장은 폭락장이고 VOO가 20일선 아래에 머무르며 거래량은 충분히 확보되지 않아 가짜 반등 위험이 크고 RSI도 과매도이지만 역배열·거래량 부족으로 안전을 위해 관망해야 합니다. (개별 기업 실적 쇼크나 반독점 소송 리스크 없이 미국 최우량 500개 기업(애플·엔비디아·MS·알파벳 등)의 성장을 통째로 담는 핵심 지수 ETF입니다.)",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-7.6%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 25.1 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 미국 증시가 급락하는 거시 레짐에 20일선 아래에 머물며 역배열 상태이고 RSI가 과매도임에도 불구하고 추가 하락 위험이 커, 따라서 원금 보호 차원에서 관망이 필요합니다. (개별 기업 실적 쇼크나 반독점 소송 리스크 없이 미국 최우량 500개 기업(애플·엔비디아·MS·알파벳 등)의 성장을 통째로 담는 핵심 지수 ETF입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(54점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:24:42",
+      "checked_at": "2026-11-23 00:18:09",
       "ai_models": [
         {
           "provider": "Google",
@@ -419,9 +419,51 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 14점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-30.8%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 14.9 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 미 증시 폭락과 20일선 하회·거래량 부족·RSI 과매도 등 역배열 위험이 커 현재는 매수보다 관망이 필요합니다. (전 세계 AI 가속기 시장을 독점하는 대장주이나, 이미 국내 계좌에 삼성전자·SK하이닉스 비중이 높으므로 단기 과열 시 추격매수를 피하고 RSI 눌림목 구간에서만 소수점 적립이 유리합니다.)",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 미 증시 패닉 폭락장 (S&P500 -3.64% 급락 — 신규매수 차단), -15점) | 20일선 역배열 하회(-30.8%, -12점) | 윗꼬리 매도 저항(-4점) | RSI 14.9 과매도이나 역배열·거래량 부족으로 바닥잡기 주의(+3점 제한)] 미국 증시가 급락하는 폭락장이고 NVDA는 20일선 아래에 머무르며 거래량도 평균 대비 부족해 가짜 반등 위험이 크므로 현재는 매수를 보류하고 관망해야 합니다. (전 세계 AI 가속기 시장을 독점하는 대장주이나, 이미 국내 계좌에 삼성전자·SK하이닉스 비중이 높으므로 단기 과열 시 추격매수를 피하고 RSI 눌림목 구간에서만 소수점 적립이 유리합니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(54점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:25:10",
+      "checked_at": "2026-11-23 00:18:27",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": 52,
+          "decision": "관망"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq 120B",
+          "score": 55,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세"
+    },
+    {
+      "symbol": "138040",
+      "name": "메리츠금융지주",
+      "marketCountry": "KR",
+      "currency": "KRW",
+      "sector": "금융 밸류업 & 자사주 소각·주주환원 1위",
+      "theme_tag": "외인·기관 수급 주도주 🏦",
+      "lastPrice": 125900.0,
+      "change_pct": 0.56,
+      "rsi": 50.1,
+      "atr_pct": 5.1,
+      "high_52w": 139200.0,
+      "from_high_52w_pct": -9.55,
+      "ai_score": 54,
+      "quant_score": 46,
+      "q_score": 46,
+      "buy_votes": 0,
+      "hold_votes": 2,
+      "earn_imminent": false,
+      "chasing_risk": false,
+      "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
+      "audit_status": "HOLD_CONSENSUS",
+      "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 8점) ➔ 진입 보류",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단), -15점) | 20일선 근접 지지권(-0.2%, +2점) | 윗꼬리 매도 저항(-4점) | RSI 50.1 과열 없는 안정 구간(+3점) | 외인·기관 쌍끌이 순매수 유입(+8점)] 패닉 폭락장과 거래량 20일 평균 대비 61% 이하, 20일선 아래(역배열) 및 실적 부진 뉴스 등 리스크가 다중으로 존재해 즉시 매수를 보류하고 관망해야 합니다. (반도체 일변도인 국내 포트폴리오의 변동성을 잡아줄 대표적인 저PBR·고주주환원 밸류업 대장주입니다.)",
+      "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(54점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
+      "checked_at": "2026-11-23 00:18:46",
       "ai_models": [
         {
           "provider": "Google",
@@ -461,56 +503,14 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 8점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단), -15점) | 20일선 근접 지지권(-0.7%, +2점) | RSI 43.9 과열 없는 안정 구간(+3점) | 메이저 수급 유입(+4점)] 패닉 폭락장이라는 거시 리스크와 20일선 아래 거래, 거래량 90% 미만 등 불확실성이 커 현재는 매수를 보류하고 관망해야 합니다. (외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.)",
+      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단), -15점) | 20일선 근접 지지권(-0.7%, +2점) | RSI 43.9 과열 없는 안정 구간(+3점) | 메이저 수급 유입(+4점)] 코스피200이 -5.48% 급락한 패닉 폭락장 레짐이 적용되었고 주가가 20일선 아래에 위치해 있어, 한투 동일 초보수적 기준에 따라 신규 매수를 전면 보류하고 안전 관망합니다. (외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(54점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:37:24",
+      "checked_at": "2026-11-23 00:18:57",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
           "score": 52,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq 120B",
-          "score": 55,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세"
-    },
-    {
-      "symbol": "138040",
-      "name": "메리츠금융지주",
-      "marketCountry": "KR",
-      "currency": "KRW",
-      "sector": "금융 밸류업 & 자사주 소각·주주환원 1위",
-      "theme_tag": "외인·기관 수급 주도주 🏦",
-      "lastPrice": 125900.0,
-      "change_pct": 0.56,
-      "rsi": 50.1,
-      "atr_pct": 5.1,
-      "high_52w": 139200.0,
-      "from_high_52w_pct": -9.55,
-      "ai_score": 52,
-      "quant_score": 46,
-      "q_score": 46,
-      "buy_votes": 0,
-      "hold_votes": 2,
-      "earn_imminent": false,
-      "chasing_risk": false,
-      "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
-      "audit_status": "HOLD_CONSENSUS",
-      "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 6점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 🚨 거시 폭락장 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단), -15점) | 20일선 근접 지지권(-0.2%, +2점) | 윗꼬리 매도 저항(-4점) | RSI 50.1 과열 없는 안정 구간(+3점) | 외인·기관 쌍끌이 순매수 유입(+8점)] 패닉 폭락장과 거래량 20일 평균 대비 61% 미만, 20일선 아래(역배열) 및 실적 부진 뉴스 등 리스크가 다중으로 존재해 안전을 위해 관망합니다. (반도체 일변도인 국내 포트폴리오의 변동성을 잡아줄 대표적인 저PBR·고주주환원 밸류업 대장주입니다.)",
-      "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(52점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-22 20:25:23",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 50,
           "decision": "관망"
         },
         {
@@ -690,7 +690,7 @@
   },
   "master_plan_gate": {
     "watchlist_buy_unlocked": false,
-    "total": 5,
+    "total": 7,
     "done": 2,
     "remaining_steps": [
       {
@@ -701,11 +701,11 @@
         "progress": "2/3"
       },
       {
-        "step_id": "STEP_3_SEC_DIP_DCA",
+        "step_id": "STEP_3_SEC_STABLE_DCA",
         "stock_name": "삼성전자",
         "symbol": "A005930",
         "status": "ACTIVE_CONDITIONAL",
-        "progress": "0/6"
+        "progress": "0/10"
       },
       {
         "step_id": "STEP_4_MERITZ_SWING_V2",
@@ -713,6 +713,20 @@
         "symbol": "A138040",
         "status": "ACTIVE_CONDITIONAL",
         "progress": "0/1"
+      },
+      {
+        "step_id": "STEP_7_SEC_TRIM",
+        "stock_name": "삼성전자",
+        "symbol": "A005930",
+        "status": "ACTIVE_CONDITIONAL",
+        "progress": "0/2"
+      },
+      {
+        "step_id": "STEP_8_HYNIX_TRIM",
+        "stock_name": "SK하이닉스",
+        "symbol": "A000660",
+        "status": "ACTIVE_CONDITIONAL",
+        "progress": "0/2"
       }
     ],
     "watchlist_locked_permanently": true,
@@ -790,6 +804,17 @@
       "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 974,000원 이하 극저점 도달 시 수동 검토 알림만 1일 1회 발송"
     }
   ],
+  "reentry_watch_alerts": [
+    {
+      "alert_id": "REENTRY_WATCH_HYNIX_1",
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "require_market_stabilized": true,
+      "auto_execute": false,
+      "action": "NOTIFY_MANUAL_CONFIRM",
+      "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 4중 장 안정 게이트(VIX<=25 · SOXX 5일선 · KR 락다운 해제 · 하이닉스 5일선 & 외국인 2거래일 순매수) 충족 시 수동 재진입 검토 알림만 1일 1회 발송"
+    }
+  ],
   "sgov_reserve_trigger": {
     "alert_id": "SGOV_RESERVE_SWITCH",
     "symbol": "SGOV",
@@ -804,10 +829,37 @@
     "auto_execute": false,
     "action": "NOTIFY_MANUAL_CONFIRM"
   },
+  "market_stabilization_gate": {
+    "symbol": "005930",
+    "passed": false,
+    "vix": 35.89,
+    "max_vix": 25.0,
+    "vix_ok": false,
+    "soxx_price": 123.4,
+    "soxx_ma5": 137.18,
+    "soxx_ok": false,
+    "kr_regime_ok": false,
+    "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
+    "stock_price": 180900.0,
+    "stock_ma5": 191900.0,
+    "stock_ma5_ok": false,
+    "foreign_ok": false,
+    "foreign_streak_days": 0,
+    "min_foreign_days": 2,
+    "foreign_data_ok": true,
+    "failed_reasons": [
+      "VIX 공포(35.89>25.0)",
+      "SOXX 5일선 미회복(123.40<137.18)",
+      "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
+      "005930 5일선 미회복(180,900<191,900)",
+      "외국인 0/2거래일"
+    ],
+    "summary": "4중 장안정 미충족: VIX 공포(35.89>25.0), SOXX 5일선 미회복(123.40<137.18), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,900<191,900), 외국인 0/2거래일"
+  },
   "master_plan": {
-    "schema_version": "2.1.0",
-    "plan_name": "토스증권 마스터플랜 v2.1 (비반도체 전환 + 잉여금 극저점 스나이퍼)",
-    "updated_at": "2026-11-20T19:05:00+09:00",
+    "schema_version": "2.2.0",
+    "plan_name": "토스증권 마스터플랜 v2.2 (반도체 반등 분할축소 + 4중 장안정 재진입)",
+    "updated_at": "2026-11-22T23:35:00+09:00",
     "account_safety": {
       "krw_hard_floor": 500000,
       "daily_max_buy_krw": 1700000,
@@ -817,6 +869,9 @@
       "allowed_windows_kst": [
         "10:00-10:35",
         "14:30-15:15"
+      ],
+      "sell_windows_kst": [
+        "10:00-15:15"
       ],
       "us_open_grace_minutes": 10,
       "auto_execute_after_minutes": 15,
@@ -837,6 +892,33 @@
       "daily_remaining_krw": 1700000,
       "single_order_max_krw": 500000,
       "effective_single_budget_krw": 500000
+    },
+    "market_stabilization": {
+      "symbol": "005930",
+      "passed": false,
+      "vix": 35.89,
+      "max_vix": 25.0,
+      "vix_ok": false,
+      "soxx_price": 123.4,
+      "soxx_ma5": 137.18,
+      "soxx_ok": false,
+      "kr_regime_ok": false,
+      "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
+      "stock_price": 180900.0,
+      "stock_ma5": 191900.0,
+      "stock_ma5_ok": false,
+      "foreign_ok": false,
+      "foreign_streak_days": 0,
+      "min_foreign_days": 2,
+      "foreign_data_ok": true,
+      "failed_reasons": [
+        "VIX 공포(35.89>25.0)",
+        "SOXX 5일선 미회복(123.40<137.18)",
+        "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
+        "005930 5일선 미회복(180,900<191,900)",
+        "외국인 0/2거래일"
+      ],
+      "summary": "4중 장안정 미충족: VIX 공포(35.89>25.0), SOXX 5일선 미회복(123.40<137.18), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -5.48% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,900<191,900), 외국인 0/2거래일"
     },
     "protected_tickers": [
       "000660",
@@ -913,8 +995,8 @@
         "live_rsi": 27.2
       },
       {
-        "step_id": "STEP_3_SEC_DIP_DCA",
-        "name": "잉여금 극저점 스나이퍼 - 삼성전자 동적 분할매수",
+        "step_id": "STEP_3_SEC_STABLE_DCA",
+        "name": "장 안정 후 재진입 - 삼성전자 잉여금 분할매수",
         "market": "KR",
         "symbol": "A005930",
         "stock_name": "삼성전자",
@@ -923,20 +1005,20 @@
         "sizing_mode": "SURPLUS_KRW_DCA",
         "quantity": 1,
         "min_quantity": 1,
-        "max_executions": 6,
+        "max_executions": 10,
         "completed_executions": 0,
-        "cooldown_days": 5,
+        "cooldown_days": 3,
         "status": "ACTIVE_CONDITIONAL",
         "protected": true,
         "conditions": {
-          "max_price": 168000,
+          "max_price": 200000,
           "max_order_krw": 500000,
-          "max_rsi": 30.0,
-          "require_intraday_rebound_pct_from_low": 1.2,
+          "max_rsi": 60.0,
           "require_lockdown_off": true,
+          "require_market_stabilized": true,
           "require_ai_ensemble": false
         },
-        "rationale": "원화 비상금(50만원) 및 잔여 비반도체 예약금(S&P500·메리츠·스윙슬롯)을 100% 보호한 뒤 남는 잉여 예수금(월별 추가 입금 자동 반영)으로만 삼성전자 극저점(168,000원 이하 · 14일 RSI<=30 · 장중 저점대비 +1.2% 반등 · 락다운 해제)에서 1회 50만원 상한·5일 쿨다운으로 동적 온주 분할매수",
+        "rationale": "공포장(VIX>25)에서는 삼성전자 추가매수를 전면 보류하고, 4중 장안정 게이트(VIX<=25 · SOXX 5일선 회복 · KR 락다운 해제 · 삼성전자 5일선 회복 & 외국인 2거래일↑ 순매수) 충족 시에만 비반도체 예약금을 침범하지 않는 잉여 원화(축소 회수금 + 월별 입금 자동 반영)로 200,000원 이하 · RSI<=60 조건에서 1회 50만원 상한·3일 쿨다운·최대 10회 분할 재매수",
         "live_price": 180900.0,
         "live_rsi": 35.6,
         "estimated_dynamic_qty": 2
@@ -990,8 +1072,8 @@
           "require_ai_ensemble": false
         },
         "rationale": "가용 달러 예수금 범위 내 배당 안전판 코어(보호종목) 적립 — $34.50 이하 및 14일 Wilder RSI<=40 과매도 눌림목 충족 시 오늘 밤 미국장부터 4주(최대 $138) 분할 진입 허용",
-        "signal_state": "EXECUTED",
-        "last_signaled_date": "2026-11-21",
+        "last_executed_at": "2026-11-21T04:25:02.832016",
+        "last_executed_price": 34.23,
         "execution_history": [
           {
             "execution_no": 1,
@@ -1001,10 +1083,64 @@
             "executed_at": "2026-11-21T04:25:02.832016"
           }
         ],
-        "last_executed_price": 34.23,
-        "last_executed_at": "2026-11-21T04:25:02.832016",
+        "signal_state": "EXECUTED",
+        "last_signaled_date": "2026-11-21",
         "live_price": 33.94,
         "live_rsi": 36.9
+      },
+      {
+        "step_id": "STEP_7_SEC_TRIM",
+        "name": "반등 분할축소 - 삼성전자 8주×2회",
+        "market": "KR",
+        "symbol": "A005930",
+        "stock_name": "삼성전자",
+        "side": "SELL",
+        "order_type": "LIMIT",
+        "quantity": 8,
+        "min_remaining_qty": 6,
+        "max_executions": 2,
+        "completed_executions": 0,
+        "cooldown_trading_days": 2,
+        "status": "ACTIVE_CONDITIONAL",
+        "protected": true,
+        "allow_protected_plan_sell": true,
+        "conditions": {
+          "min_change_pct": 2.5,
+          "alt_rebound_from_low_pct": 3.5,
+          "alt_require_positive_day": true,
+          "require_below_ma20": true,
+          "block_if_market_stabilized": true
+        },
+        "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 22주 중 8주씩 2회(최소 6주 잔류·2거래일 쿨다운) 자동 지정가 분할축소하여 장안정 후 재매수 현금 확보",
+        "live_price": 180900.0,
+        "live_rsi": 35.6
+      },
+      {
+        "step_id": "STEP_8_HYNIX_TRIM",
+        "name": "반등 분할축소 - SK하이닉스 1주×2회",
+        "market": "KR",
+        "symbol": "A000660",
+        "stock_name": "SK하이닉스",
+        "side": "SELL",
+        "order_type": "LIMIT",
+        "quantity": 1,
+        "min_remaining_qty": 0,
+        "max_executions": 2,
+        "completed_executions": 0,
+        "cooldown_trading_days": 2,
+        "status": "ACTIVE_CONDITIONAL",
+        "protected": true,
+        "allow_protected_plan_sell": true,
+        "conditions": {
+          "min_change_pct": 2.5,
+          "alt_rebound_from_low_pct": 3.5,
+          "alt_require_positive_day": true,
+          "require_below_ma20": true,
+          "block_if_market_stabilized": true
+        },
+        "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 2주 중 1주씩 2회(2거래일 쿨다운) 자동 지정가 분할매도",
+        "live_price": 1099000.0,
+        "live_rsi": 38.2
       }
     ],
     "quant_swing_slot": {
@@ -1092,6 +1228,20 @@
         "distance_pct": -11.37
       }
     ],
+    "reentry_watch_alerts": [
+      {
+        "alert_id": "REENTRY_WATCH_HYNIX_1",
+        "symbol": "000660",
+        "name": "SK하이닉스",
+        "require_market_stabilized": true,
+        "auto_execute": false,
+        "action": "NOTIFY_MANUAL_CONFIRM",
+        "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 4중 장 안정 게이트(VIX<=25 · SOXX 5일선 · KR 락다운 해제 · 하이닉스 5일선 & 외국인 2거래일 순매수) 충족 시 수동 재진입 검토 알림만 1일 1회 발송",
+        "held_qty": 2.0,
+        "live_price": 1099000.0,
+        "live_rsi": 38.2
+      }
+    ],
     "sgov_reserve_trigger": {
       "alert_id": "SGOV_RESERVE_SWITCH",
       "symbol": "SGOV",
@@ -1106,9 +1256,9 @@
       "auto_execute": false,
       "action": "NOTIFY_MANUAL_CONFIRM",
       "held_qty": 5.0,
-      "benchmark_price": 702.07,
+      "benchmark_price": 689.81,
       "benchmark_high_52w": 781.62,
-      "live_drawdown_pct": -10.18
+      "live_drawdown_pct": -11.75
     }
   }
 }
