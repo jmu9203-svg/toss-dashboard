@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-24 00:20:18",
+  "updated_at": "2026-11-24 00:26:21",
   "account_no": "17601069723",
   "battery": "16% (🔋 DISCHARGING)",
   "tot_rate": -21.02,
   "mkt_val_krw": 7592300,
   "tot_pchs_krw": 10081100,
   "pnl_krw": -2488800,
-  "mkt_val_usd": 1258.15,
+  "mkt_val_usd": 1257.77,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 28.63,
+  "pnl_usd": 28.26,
   "krw_cash": 109367,
   "usd_cash": 1495.23,
   "holding_count": 7,
@@ -121,11 +121,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 281.34,
+      "lastPrice": 282.95,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -4.2,
-      "profitLossAmount": -4.204168,
-      "rsi": 40.6,
+      "profitLossRate": -3.66,
+      "profitLossAmount": -3.656538,
+      "rsi": 41.7,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 60,
@@ -155,11 +155,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 96.14,
+      "lastPrice": 95.85,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 9.22,
-      "profitLossAmount": 32.48,
-      "rsi": 53.9,
+      "profitLossRate": 8.89,
+      "profitLossAmount": 31.32,
+      "rsi": 52.8,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 65,
@@ -189,11 +189,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 8.0,
-      "lastPrice": 34.33,
+      "lastPrice": 34.36,
       "averagePurchasePrice": 34.3043,
-      "profitLossRate": 0.07,
-      "profitLossAmount": 0.2056,
-      "rsi": 42.3,
+      "profitLossRate": 0.16,
+      "profitLossAmount": 0.4456,
+      "rsi": 42.7,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 76,
@@ -257,9 +257,9 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 81.4,
     "kr_eval": 7592300.0,
-    "us_eval": 1258.15,
-    "growth_eval": 95.7,
-    "div_eval": 659.2,
+    "us_eval": 1257.77,
+    "growth_eval": 96.24,
+    "div_eval": 658.28,
     "park_eval": 503.25,
     "diagnoses": [
       "⚠️ 국내 계좌 반도체 비중 과다 (81.4%)",
@@ -833,11 +833,11 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 27.57,
+    "vix": 27.59,
     "max_vix": 25.0,
     "vix_ok": false,
-    "soxx_price": 140.88,
-    "soxx_ma5": 137.11,
+    "soxx_price": 142.04,
+    "soxx_ma5": 137.34,
     "soxx_ok": true,
     "kr_regime_ok": false,
     "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
@@ -849,12 +849,12 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(27.57>25.0)",
+      "VIX 공포(27.59>25.0)",
       "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
       "005930 5일선 미회복(180,600<189,020)",
       "외국인 1/2거래일"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(27.57>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
+    "summary": "4중 장안정 미충족: VIX 공포(27.59>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
   },
   "master_plan": {
     "schema_version": "2.2.0",
@@ -896,11 +896,11 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 27.57,
+      "vix": 27.59,
       "max_vix": 25.0,
       "vix_ok": false,
-      "soxx_price": 140.88,
-      "soxx_ma5": 137.11,
+      "soxx_price": 142.04,
+      "soxx_ma5": 137.34,
       "soxx_ok": true,
       "kr_regime_ok": false,
       "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
@@ -912,12 +912,12 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(27.57>25.0)",
+        "VIX 공포(27.59>25.0)",
         "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
         "005930 5일선 미회복(180,600<189,020)",
         "외국인 1/2거래일"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(27.57>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
+      "summary": "4중 장안정 미충족: VIX 공포(27.59>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
     },
     "protected_tickers": [
       "000660",
@@ -1094,8 +1094,8 @@
         ],
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-21",
-        "live_price": 34.33,
-        "live_rsi": 42.3
+        "live_price": 34.36,
+        "live_rsi": 42.7
       },
       {
         "step_id": "STEP_7_SEC_TRIM",
@@ -1265,9 +1265,9 @@
       "auto_execute": false,
       "action": "NOTIFY_MANUAL_CONFIRM",
       "held_qty": 5.0,
-      "benchmark_price": 724.37,
+      "benchmark_price": 727.12,
       "benchmark_high_52w": 781.62,
-      "live_drawdown_pct": -7.32
+      "live_drawdown_pct": -6.97
     }
   }
 }
