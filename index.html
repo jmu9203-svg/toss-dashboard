@@ -173,8 +173,8 @@
 
   <div class="header">
     <div class="title-group">
-      <h1>토스 실전 운용 <span class="toss-tag">AI 자율</span></h1>
-      <p>토스증권 실전 계좌(17601069723) · 마스터플랜 v2.0 비반도체 전환 &amp; 보호종목 자율운용</p>
+      <h1>토스 실전 운용 <span class="toss-tag">관제·알림 전용</span></h1>
+      <p>토스증권 실전 계좌(17601069723) · 읽기 전용 실시간 관제 &amp; AI 어드바이저 (자동매매 영구 차단)</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -185,7 +185,7 @@
         <span id="statusText">24/7 실시간 관제</span>
         <span id="marketToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
       </div>
-      <div class="status-badge-btn" id="watchdogSyncBtn" onclick="toggleWatchdogBanner()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-sub);" title="클릭하여 4중 안전 가드레일 및 자율 운용 정책 확인">
+      <div class="status-badge-btn" id="watchdogSyncBtn" onclick="toggleWatchdogBanner()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-sub);" title="클릭하여 토스 읽기 전용 관제 및 동기화 상태 확인">
         <span>🕒 </span><span id="watchdogSyncAge">방금 동기화</span>
         <span id="watchdogToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
       </div>
@@ -194,7 +194,7 @@
 
   <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
   <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 마스터플랜 v2.0 자율 매매 가동 중</b> — 일반 감시종목 영구 잠금 · STEP 5 비반도체 단일 슬롯 · 삼전·하닉·360750·배당코어 손절 제외</span>
+    <span id="watchdogText">🔒 <b>토스증권 읽기 전용 관제 · AI 어드바이저 (자동매매 영구 차단)</b> — 실시간 잔고·수익률·AI 분석·수동 알림만 제공 (자동 주문 0%)</span>
     <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
   </div>
 
@@ -896,11 +896,11 @@
           } else if (wdBanner && wdText) {
             wdBanner.style.background = 'rgba(49, 130, 246, 0.10)';
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
-            const isAuto = d.auto_trade !== false;
+            const isAuto = d.auto_trade === true;
             if (isAuto) {
-              wdText.innerHTML = '⚡ <b>토스증권 마스터플랜 v2.0 가동 중</b> — 일반 감시종목 영구 잠금 · STEP 5 비반도체 단일 슬롯 · 삼전·하닉·360750·배당코어 손절 제외';
+              wdText.innerHTML = '⚡ <b>토스증권 마스터플랜 가동 중</b>';
             } else {
-              wdText.innerHTML = '🛡️ <b>대화형 스마트 수동 승인 매매 (옵션 A)</b> — 텔레그램 2중 승인 시에만 실행 · 오주문 리스크 0%';
+              wdText.innerHTML = '🔒 <b>토스증권 읽기 전용 관제 · AI 어드바이저 (자동매매 영구 차단)</b> — 실시간 잔고·수익률·AI 분석·수동 알림만 제공 (자동 주문 0%)';
             }
           }
         }
@@ -978,7 +978,7 @@
         const krInSession = (kr.is_in_session !== undefined) ? kr.is_in_session : (kstMin >= 9 * 60 && kstMin < 15 * 60 + 30 && kstDay >= 1 && kstDay <= 5);
         const usInSession = (us.is_in_session !== undefined) ? us.is_in_session : ((kstMin < closeMin && kstDay >= 2 && kstDay <= 6) || (kstMin >= openMin && kstDay >= 1 && kstDay <= 5));
 
-        let summary = 'B-플랜 자율 가동';
+        let summary = '실시간 관제 · AI 어드바이저';
         let dotColor = '#10b981';
 
         if (krInSession && usInSession) {
@@ -997,7 +997,7 @@
           summary = '🔴 주말 휴장 (자체 감사)';
           dotColor = '#f87171';
         } else {
-          summary = '🌙 장 마감 (자율 PB 대기)';
+          summary = '🌙 장 마감 (관제 대기)';
           dotColor = '#94a3b8';
         }
 
@@ -1336,7 +1336,7 @@
                   ? '<span class="mp-protect-pill" style="background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35);">🛡️ 영구 보호</span>'
                   : ((Number(it.quantity) || 0) < 1
                     ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
-                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>')}
+                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">📊 AI 관제</span>')}
               </div>
               <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
             </div>
