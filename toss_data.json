@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-24 04:22:01",
+  "updated_at": "2026-11-24 04:29:24",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
   "tot_rate": -21.0,
   "mkt_val_krw": 7592300,
   "tot_pchs_krw": 10081100,
   "pnl_krw": -2488800,
-  "mkt_val_usd": 1259.37,
+  "mkt_val_usd": 1259.41,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 29.85,
+  "pnl_usd": 29.89,
   "krw_cash": 109367,
   "usd_cash": 1495.23,
   "holding_count": 7,
@@ -121,11 +121,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 283.55,
+      "lastPrice": 283.43,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -3.45,
-      "profitLossAmount": -3.452452,
-      "rsi": 42.0,
+      "profitLossRate": -3.49,
+      "profitLossAmount": -3.493269,
+      "rsi": 41.9,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 65,
@@ -155,11 +155,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 96.13,
+      "lastPrice": 96.15,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 9.21,
-      "profitLossAmount": 32.44,
-      "rsi": 53.9,
+      "profitLossRate": 9.23,
+      "profitLossAmount": 32.52,
+      "rsi": 54.1,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 64,
@@ -227,13 +227,13 @@
       "averagePurchasePrice": 100.62,
       "profitLossRate": 0.01,
       "profitLossAmount": 0.1,
-      "rsi": 60.7,
+      "rsi": 61.3,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 68,
       "ai_action_tip": "월초 배당락 직후 국채 이자 재누적 구간 — 기존 파킹 포지션은 든든히 홀딩 유지하되 유휴 달러 예수금 파킹 시에만 활용하세요.",
-      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 67점 · 편차 2점 | Groq:gpt-oss-120b(66점 관망), Groq:qwen/qwen3.8-27b(68점 관망))] SGOV의 14일 RSI(60.7)는 주가 하락이나 기술적 과매도 신호가 아니라, 매월 초 배당락(-$0.32)으로 월배당금이 지급된 직후 다시 초단기 미국채 이자가 하루 $0.01~$0.02씩 계단식으로 누적되기 시작하는 정상적인 금리 사이클입니다. 연 4~5% 달러 월배당 이자를 안정적으로 수령하면서 향후 빅테크·배당주 조정 시 투입할 대기 자금(Dry Powder)으로서 든든하게 홀딩 관망합니다.",
-      "checked_at": "2026-11-24 04:14:31",
+      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 67점 · 편차 2점 | Groq:gpt-oss-120b(66점 관망), Groq:qwen/qwen3.8-27b(68점 관망))] SGOV의 14일 RSI(61.3)는 주가 하락이나 기술적 과매도 신호가 아니라, 매월 초 배당락(-$0.32)으로 월배당금이 지급된 직후 다시 초단기 미국채 이자가 하루 $0.01~$0.02씩 계단식으로 누적되기 시작하는 정상적인 금리 사이클입니다. 연 4~5% 달러 월배당 이자를 안정적으로 수령하면서 향후 빅테크·배당주 조정 시 투입할 대기 자금(Dry Powder)으로서 든든하게 홀딩 관망합니다.",
+      "checked_at": "2026-11-24 04:29:23",
       "ai_models": [
         {
           "provider": "Google",
@@ -257,9 +257,9 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 81.4,
     "kr_eval": 7592300.0,
-    "us_eval": 1259.37,
-    "growth_eval": 96.45,
-    "div_eval": 659.72,
+    "us_eval": 1259.41,
+    "growth_eval": 96.41,
+    "div_eval": 659.8,
     "park_eval": 503.2,
     "diagnoses": [
       "⚠️ 국내 계좌 반도체 비중 과다 (81.4%)",
@@ -833,11 +833,11 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 26.45,
+    "vix": 26.62,
     "max_vix": 25.0,
     "vix_ok": false,
-    "soxx_price": 139.51,
-    "soxx_ma5": 136.84,
+    "soxx_price": 139.42,
+    "soxx_ma5": 136.82,
     "soxx_ok": true,
     "kr_regime_ok": false,
     "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
@@ -849,12 +849,12 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(26.45>25.0)",
+      "VIX 공포(26.62>25.0)",
       "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
       "005930 5일선 미회복(180,600<189,020)",
       "외국인 1/2거래일"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(26.45>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
+    "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
   },
   "master_plan": {
     "schema_version": "2.2.0",
@@ -896,11 +896,11 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 26.45,
+      "vix": 26.62,
       "max_vix": 25.0,
       "vix_ok": false,
-      "soxx_price": 139.51,
-      "soxx_ma5": 136.84,
+      "soxx_price": 139.42,
+      "soxx_ma5": 136.82,
       "soxx_ok": true,
       "kr_regime_ok": false,
       "kr_regime_label": "🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)",
@@ -912,12 +912,12 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(26.45>25.0)",
+        "VIX 공포(26.62>25.0)",
         "KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단))",
         "005930 5일선 미회복(180,600<189,020)",
         "외국인 1/2거래일"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(26.45>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
+      "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), KR 레짐 락다운(🚨 패닉 폭락장 (직전 거래일 마감 기준 코스피200 -3.20% 급락 — 오늘 09:00 개장 시 신규매수 전면 차단)), 005930 5일선 미회복(180,600<189,020), 외국인 1/2거래일"
     },
     "protected_tickers": [
       "000660",
@@ -1265,9 +1265,9 @@
       "auto_execute": false,
       "action": "NOTIFY_MANUAL_CONFIRM",
       "held_qty": 5.0,
-      "benchmark_price": 723.62,
+      "benchmark_price": 723.67,
       "benchmark_high_52w": 781.62,
-      "live_drawdown_pct": -7.42
+      "live_drawdown_pct": -7.41
     }
   }
 }
