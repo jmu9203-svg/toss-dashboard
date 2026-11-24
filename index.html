@@ -173,8 +173,8 @@
 
   <div class="header">
     <div class="title-group">
-      <h1>토스 실전 운용 <span class="toss-tag">AI 자율</span></h1>
-      <p>토스증권 실전 계좌(17601069723) · 한·미 우량주 퀀트+AI 자율매매 v3.0 (삼전·하닉 수동전용 · 배당/지수코어 보호)</p>
+      <h1>토스 실전 운용 <span class="toss-tag">관제·알림 전용</span></h1>
+      <p>토스증권 실전 계좌(17601069723) · 읽기 전용 실시간 관제 &amp; AI 어드바이저 (자동매매 영구 차단)</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -182,10 +182,10 @@
       </div>
       <div class="status-badge-btn" id="systemStatus" onclick="toggleMarketCalendar()" title="클릭하여 한·미 증시 운영시간 및 실시간 개장 현황 확인">
         <div class="pulse-dot" id="systemPulseDot"></div>
-        <span id="statusText">AI 자율 가동 중</span>
+        <span id="statusText">24/7 실시간 관제</span>
         <span id="marketToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
       </div>
-      <div class="status-badge-btn" id="watchdogSyncBtn" onclick="toggleWatchdogBanner()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-sub);" title="클릭하여 토스 우량주 AI 자율매매 및 안전 가드레일 확인">
+      <div class="status-badge-btn" id="watchdogSyncBtn" onclick="toggleWatchdogBanner()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-sub);" title="클릭하여 토스 읽기 전용 관제 및 동기화 상태 확인">
         <span>🕒 </span><span id="watchdogSyncAge">방금 동기화</span>
         <span id="watchdogToggleArrow" style="font-size: 10px; margin-left: 2px; opacity: 0.8;">▾</span>
       </div>
@@ -194,7 +194,7 @@
 
   <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
   <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.0 가동 중</b> — 국내 100선·미국 30선 퀀트+2사 AI 교차검증 · 삼전·하닉 수동전용 · 360750·KO·SCHD·SGOV 영구보호</span>
+    <span id="watchdogText">🔒 <b>토스증권 읽기 전용 관제 · AI 어드바이저 (자동매매 영구 차단)</b> — 실시간 잔고·수익률·AI 분석·수동 알림만 제공 (자동 주문 0%)</span>
     <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
   </div>
 
@@ -283,13 +283,13 @@
 
     <div class="strategy-footer">
       <span id="healthPrescription">자산 배분 분석 중...</span>
-      <span>🛡️ 원화 100만원·달러 $150 안전 하한선 가드 가동</span>
+      <span>🛡️ 예수금 50만원 하한선 안전 가드 가동</span>
     </div>
   </div>
 
   <div class="filter-tabs" role="tablist" aria-label="토스 계좌 보기 필터">
     <button type="button" class="tab-btn active" role="tab" aria-selected="true" onclick="setFilter('ALL', this)">전체 종목</button>
-    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('PLAN', this)">🤖 자율매매 규칙</button>
+    <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('PLAN', this)">📋 마스터플랜</button>
     <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('KR', this)">국내 주식</button>
     <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('US', this)">해외 주식</button>
     <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setFilter('RECOMMEND', this)">감시 종목</button>
@@ -423,31 +423,21 @@
       const safety = mp.account_safety || {};
       const dailyStats = mp.daily_stats || {};
       const protectedSet = new Set((mp.protected_tickers || []).map(normSym));
-      const manualOnlyList = mp.manual_only_tickers || ['005930', '000660'];
       const alertState = mp.advisory_alert_state || {};
 
-      document.getElementById('sectionTitleText').textContent = steps.length === 0
-        ? '🤖 한·미 우량주 자율매매 v' + (mp.schema_version || '3.0.0') + ' 규칙'
-        : '📋 마스터플랜 v' + (mp.schema_version || '2.2.0') + ' 전략 관제';
+      document.getElementById('sectionTitleText').textContent = '📋 마스터플랜 v' + (mp.schema_version || '2.2.0') + ' 전략 관제';
       const activeStepCount = steps.filter(s => ['ACTIVE', 'ACTIVE_CONDITIONAL'].includes(String(s.status || '').toUpperCase())).length;
       const doneStepCount = steps.filter(s => String(s.status || '').toUpperCase() === 'COMPLETED' || Number(s.completed_executions || 0) >= Number(s.max_executions || 1)).length;
-      document.getElementById('holdingCount').textContent = steps.length === 0
-        ? (d.auto_trade === false ? '🟡 수동 대기 모드' : '⚡ 한·미 AI 자율매매 가동 중')
-        : `${doneStepCount}/${steps.length} 완료 · ${activeStepCount}개 감시중`;
+      document.getElementById('holdingCount').textContent = `${doneStepCount}/${steps.length} 완료 · ${activeStepCount}개 감시중`;
 
       const krwCash = Number(d.krw_cash || 0);
       const usdCash = Number(d.usd_cash || 0);
-      const krwFloor = Number(safety.krw_hard_floor || 1000000);
-      const usdFloor = Number(safety.usd_hard_floor || 150);
+      const krwFloor = Number(safety.krw_hard_floor || 500000);
       const singleMax = Number(safety.single_order_max_krw || 500000);
-      const dailyMax = Number(safety.daily_max_buy_krw || 1500000);
-      const maxPerStock = Number(safety.max_per_stock_krw || 1000000);
-      const maxKrPos = Number(safety.max_concurrent_positions_kr || 5);
-      const maxUsPos = Number(safety.max_concurrent_positions_us || 4);
+      const dailyMax = Number(safety.daily_max_buy_krw || 1700000);
       const todayStr = String(d.updated_at || '').slice(0, 10);
       const todayBought = (dailyStats.date === todayStr || !todayStr) ? Number(dailyStats.today_bought_krw || 0) : 0;
       const usableKrw = Math.max(0, krwCash - krwFloor);
-      const usableUsd = Math.max(0, usdCash - usdFloor);
 
       let remainingPlanKrw = 0;
       steps.forEach(st => {
@@ -469,12 +459,12 @@
       const sb = mp.surplus_budget || {};
       const effReservedKrw = sb.reserved_krw != null ? Number(sb.reserved_krw) : remainingPlanKrw;
       const reserveKrw = sb.surplus_krw != null ? Number(sb.surplus_krw) : Math.max(0, usableKrw - effReservedKrw);
-      const allocPct = dailyMax > 0 ? Math.min(100, Math.round((todayBought / dailyMax) * 100)) : 0;
+      const allocPct = usableKrw > 0 ? Math.min(100, Math.round((effReservedKrw / usableKrw) * 100)) : 100;
       const watchlistLocked = safety.watchlist_buy_unlocked === false;
 
       const syncWarnBanner = hasRichPlan ? '' : `
         <div style="font-size: 11.5px; color: #fbbf24; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 10px; padding: 9px 12px;">
-          ⏳ 공기계(Termux)에서 다음 동기화 주기에 상세 <code>master_plan</code> 스냅샷이 푸시되면 라이브 규칙이 자동 반영됩니다.
+          ⏳ 공기계(Termux)에서 다음 동기화 주기에 상세 <code>master_plan</code> 스냅샷이 푸시되면 라이브 스텝 진행률이 자동 반영됩니다.
         </div>
       `;
 
@@ -483,38 +473,40 @@
           <div class="mp-header">
             <div>
               <div class="mp-title">
-                <span>🧭 ${escapeHtml(mp.plan_name || '토스증권 한·미 우량주 AI 자율매매 v3.0')}</span>
-                <span class="mp-status-pill mp-pill-active">v${escapeHtml(mp.schema_version || '3.0.0')}</span>
+                <span>🧭 ${escapeHtml(mp.plan_name || '토스증권 마스터플랜 v2.2')}</span>
+                <span class="mp-status-pill mp-pill-active">v${escapeHtml(mp.schema_version || '2.2.0')}</span>
               </div>
-              <div class="mp-sub">${steps.length === 0 ? '국내 100선·미국 30선 우량주 퀀트+2사 AI 교차검증 자율매매 · 삼성전자·SK하이닉스 수동전용 · 배당/지수코어 영구 보호' : '일시적 반등 시 반도체 분할축소 · 4중 장안정 게이트 통과 시 재진입'}</div>
+              <div class="mp-sub">일시적 반등 시 반도체 분할축소(삼전 8주×2·하닉 1주×2) · 4중 장안정 게이트 통과 시 삼성전자 잉여금 분할 재진입</div>
             </div>
             <span class="mp-status-pill ${watchlistLocked ? 'mp-pill-lock' : 'mp-pill-done'}">
-              ${watchlistLocked ? '🔒 감시종목 영구 잠금' : '🔓 우량주 자율 개방'}
+              ${watchlistLocked ? '🔒 감시종목 영구 잠금' : '🔓 감시종목 개방'}
             </span>
           </div>
 
           <div class="mp-kpi-grid">
             <div class="mp-kpi">
-              <div class="mp-kpi-label">안전 비상금 하한 (KRW / USD)</div>
-              <div class="mp-kpi-val" style="color: #fbbf24;">${krwFloor.toLocaleString()}원 / $${usdFloor.toFixed(0)}</div>
+              <div class="mp-kpi-label">원화 비상금 하한선</div>
+              <div class="mp-kpi-val" style="color: #fbbf24;">${krwFloor.toLocaleString()}원</div>
             </div>
             <div class="mp-kpi">
-              <div class="mp-kpi-label">1회 / 종목당 / 일일 상한</div>
-              <div class="mp-kpi-val">${(singleMax / 10000).toFixed(0)}만 / ${(maxPerStock / 10000).toFixed(0)}만 / ${(dailyMax / 10000).toFixed(0)}만</div>
+              <div class="mp-kpi-label">단일 / 일일 주문 상한</div>
+              <div class="mp-kpi-val">${(singleMax / 10000).toFixed(0)}만 / ${(dailyMax / 10000).toFixed(0)}만</div>
             </div>
             <div class="mp-kpi">
-              <div class="mp-kpi-label">자율매수 가용 (하한 제외)</div>
-              <div class="mp-kpi-val" style="color: #60a5fa;">${usableKrw.toLocaleString()}원 · $${usableUsd.toFixed(2)}</div>
+              <div class="mp-kpi-label">실투입 가용 원화 (하한 제외)</div>
+              <div class="mp-kpi-val" style="color: #60a5fa;">${usableKrw.toLocaleString()}원</div>
             </div>
             <div class="mp-kpi">
-              <div class="mp-kpi-label">최대 동시 자율 슬롯 (KR / US)</div>
-              <div class="mp-kpi-val" style="color: #34d399;">국내 ${maxKrPos}종 · 미국 ${maxUsPos}종</div>
+              <div class="mp-kpi-label">잔여 비반도체 예약 / 잉여</div>
+              <div class="mp-kpi-val" style="color: ${reserveKrw >= 0 ? '#34d399' : '#f87171'};">
+                ${effReservedKrw.toLocaleString()}원 <span style="font-size: 11px; color: var(--text-sub);">(잉여 ${reserveKrw.toLocaleString()}원)</span>
+              </div>
             </div>
           </div>
 
           <div style="margin-top: 10px;">
             <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-sub);">
-              <span>당일 매수 한도 소진율 (${todayBought.toLocaleString()}원 / ${dailyMax.toLocaleString()}원)</span>
+              <span>원화 배정률 (당일 누적 ${todayBought.toLocaleString()}원 · 가용 달러 $${usdCash.toFixed(2)})</span>
               <span style="font-weight: 700; color: var(--text-main);">${allocPct}%</span>
             </div>
             <div class="mp-progress-track">
@@ -523,8 +515,8 @@
           </div>
 
           <div class="mp-chip-row">
-            <span class="mp-chip" style="color: #38bdf8; border-color: rgba(56,189,248,0.35);">✋ 수동전용(자동매매 제외): ${manualOnlyList.map(escapeHtml).join(' · ')}</span>
-            <span class="mp-chip" style="color: #34d399; border-color: rgba(16,185,129,0.35);">🛡️ 영구 매도보호: ${Array.from(protectedSet).map(escapeHtml).join(' · ')}</span>
+            <span class="mp-chip" style="color: #34d399; border-color: rgba(16,185,129,0.35);">🛡️ 영구 보호종목: ${Array.from(protectedSet).map(escapeHtml).join(' · ')}</span>
+            <span class="mp-chip" style="color: #60a5fa; border-color: rgba(59,130,246,0.35);">🎯 장안정 재진입 가용: ${Math.max(0, reserveKrw).toLocaleString()}원 (1회 ≤ ${(singleMax / 10000).toFixed(0)}만 · 3일 쿨다운)</span>
           </div>
         </div>
       `;
@@ -536,41 +528,23 @@
         return `<span class="mp-chip" style="background:${bg}; border-color:${bd}; color:${col};">${ok ? '✅' : '⛔'} ${escapeHtml(label)}</span>`;
       };
       const gatePassed = Boolean(mktStab && mktStab.passed);
-      const gateHtml = (steps.length > 0 && mktStab && Object.keys(mktStab).length > 0) ? `
+      const gateHtml = (mktStab && Object.keys(mktStab).length > 0) ? `
         <div class="mp-card" style="border-left: 3px solid ${gatePassed ? '#10b981' : '#ef4444'};">
           <div class="mp-header">
             <div>
-              <div class="mp-title">🚦 4중 장 안정 게이트</div>
-              <div class="mp-sub">${escapeHtml(mktStab.summary || '')}</div>
+              <div class="mp-title">🚦 4중 장 안정 게이트 (반도체 재진입 해금 조건)</div>
+              <div class="mp-sub">${escapeHtml(mktStab.summary || '4개 조건 모두 충족 시 삼성전자 분할 재매수 자동 해금 (공포장 시 잠금 유지)')}</div>
             </div>
             <span class="mp-status-pill ${gatePassed ? 'mp-pill-done' : 'mp-pill-lock'}">
-              ${gatePassed ? '🔓 해금' : '🔒 대기'}
+              ${gatePassed ? '🔓 재진입 해금' : '🔒 공포장 잠금'}
             </span>
           </div>
           <div class="mp-chip-row">
             ${gateChip(Boolean(mktStab.vix_ok), `VIX ${mktStab.vix != null ? mktStab.vix : '--'} <= ${mktStab.max_vix ?? 25}`)}
             ${gateChip(Boolean(mktStab.soxx_ok), `SOXX ${mktStab.soxx_price != null ? '$' + mktStab.soxx_price : '--'} >= MA5 ${mktStab.soxx_ma5 != null ? '$' + mktStab.soxx_ma5 : '--'}`)}
             ${gateChip(Boolean(mktStab.kr_regime_ok), `KR 레짐 (${mktStab.kr_regime_label || '--'})`)}
+            ${gateChip(Boolean(mktStab.stock_ma5_ok), `삼성전자 MA5 (${mktStab.stock_price ? Math.round(mktStab.stock_price).toLocaleString() : '--'} / ${mktStab.stock_ma5 ? Math.round(mktStab.stock_ma5).toLocaleString() : '--'})`)}
             ${gateChip(Boolean(mktStab.foreign_ok), `외국인 순매수 ${mktStab.foreign_streak_days ?? 0}/${mktStab.min_foreign_days ?? 2}일`)}
-          </div>
-        </div>
-      ` : '';
-
-      const v3RulesHtml = steps.length === 0 ? `
-        <div class="mp-card" style="border-left: 3px solid #10b981;">
-          <div class="mp-header">
-            <div>
-              <div class="mp-title">⚡ 한·미 우량주 2사 AI + 퀀트 자율 운용 규칙 (v3.0)</div>
-              <div class="mp-sub">저가·물타기 마스터플랜을 전면 폐지하고, 이전 한투 계좌와 동일한 초보수적 퀀트+AI 우량주 자율 운용으로 전환했습니다.</div>
-            </div>
-            <span class="mp-status-pill mp-pill-active">🟢 자율매매 가동</span>
-          </div>
-          <div class="mp-chip-row">
-            <span class="mp-chip">🇰🇷 국내 세션: 10:05·11:35·13:35·14:35 (09시 차단)</span>
-            <span class="mp-chip">🇺🇸 미국 세션: 23:40·01:35·03:35·05:35 (DST -1h)</span>
-            <span class="mp-chip">🎯 진입: 정량 ≥ 75 · 2사 AI ≥ 75 · 편차 ≤ 15 · RSI &lt; 68</span>
-            <span class="mp-chip">🛡️ 청산: ATR 손절 · 50% 반절익절 · -2.5%p 트레일링 · 3일 쿨다운</span>
-            <span class="mp-chip">✋ 삼전(005930)·하닉(000660) 100% 수동전용</span>
           </div>
         </div>
       ` : '';
@@ -685,9 +659,9 @@
       }).join('');
 
       const slEc = slot.entry_conditions || {};
-      const slStatus = String(slot.status || 'DISABLED').toUpperCase();
+      const slStatus = String(slot.status || 'INACTIVE').toUpperCase();
       const slActive = ['ACTIVE', 'ACTIVE_CONDITIONAL'].includes(slStatus);
-      const slotHtml = (slStatus !== 'DISABLED' && slot.slot_id) ? `
+      const slotHtml = `
         <div class="mp-card" style="border-left: 3px solid #8b5cf6;">
           <div class="mp-header">
             <div>
@@ -695,7 +669,7 @@
                 <span class="country-tag country-kr">🇰🇷 STEP 5</span>
                 <span>${escapeHtml(slot.name || '비반도체 퀀트+AI 스윙 슬롯')}</span>
               </div>
-              <div class="mp-sub">${escapeHtml(slot.slot_id || 'QUANT_RECOVERY_SLOT_1')} · 동시 1종목만 회전</div>
+              <div class="mp-sub">${escapeHtml(slot.slot_id || 'QUANT_RECOVERY_SLOT_1')} · 삼성전자·SK하이닉스·소부장 전면 제외, 동시 1종목만 회전</div>
             </div>
             <span class="mp-status-pill ${slActive ? 'mp-pill-cond' : 'mp-pill-lock'}">
               ${slActive ? '🟣 1슬롯 가동 중' : escapeHtml(slStatus)}
@@ -723,7 +697,7 @@
             <span class="mp-chip">ATR 손절 + 50% 반절익절</span>
           </div>
         </div>
-      ` : '';
+      `;
 
       const alertsRowsHtml = exitAlerts.map(al => {
         const sym = normSym(al.symbol || '');
@@ -830,13 +804,12 @@
         </div>
       ` : '';
 
-      const hasAnyAlertRow = Boolean(alertsRowsHtml || lowAlertsRowsHtml || reentryRowsHtml || sgovHtml);
-      const advisoryHtml = hasAnyAlertRow ? `
+      const advisoryHtml = `
         <div class="mp-card" style="border-left: 3px solid #f59e0b;">
           <div class="mp-header">
             <div>
-              <div class="mp-title">🛡️ 보호종목 전환 검토 알림 (수동확인 전용)</div>
-              <div class="mp-sub">보호종목 전환 알림은 자동 주문 없이 텔레그램 참고 알림(1일 1회)만 발송합니다.</div>
+              <div class="mp-title">🛡️ 보호종목 탈출·극저점·장안정 재진입 알림 &amp; SGOV 위기 전환</div>
+              <div class="mp-sub">보호종목 탈출·하이닉스 극저점·하이닉스 재진입·SGOV 전환은 자동 주문 없이 텔레그램 알림(1일 1회)만 발송합니다.</div>
             </div>
             <span class="mp-status-pill mp-pill-done">수동확인 전용</span>
           </div>
@@ -845,9 +818,9 @@
           ${reentryRowsHtml}
           ${sgovHtml}
         </div>
-      ` : '';
+      `;
 
-      hList.innerHTML = syncWarnBanner + overviewHtml + gateHtml + v3RulesHtml + stepsHtml + slotHtml + advisoryHtml;
+      hList.innerHTML = syncWarnBanner + overviewHtml + gateHtml + stepsHtml + slotHtml + advisoryHtml;
     }
 
 
@@ -923,11 +896,11 @@
           } else if (wdBanner && wdText) {
             wdBanner.style.background = 'rgba(49, 130, 246, 0.10)';
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
-            const isAuto = d.auto_trade !== false;
+            const isAuto = d.auto_trade === true;
             if (isAuto) {
-              wdText.innerHTML = '⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.0 가동 중</b> — 국내 100선·미국 30선 퀀트+2사 AI 교차검증 · 삼전·하닉 수동전용 · 360750·KO·SCHD·SGOV 영구보호';
+              wdText.innerHTML = '⚡ <b>토스증권 마스터플랜 가동 중</b>';
             } else {
-              wdText.innerHTML = '🛡️ <b>대화형 수동 승인 대기 모드 (옵션 A)</b> — /toss_auto on 명령 시 언제든 자율매매 재개';
+              wdText.innerHTML = '🔒 <b>토스증권 읽기 전용 관제 · AI 어드바이저 (자동매매 영구 차단)</b> — 실시간 잔고·수익률·AI 분석·수동 알림만 제공 (자동 주문 0%)';
             }
           }
         }
@@ -1005,7 +978,7 @@
         const krInSession = (kr.is_in_session !== undefined) ? kr.is_in_session : (kstMin >= 9 * 60 && kstMin < 15 * 60 + 30 && kstDay >= 1 && kstDay <= 5);
         const usInSession = (us.is_in_session !== undefined) ? us.is_in_session : ((kstMin < closeMin && kstDay >= 2 && kstDay <= 6) || (kstMin >= openMin && kstDay >= 1 && kstDay <= 5));
 
-        let summary = 'AI 자율 가동';
+        let summary = '실시간 관제 · AI 어드바이저';
         let dotColor = '#10b981';
 
         if (krInSession && usInSession) {
@@ -1024,7 +997,7 @@
           summary = '🔴 주말 휴장 (자체 감사)';
           dotColor = '#f87171';
         } else {
-          summary = '🌙 장 마감 (AI 자율 대기)';
+          summary = '🌙 장 마감 (관제 대기)';
           dotColor = '#94a3b8';
         }
 
@@ -1363,7 +1336,7 @@
                   ? '<span class="mp-protect-pill" style="background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35);">🛡️ 영구 보호</span>'
                   : ((Number(it.quantity) || 0) < 1
                     ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
-                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>')}
+                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">📊 AI 관제</span>')}
               </div>
               <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
             </div>
