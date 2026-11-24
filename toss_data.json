@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-25 05:38:28",
+  "updated_at": "2026-11-25 05:40:38",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
   "tot_rate": 0.63,
   "mkt_val_krw": 1448400,
   "tot_pchs_krw": 1472100,
   "pnl_krw": -23700,
-  "mkt_val_usd": 1267.05,
+  "mkt_val_usd": 1267.11,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 37.54,
+  "pnl_usd": 37.6,
   "krw_cash": 6606436,
   "usd_cash": 1495.23,
   "holding_count": 5,
@@ -54,11 +54,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 277.39,
+      "lastPrice": 277.56,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -5.55,
-      "profitLossAmount": -5.547733,
-      "rsi": 38.7,
+      "profitLossRate": -5.49,
+      "profitLossAmount": -5.489908,
+      "rsi": 38.8,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "매수",
       "ai_score": 82,
@@ -93,7 +93,7 @@
       "averagePurchasePrice": 88.02,
       "profitLossRate": 10.91,
       "profitLossAmount": 38.44,
-      "rsi": 59.1,
+      "rsi": 59.0,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 74,
@@ -128,7 +128,7 @@
       "averagePurchasePrice": 34.3043,
       "profitLossRate": 1.61,
       "profitLossAmount": 4.4456,
-      "rsi": 48.9,
+      "rsi": 49.0,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 64,
@@ -194,8 +194,8 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 0.0,
     "kr_eval": 1448400.0,
-    "us_eval": 1267.05,
-    "growth_eval": 94.35,
+    "us_eval": 1267.11,
+    "growth_eval": 94.41,
     "div_eval": 669.4,
     "park_eval": 503.3,
     "diagnoses": [
@@ -919,11 +919,11 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 27.13,
+    "vix": 27.1,
     "max_vix": 25.0,
     "vix_ok": false,
-    "soxx_price": 127.93,
-    "soxx_ma5": 134.27,
+    "soxx_price": 128.26,
+    "soxx_ma5": 134.34,
     "soxx_ok": false,
     "kr_regime_ok": true,
     "kr_regime_label": "⚠️ 약세·조정장 (직전 거래일 마감 기준 코스피200 +0.00%, 20일선 하회 — 매수 커트라인 +5점 강화)",
@@ -935,11 +935,11 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(27.13>25.0)",
-      "SOXX 5일선 미회복(127.93<134.27)",
+      "VIX 공포(27.10>25.0)",
+      "SOXX 5일선 미회복(128.26<134.34)",
       "005930 MA5 조회실패"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(27.13>25.0), SOXX 5일선 미회복(127.93<134.27), 005930 MA5 조회실패"
+    "summary": "4중 장안정 미충족: VIX 공포(27.10>25.0), SOXX 5일선 미회복(128.26<134.34), 005930 MA5 조회실패"
   },
   "master_plan": {
     "schema_version": "3.1.0",
@@ -997,11 +997,11 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 27.13,
+      "vix": 27.1,
       "max_vix": 25.0,
       "vix_ok": false,
-      "soxx_price": 127.93,
-      "soxx_ma5": 134.27,
+      "soxx_price": 128.26,
+      "soxx_ma5": 134.34,
       "soxx_ok": false,
       "kr_regime_ok": true,
       "kr_regime_label": "⚠️ 약세·조정장 (직전 거래일 마감 기준 코스피200 +0.00%, 20일선 하회 — 매수 커트라인 +5점 강화)",
@@ -1013,11 +1013,11 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(27.13>25.0)",
-        "SOXX 5일선 미회복(127.93<134.27)",
+        "VIX 공포(27.10>25.0)",
+        "SOXX 5일선 미회복(128.26<134.34)",
         "005930 MA5 조회실패"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(27.13>25.0), SOXX 5일선 미회복(127.93<134.27), 005930 MA5 조회실패"
+      "summary": "4중 장안정 미충족: VIX 공포(27.10>25.0), SOXX 5일선 미회복(128.26<134.34), 005930 MA5 조회실패"
     },
     "manual_only_tickers": [
       "000660",
@@ -1068,9 +1068,9 @@
       "auto_execute": false,
       "action": "NOTIFY_MANUAL_CONFIRM",
       "held_qty": 5.0,
-      "benchmark_price": 715.64,
+      "benchmark_price": 716.21,
       "benchmark_high_52w": 781.62,
-      "live_drawdown_pct": -8.44
+      "live_drawdown_pct": -8.37
     },
     "direction2_reentry_plan": {
       "enabled": false,
