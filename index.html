@@ -569,9 +569,8 @@
             <span class="mp-chip">🇰🇷 국내 세션: 10:05·11:35·13:35·14:35 (09시 차단)</span>
             <span class="mp-chip">🇺🇸 미국 세션: 23:40·01:35·03:35·05:35 (DST -1h)</span>
             <span class="mp-chip">🎯 진입: 정량 ≥ 75 · 2사 AI ≥ 75 · 편차 ≤ 15 · RSI &lt; 68</span>
-            <span class="mp-chip">🧠 감사: 중대악재·AI 논리모순 차단 · 거시/어닝 동적 커트라인 (한투 100% 동일)</span>
-            <span class="mp-chip">🛡️ 청산·한도: ATR 손절 · 50% 반절익절 · -2.5%p 트레일링 · 동일 섹터 150만 상한 · 일일 손절 2회 서킷브레이커</span>
-            <span class="mp-chip">🔒 삼전(005930)·하닉(000660) 주문엔진 하드잠금 (100% 수동전용)</span>
+            <span class="mp-chip">🛡️ 청산: ATR 손절 · 50% 반절익절 · -2.5%p 트레일링 · 3일 쿨다운</span>
+            <span class="mp-chip">✋ 삼전(005930)·하닉(000660) 100% 수동전용</span>
           </div>
         </div>
       ` : '';
@@ -1307,25 +1306,16 @@
           reasonText = reasonText.replace(/\[(?:🤖|🧠)?\s*Gemini\s*3(?:종|대)[^\]]*\]/gi, '[🌐 미국 3대 빅테크 이종 앙상블(Google+Groq+Meta)]');
         }
 
-        // 삼전·하닉 100% 수동전용 잠금 프론트엔드 안전망 (캐시 잔재 원천 차단)
-        const isManualLocked = it.manual_only_locked === true || ['005930', '000660'].includes(normSym(it.symbol));
-        if (isManualLocked) {
-          decision = '홀딩 관망';
-          score = 60;
-          actionTip = '🔒 사용자 수동전용 잠금 종목 — 봇 자동매수·자동매도·손절 완전 제외 (토스 앱 직접 운용)';
-          reasonText = `[🔒 수동전용 잠금 작동] ${it.name || it.symbol}(${normSym(it.symbol)})은(는) 대표님 수동 운용 전용 종목으로 잠금 설정되어 봇이 자동 추매·익절·손절에 일절 개입하지 않습니다.`;
-        }
-
         // 배당주/파킹/지수코어 ETF (KO, SCHD, SGOV, 360750) 매도 차단 프론트엔드 안전망
-        if (!isManualLocked && ['KO', 'SCHD', 'SGOV', '360750'].includes(normSym(it.symbol)) && decision.includes('매도')) {
+        if (['KO', 'SCHD', 'SGOV', '360750'].includes(normSym(it.symbol)) && decision.includes('매도')) {
           decision = '홀딩 관망';
           score = 65;
-          actionTip = '마스터플랜 v3.0 영구 보호 종목입니다. 자동 매도/손절 없이 계속 홀딩하세요.';
+          actionTip = '마스터플랜 v2.0 영구 보호 종목입니다. 자동 매도/손절 없이 계속 홀딩하세요.';
           reasonText = '[영구 보호 원칙] 장기 코어·배당 자산이므로 단기 등락과 무관하게 매도를 보류하고 장기 보유합니다.';
         }
 
         // 국내주식 과다 보유(10주↑) 시 1주 물타기 실효성 미달(<1.5%) 및 섹터 편중 가드레일 안전망
-        if (!isManualLocked && isKr && (decision.includes('추매') || decision.includes('매수')) && (it.quantity || 0) >= 10 && (it.averagePurchasePrice || 0) > 0) {
+        if (isKr && (decision.includes('추매') || decision.includes('매수')) && (it.quantity || 0) >= 10 && (it.averagePurchasePrice || 0) > 0) {
           const q = it.quantity;
           const avgP = it.averagePurchasePrice;
           const curP = it.lastPrice || avgP;
@@ -1369,13 +1359,11 @@
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
               <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                 <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
-                ${isManualLocked
-                  ? '<span class="mp-protect-pill" style="background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.45);">🔒 수동전용 잠금 (봇 불간섭)</span>'
-                  : (it.auto_sell_protected === true
-                    ? '<span class="mp-protect-pill" style="background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35);">🛡️ 영구 보호</span>'
-                    : ((Number(it.quantity) || 0) < 1
-                      ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
-                      : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>'))}
+                ${it.auto_sell_protected === true
+                  ? '<span class="mp-protect-pill" style="background: rgba(16,185,129,0.16); color: #34d399; border: 1px solid rgba(16,185,129,0.35);">🛡️ 영구 보호</span>'
+                  : ((Number(it.quantity) || 0) < 1
+                    ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
+                    : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>')}
               </div>
               <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
             </div>
