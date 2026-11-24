@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-25 03:33:55",
-  "account_no": "",
+  "updated_at": "2026-11-25 03:37:42",
+  "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
-  "tot_rate": 0.73,
+  "tot_rate": 0.7,
   "mkt_val_krw": 1448400,
   "tot_pchs_krw": 1472100,
   "pnl_krw": -23700,
-  "mkt_val_usd": 1269.57,
+  "mkt_val_usd": 1268.74,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 40.06,
+  "pnl_usd": 39.22,
   "krw_cash": 6606436,
   "usd_cash": 1495.23,
   "holding_count": 5,
@@ -28,8 +28,78 @@
       "ai_decision": "홀딩 관망",
       "ai_score": 64,
       "ai_action_tip": "현재 60주 보유 중으로 1주 추매 시 평단 인하 폭이 -0.03%(24,535원→24,528원)에 불과하고 이미 충분한 수량을 보유하고 있으므로, 원화 예수금(6,606,436원)을 아끼고 홀딩 관망하세요.",
-      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Groq:gpt-oss-20b(60점 관망), Groq:qwen/qwen3.8-27b(65점 관망))] [5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일 작동] 최근 단기 조정(최근 5거래일 -1.7%)으로 Wilder 14일 RSI(38.7)가 과매도 근접 구간에 진입했으나, 이미 60주를 보유 중이어서 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -0.03%로 미미하며, 단일 종목 과다 편중 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.",
-      "checked_at": "2026-11-25 01:36:50",
+      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Groq:qwen/qwen3.8-27b(65점 관망), Groq:gpt-oss-20b(60점 관망))] [5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일 작동] 최근 단기 조정(최근 5거래일 -1.7%)으로 Wilder 14일 RSI(38.7)가 과매도 근접 구간에 진입했으나, 이미 60주를 보유 중이어서 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -0.03%로 미미하며, 단일 종목 과다 편중 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.",
+      "checked_at": "2026-11-25 03:37:03",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": "-",
+          "decision": "미호출"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq Qwen",
+          "score": 65,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세",
+      "auto_sell_protected": true,
+      "manual_only_locked": false
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "알파벳 A",
+      "marketCountry": "US",
+      "currency": "USD",
+      "quantity": 0.340143,
+      "lastPrice": 278.84,
+      "averagePurchasePrice": 293.699999,
+      "profitLossRate": -5.05,
+      "profitLossAmount": -5.054525,
+      "rsi": 39.4,
+      "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
+      "ai_decision": "홀딩 관망",
+      "ai_score": 59,
+      "ai_action_tip": "현재 포지션을 유지하고, 추가 매수는 필요 없으며, 시장 변동성을 주시한다.",
+      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 59점 · 편차 2점 | Groq:gpt-oss-20b(60점 관망), Groq:qwen/qwen3.8-27b(58점 관망))] Alphabet은 성장주이며 보호종목이 아니지만, RSI가 30~38 구간이 아니라 39.4로 과매도 구간을 벗어나고, 20일 이동평균선 아래에 위치해 단기 조정 단계에 있다. 외인/기관 수급이 명확히 확인되지 않았고, 과열 징후가 없으므로 현재 보유를 유지하는 것이 가장 합리적이다.",
+      "checked_at": "2026-11-25 03:37:07",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": "-",
+          "decision": "미호출"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq 20B",
+          "score": 60,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세",
+      "auto_sell_protected": false,
+      "manual_only_locked": false
+    },
+    {
+      "symbol": "KO",
+      "name": "코카콜라",
+      "marketCountry": "US",
+      "currency": "USD",
+      "quantity": 4.0,
+      "lastPrice": 97.82,
+      "averagePurchasePrice": 88.02,
+      "profitLossRate": 11.13,
+      "profitLossAmount": 39.2,
+      "rsi": 59.6,
+      "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
+      "ai_decision": "홀딩 관망",
+      "ai_score": 62,
+      "ai_action_tip": "현재 포지션 유지하며, RSI가 70~85 구간에 있지 않으므로 추가 매수는 필요 없음",
+      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Groq:gpt-oss-20b(60점 관망), Groq:qwen/qwen3.8-27b(65점 관망))] KO는 배당 안전판으로 분류되어 매도·손절 금지이며, 현재 RSI 59.6이 과열 구간이 아니고 5일 추세가 -0.98%에 불과해 단기 변동성은 낮음. 보유 예수금으로 1주 이상 매수가 가능하지만, 보호 종목이므로 추가 매수는 권장하지 않는다",
+      "checked_at": "2026-11-25 03:37:11",
       "ai_models": [
         {
           "provider": "Google",
@@ -49,98 +119,28 @@
       "manual_only_locked": false
     },
     {
-      "symbol": "GOOGL",
-      "name": "알파벳 A",
-      "marketCountry": "US",
-      "currency": "USD",
-      "quantity": 0.340143,
-      "lastPrice": 279.06,
-      "averagePurchasePrice": 293.699999,
-      "profitLossRate": -4.98,
-      "profitLossAmount": -4.979694,
-      "rsi": 39.5,
-      "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
-      "ai_decision": "홀딩 관망",
-      "ai_score": 66,
-      "ai_action_tip": "현재 포지션을 유지하고, 필요 시 1주 단위 소수점 매수로 점진적 적립을 고려하세요.",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 66점 · 편차 3점 | Groq:gpt-oss-20b(65점 관망), Google:flash-lite-latest(68점 관망))] GOOGL은 성장주로 분류되며, RSI가 38.7로 과매도 근접 구간에 있으나 과열은 아니며, 5일 추세가 약간 하락세이므로 단기 매도보다는 보유를 권장합니다. 현재 보유 예수금으로 1주 이상 매수가 가능하고 외인/기관 수급이 안정적이므로, 추가 매수보다는 현 포지션 유지가 최적입니다.",
-      "checked_at": "2026-11-25 01:37:03",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 68,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq 20B",
-          "score": 65,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세",
-      "auto_sell_protected": false,
-      "manual_only_locked": false
-    },
-    {
-      "symbol": "KO",
-      "name": "코카콜라",
-      "marketCountry": "US",
-      "currency": "USD",
-      "quantity": 4.0,
-      "lastPrice": 97.93,
-      "averagePurchasePrice": 88.02,
-      "profitLossRate": 11.25,
-      "profitLossAmount": 39.64,
-      "rsi": 59.9,
-      "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
-      "ai_decision": "홀딩 관망",
-      "ai_score": 62,
-      "ai_action_tip": "현재 포지션을 유지하고, RSI가 40~50 이하로 떨어질 때 추가 매수를 고려하세요.",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Groq:gpt-oss-20b(60점 관망), Google:flash-lite-latest(65점 관망))] 코카콜라는 배당 방어주로 보호종목에 해당하며, RSI가 과열 수준(70~85)에 이르지 않았고, 현재 수익률이 양호합니다. 과매도나 외인/기관 수급 유입이 확인되지 않았으므로 추가 매수보다는 보유를 유지하는 것이 적절합니다.",
-      "checked_at": "2026-11-25 01:37:12",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 65,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq 20B",
-          "score": 60,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세",
-      "auto_sell_protected": true,
-      "manual_only_locked": false
-    },
-    {
       "symbol": "SCHD",
       "name": "SCHD",
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 8.0,
-      "lastPrice": 34.96,
+      "lastPrice": 34.92,
       "averagePurchasePrice": 34.3043,
-      "profitLossRate": 1.91,
-      "profitLossAmount": 5.2456,
-      "rsi": 50.0,
+      "profitLossRate": 1.79,
+      "profitLossAmount": 4.9256,
+      "rsi": 49.5,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
-      "ai_score": 74,
-      "ai_action_tip": "배당 안전판 보호 종목으로 단기 등락과 무관하게 홀딩 관망 및 향후 조정 시 추매 유지",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [1:1 의견 분립 (안전 관망 채택)] (평균 74점 · 편차 12점 | Groq:gpt-oss-20b(80점 매수), Google:flash-lite-latest(68점 관망))] SCHD는 포트폴리오의 장기 배당 방어주(보호 종목)로 단기 수익이나 RSI 47.9 구간에서의 매도는 절대 금지됩니다. 현재 20일선 하회 및 단기 조정 흐름이나, 배당 안전판으로서 물량을 지속 보유하며 장기 코어 자산으로 유지해야 합니다.",
-      "checked_at": "2026-11-25 01:37:22",
+      "ai_score": 72,
+      "ai_action_tip": "현재 8주 포지션을 유지하며 배당 수령 및 장기 코어 자산으로서의 안전판 역할을 수행하세요.",
+      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [1:1 의견 분립 (안전 관망 채택)] (평균 72점 · 편차 15점 | Groq:gpt-oss-20b(80점 매수), Groq:qwen/qwen3.8-27b(65점 관망))] SCHD는 장기 배당 방어주(보호종목)이므로 단기 RSI 49.5 수준의 중립적 기술적 지표나 소폭 수익을 이유로 매도하지 않으며, 매크로 불확실성 속에서도 변동성 완화를 위한 포트폴리오 핵심 축으로 유지해야 합니다. 현재가 $34.92는 MA20($35.38)을 소폭 하회하는 단기 조정 구간이나, 추매보다는 기존 포지션의 안정적 유지와 향후 RSI 40~50 이하 하락 시 달러 예수금 활용 추매를 준비하는 것이 적절합니다.",
+      "checked_at": "2026-11-25 03:37:15",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
-          "score": 68,
-          "decision": "관망"
+          "score": "-",
+          "decision": "미호출"
         },
         {
           "provider": "Groq",
@@ -168,14 +168,14 @@
       "ai_decision": "홀딩 관망",
       "ai_score": 68,
       "ai_action_tip": "월초 배당락 직후 국채 이자 재누적 구간 — 기존 파킹 포지션은 든든히 홀딩 유지하되 유휴 달러 예수금 파킹 시에만 활용하세요.",
-      "ai_reason": "[🤖 Groq 단일 체인(Fallback) 교차검증 [2:0 관망 우세] (평균 66점 · 편차 0점 | Groq:gpt-oss-20b(66점 관망), Groq:qwen/qwen3.8-27b(66점 관망))] SGOV의 14일 RSI(63.1)는 주가 하락이나 기술적 과매도 신호가 아니라, 매월 초 배당락(-$0.32)으로 월배당금이 지급된 직후 다시 초단기 미국채 이자가 하루 $0.01~$0.02씩 계단식으로 누적되기 시작하는 정상적인 금리 사이클입니다. 연 4~5% 달러 월배당 이자를 안정적으로 수령하면서 향후 빅테크·배당주 조정 시 투입할 대기 자금(Dry Powder)으로서 든든하게 홀딩 관망합니다.",
-      "checked_at": "2026-11-25 03:33:36",
+      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 66점 · 편차 1점 | Groq:gpt-oss-20b(66점 관망), Google:3.5-flash-lite(67점 관망))] SGOV의 14일 RSI(63.1)는 주가 하락이나 기술적 과매도 신호가 아니라, 매월 초 배당락(-$0.32)으로 월배당금이 지급된 직후 다시 초단기 미국채 이자가 하루 $0.01~$0.02씩 계단식으로 누적되기 시작하는 정상적인 금리 사이클입니다. 연 4~5% 달러 월배당 이자를 안정적으로 수령하면서 향후 빅테크·배당주 조정 시 투입할 대기 자금(Dry Powder)으로서 든든하게 홀딩 관망합니다.",
+      "checked_at": "2026-11-25 03:37:24",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
-          "score": "-",
-          "decision": "미호출"
+          "score": 67,
+          "decision": "관망"
         },
         {
           "provider": "Groq",
@@ -194,9 +194,9 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 0.0,
     "kr_eval": 1448400.0,
-    "us_eval": 1269.57,
-    "growth_eval": 94.92,
-    "div_eval": 671.4,
+    "us_eval": 1268.74,
+    "growth_eval": 94.85,
+    "div_eval": 670.64,
     "park_eval": 503.25,
     "diagnoses": [
       "✅ 국내 섹터 분산 양호 (반도체 비중 0.0%)",
@@ -919,11 +919,11 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 26.62,
+    "vix": 26.6,
     "max_vix": 25.0,
     "vix_ok": false,
-    "soxx_price": 129.79,
-    "soxx_ma5": 134.64,
+    "soxx_price": 129.74,
+    "soxx_ma5": 134.63,
     "soxx_ok": false,
     "kr_regime_ok": true,
     "kr_regime_label": "⚠️ 약세·조정장 (직전 거래일 마감 기준 코스피200 +6.63%, 20일선 하회 — 매수 커트라인 +5점 강화)",
@@ -935,11 +935,11 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(26.62>25.0)",
-      "SOXX 5일선 미회복(129.79<134.64)",
+      "VIX 공포(26.60>25.0)",
+      "SOXX 5일선 미회복(129.74<134.63)",
       "005930 MA5 조회실패"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), SOXX 5일선 미회복(129.79<134.64), 005930 MA5 조회실패"
+    "summary": "4중 장안정 미충족: VIX 공포(26.60>25.0), SOXX 5일선 미회복(129.74<134.63), 005930 MA5 조회실패"
   },
   "master_plan": {
     "schema_version": "3.1.0",
@@ -997,11 +997,11 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 26.62,
+      "vix": 26.6,
       "max_vix": 25.0,
       "vix_ok": false,
-      "soxx_price": 129.79,
-      "soxx_ma5": 134.64,
+      "soxx_price": 129.74,
+      "soxx_ma5": 134.63,
       "soxx_ok": false,
       "kr_regime_ok": true,
       "kr_regime_label": "⚠️ 약세·조정장 (직전 거래일 마감 기준 코스피200 +6.63%, 20일선 하회 — 매수 커트라인 +5점 강화)",
@@ -1013,11 +1013,11 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(26.62>25.0)",
-        "SOXX 5일선 미회복(129.79<134.64)",
+        "VIX 공포(26.60>25.0)",
+        "SOXX 5일선 미회복(129.74<134.63)",
         "005930 MA5 조회실패"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), SOXX 5일선 미회복(129.79<134.64), 005930 MA5 조회실패"
+      "summary": "4중 장안정 미충족: VIX 공포(26.60>25.0), SOXX 5일선 미회복(129.74<134.63), 005930 MA5 조회실패"
     },
     "manual_only_tickers": [
       "000660",
@@ -1068,9 +1068,9 @@
       "auto_execute": false,
       "action": "NOTIFY_MANUAL_CONFIRM",
       "held_qty": 5.0,
-      "benchmark_price": 719.25,
+      "benchmark_price": 718.85,
       "benchmark_high_52w": 781.62,
-      "live_drawdown_pct": -7.98
+      "live_drawdown_pct": -8.03
     },
     "direction2_reentry_plan": {
       "enabled": false,
