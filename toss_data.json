@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-24 09:28:25",
+  "updated_at": "2026-11-24 09:36:18",
   "account_no": "17601069723",
   "battery": "84% (🔋 DISCHARGING)",
-  "tot_rate": -0.13,
+  "tot_rate": -0.12,
   "mkt_val_krw": 1446600,
   "tot_pchs_krw": 1472100,
   "pnl_krw": -25500,
-  "mkt_val_usd": 1259.31,
+  "mkt_val_usd": 1259.37,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 29.79,
+  "pnl_usd": 29.86,
   "krw_cash": 6606436,
   "usd_cash": 1495.23,
   "holding_count": 5,
@@ -53,29 +53,29 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 284.29,
+      "lastPrice": 284.36,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -3.2,
-      "profitLossAmount": -3.200746,
+      "profitLossRate": -3.18,
+      "profitLossAmount": -3.176936,
       "rsi": 41.2,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
-      "ai_score": 74,
-      "ai_action_tip": "단기 20일선 하회 및 음봉 조정 국면이나, 소수점 적립 매수 여력을 활용한 분할 관점의 홀딩 및 관망 유지",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [1:1 의견 분립 (안전 관망 채택)] (평균 74점 · 편차 12점 | Google:flash-lite-latest(68점 관망), Groq:gpt-oss-120b(80점 매수))] 성장 주기형 자산인 알파벳 A(GOOGL)는 14일 RSI 42.0으로 과매도 근접 구간이나 단기 하방 압력이 존재하여 추가 모니터링이 필요합니다. 토스증권의 원화 자동 환전 및 소수점 적립 매수 제도가 완벽히 지원되므로 급격한 손절보다는 추세 안정화 여부를 확인하며 홀딩하는 것이 타당합니다.",
-      "checked_at": "2026-11-24 05:35:53",
+      "ai_score": 70,
+      "ai_action_tip": "현재 보유 중인 0.340143주를 유지하고 추가 매수는 보류합니다.",
+      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [1:1 의견 분립 (안전 관망 채택)] (평균 70점 · 편차 16점 | Groq:gpt-oss-120b(62점 관망), Google:flash-lite-latest(78점 매수))] 알파벳 A는 성장주이며 보호종목이 아니지만 RSI 41.2로 과매도 수준에 도달하지 않았고, 현재 가격이 20일 이동평균선(287.73) 아래에 위치해 단기 조정 흐름이 지속되고 있습니다. 현금 여력은 충분하지만, 외국인·기관 수급이 뚜렷하게 유입된 신호가 없으며 기술적 신호가 강력히 매수 쪽을 가리키지 않아 관망이 적절합니다.",
+      "checked_at": "2026-11-24 09:35:54",
       "ai_models": [
         {
           "provider": "Google",
           "model": "Gemini 3.5",
-          "score": 68,
-          "decision": "관망"
+          "score": 78,
+          "decision": "매수"
         },
         {
           "provider": "Groq",
           "model": "Groq 120B",
-          "score": 80,
-          "decision": "매수"
+          "score": 62,
+          "decision": "관망"
         }
       ],
       "consensus": "1:1 의견 분립 (안전 관망 채택)",
@@ -87,10 +87,10 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 96.0,
+      "lastPrice": 96.01,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 9.06,
-      "profitLossAmount": 31.92,
+      "profitLossRate": 9.07,
+      "profitLossAmount": 31.96,
       "rsi": 52.8,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
@@ -125,7 +125,7 @@
       "averagePurchasePrice": 34.3043,
       "profitLossRate": 0.33,
       "profitLossAmount": 0.9256,
-      "rsi": 43.1,
+      "rsi": 43.3,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 74,
@@ -189,9 +189,9 @@
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 0.0,
     "kr_eval": 1446600.0,
-    "us_eval": 1259.31,
-    "growth_eval": 96.7,
-    "div_eval": 659.36,
+    "us_eval": 1259.37,
+    "growth_eval": 96.72,
+    "div_eval": 659.4,
     "park_eval": 503.25,
     "diagnoses": [
       "✅ 국내 섹터 분산 양호 (반도체 비중 0.0%)",
@@ -375,12 +375,12 @@
       "currency": "KRW",
       "sector": "금융 밸류업 & 자사주 소각·주주환원 1위",
       "theme_tag": "외인·기관 수급 주도주 🏦",
-      "lastPrice": 122200.0,
-      "change_pct": 0.83,
-      "rsi": 45.6,
+      "lastPrice": 121300.0,
+      "change_pct": 0.08,
+      "rsi": 44.3,
       "atr_pct": 5.28,
       "high_52w": 139200.0,
-      "from_high_52w_pct": -12.21,
+      "from_high_52w_pct": -12.86,
       "ai_score": 55,
       "quant_score": 40,
       "q_score": 40,
@@ -391,7 +391,7 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 15점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.18%, 20일선 하회 — 매수 커트라인 +5점 강화), -6점) | 20일선 역배열 하회(-3.0%, -8점) | 🚨 거래량 실종(6%) 가짜 반등 위험(-10점) | RSI 45.6 중립 | 메이저 수급 유입(+4점)] 코스피200이 20일선을 하회하는 약세 조정장 속에서 종가 기준 20일선 역배열(-2.7%) 및 거래량 부진(79%)이 겹쳐 하방 압력이 존재하므로, 원금 보호를 위해 신규 매수를 보류하고 안전 관망합니다. (반도체 일변도인 국내 포트폴리오의 변동성을 잡아줄 대표적인 저PBR·고주주환원 밸류업 대장주입니다.)",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.28%, 20일선 하회 — 매수 커트라인 +5점 강화), -6점) | 20일선 역배열 하회(-3.8%, -8점) | 🚨 거래량 실종(8%) 가짜 반등 위험(-10점) | RSI 44.3 중립 | 메이저 수급 유입(+4점)] 코스피200이 20일선을 하회하는 약세 조정장 속에서 종가 기준 20일선 역배열(-2.7%) 및 거래량 부진(79%)이 겹쳐 하방 압력이 존재하므로, 원금 보호를 위해 신규 매수를 보류하고 안전 관망합니다. (반도체 일변도인 국내 포트폴리오의 변동성을 잡아줄 대표적인 저PBR·고주주환원 밸류업 대장주입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(55점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
       "checked_at": "2026-11-24 07:46:09",
       "ai_models": [
@@ -417,12 +417,12 @@
       "currency": "KRW",
       "sector": "대한민국 1위 금융지주 & 분기 고배당",
       "theme_tag": "방어 & 분기배당 🛡️",
-      "lastPrice": 147800.0,
-      "change_pct": 2.85,
-      "rsi": 39.5,
+      "lastPrice": 147700.0,
+      "change_pct": 2.78,
+      "rsi": 39.2,
       "atr_pct": 4.81,
       "high_52w": 181700.0,
-      "from_high_52w_pct": -18.66,
+      "from_high_52w_pct": -18.71,
       "ai_score": 55,
       "quant_score": 40,
       "q_score": 40,
@@ -433,7 +433,7 @@
       "badge": "⏸️ AI 관망 우세(2:0 관망 우세) · 진입 대기",
       "audit_status": "HOLD_CONSENSUS",
       "audit_badge": "⏸️ AI 관망 우세 (2:0 관망 우세 | 편차 15점) ➔ 진입 보류",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.18%, 20일선 하회 — 매수 커트라인 +5점 강화), -6점) | 20일선 역배열 하회(-4.0%, -8점) | 🚨 거래량 실종(17%) 가짜 반등 위험(-10점) | RSI 39.5 눌림목이나 역배열 주의(+2점) | 메이저 수급 유입(+4점)] 코스피200이 20일선을 하회하는 약세·조정장이며, KB금융 주가가 20일선 아래의 역배열(-5.8%) 상태인 데다 현재가(145,000원)가 토스 원화 예수금(109,367원)을 초과하여 온주 매수가 불가능하므로 안전을 위해 관망을 유지합니다. (외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.)",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.28%, 20일선 하회 — 매수 커트라인 +5점 강화), -6점) | 20일선 역배열 하회(-4.1%, -8점) | 🚨 거래량 실종(20%) 가짜 반등 위험(-10점) | RSI 39.2 눌림목이나 역배열 주의(+2점) | 메이저 수급 유입(+4점)] 코스피200이 20일선을 하회하는 약세·조정장이며, KB금융 주가가 20일선 아래의 역배열(-5.8%) 상태인 데다 현재가(145,000원)가 토스 원화 예수금(109,367원)을 초과하여 온주 매수가 불가능하므로 안전을 위해 관망을 유지합니다. (외국인 수급이 꾸준히 유입되는 국내 1위 금융지주로, 토스 원화 예수금 범위 내에서 온주(1주) 매수가 가능한 핵심 방어주입니다.)",
       "action_tip": "이종 AI 모델 중 2개 사가 거시 리스크 및 하방 압력을 우려해 관망(55점)을 권고합니다. AI 2사 전원 매수 합의 전까지 신규 매수를 보류하세요.",
       "checked_at": "2026-11-24 07:46:18",
       "ai_models": [
@@ -771,17 +771,18 @@
     "soxx_ok": true,
     "kr_regime_ok": true,
     "kr_regime_label": "⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.28%, 20일선 하회 — 매수 커트라인 +5점 강화)",
-    "stock_price": 189900.0,
-    "stock_ma5": 189020.0,
-    "stock_ma5_ok": true,
+    "stock_price": 187800.0,
+    "stock_ma5": 188720.0,
+    "stock_ma5_ok": false,
     "foreign_ok": true,
     "foreign_streak_days": 2,
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(26.62>25.0)"
+      "VIX 공포(26.62>25.0)",
+      "005930 5일선 미회복(187,800<188,720)"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0)"
+    "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), 005930 5일선 미회복(187,800<188,720)"
   },
   "master_plan": {
     "schema_version": "2.2.0",
@@ -831,17 +832,18 @@
       "soxx_ok": true,
       "kr_regime_ok": true,
       "kr_regime_label": "⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +6.28%, 20일선 하회 — 매수 커트라인 +5점 강화)",
-      "stock_price": 189900.0,
-      "stock_ma5": 189020.0,
-      "stock_ma5_ok": true,
+      "stock_price": 187800.0,
+      "stock_ma5": 188720.0,
+      "stock_ma5_ok": false,
       "foreign_ok": true,
       "foreign_streak_days": 2,
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(26.62>25.0)"
+        "VIX 공포(26.62>25.0)",
+        "005930 5일선 미회복(187,800<188,720)"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0)"
+      "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), 005930 5일선 미회복(187,800<188,720)"
     },
     "protected_tickers": [
       "000660",
@@ -886,8 +888,8 @@
         "rationale": "보유 1주(평단 171만원) 상태에서 110만~115.5만원 구간 아랫꼬리 지지(+1.2% 이상 반등) 확인 시 1주 추매하여 평단가를 143.2만원대로 인하 완료",
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-09",
-        "live_price": 1174000.0,
-        "live_rsi": 43.5
+        "live_price": 1166000.0,
+        "live_rsi": 43.2
       },
       {
         "step_id": "STEP_2_SP500_DCA",
@@ -953,7 +955,7 @@
         },
         "rationale": "공포장(VIX>25)에서는 삼성전자 추가매수를 전면 보류하고, 4중 장안정 게이트(VIX<=25 · SOXX 5일선 회복 · KR 락다운 해제 · 삼성전자 5일선 회복 & 외국인 2거래일↑ 순매수) 충족 시에만 비반도체 예약금을 침범하지 않는 잉여 원화(축소 회수금 + 월별 입금 자동 반영)로 200,000원 이하 · RSI<=60 조건에서 1회 50만원 상한·3일 쿨다운·최대 10회 분할 재매수",
         "live_price": 189900.0,
-        "live_rsi": 40.7,
+        "live_rsi": 40.8,
         "estimated_dynamic_qty": 2
       },
       {
@@ -980,8 +982,8 @@
           "require_ai_ensemble": true
         },
         "rationale": "반도체 편중 완화용 저PBR·주주환원 금융주 3주(38.4만원 이하, 50% 반절익절 가능 수량) — 128,000원 이하 · RSI<=50 · 정량/AI>=75(편차<=15) · 폭락장 락다운 해제 시 비보호 스윙 진입",
-        "live_price": 122200.0,
-        "live_rsi": 45.6
+        "live_price": 121300.0,
+        "live_rsi": 44.3
       },
       {
         "step_id": "STEP_6_SCHD_USD_DCA_V2",
@@ -1019,7 +1021,7 @@
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-21",
         "live_price": 34.42,
-        "live_rsi": 43.1
+        "live_rsi": 43.3
       },
       {
         "step_id": "STEP_7_SEC_TRIM",
@@ -1046,7 +1048,7 @@
         },
         "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 22주 중 8주씩 2회(최소 6주 잔류·2거래일 쿨다운) 자동 지정가 분할축소하여 장안정 후 재매수 현금 확보",
         "live_price": 189900.0,
-        "live_rsi": 40.7
+        "live_rsi": 40.8
       },
       {
         "step_id": "STEP_8_HYNIX_TRIM",
@@ -1072,8 +1074,8 @@
           "block_if_market_stabilized": true
         },
         "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 2주 중 1주씩 2회(2거래일 쿨다운) 자동 지정가 분할매도",
-        "live_price": 1174000.0,
-        "live_rsi": 43.5
+        "live_price": 1166000.0,
+        "live_rsi": 43.2
       }
     ],
     "quant_swing_slot": {
@@ -1117,8 +1119,8 @@
         "auto_execute": false,
         "action": "NOTIFY_MANUAL_CONFIRM",
         "held_qty": 0.0,
-        "live_price": 1174000.0,
-        "distance_pct": 22.66
+        "live_price": 1166000.0,
+        "distance_pct": 23.5
       },
       {
         "alert_id": "EXIT_SAMSUNG_1",
@@ -1156,9 +1158,9 @@
         "action": "NOTIFY_MANUAL_CONFIRM",
         "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 974,000원 이하 극저점 도달 시 수동 검토 알림만 1일 1회 발송",
         "held_qty": 0.0,
-        "live_price": 1174000.0,
-        "live_rsi": 43.5,
-        "distance_pct": -17.04
+        "live_price": 1166000.0,
+        "live_rsi": 43.2,
+        "distance_pct": -16.47
       }
     ],
     "reentry_watch_alerts": [
@@ -1171,8 +1173,8 @@
         "action": "NOTIFY_MANUAL_CONFIRM",
         "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 4중 장 안정 게이트(VIX<=25 · SOXX 5일선 · KR 락다운 해제 · 하이닉스 5일선 & 외국인 2거래일 순매수) 충족 시 수동 재진입 검토 알림만 1일 1회 발송",
         "held_qty": 0.0,
-        "live_price": 1174000.0,
-        "live_rsi": 43.5
+        "live_price": 1166000.0,
+        "live_rsi": 43.2
       }
     ],
     "sgov_reserve_trigger": {
