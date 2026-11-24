@@ -174,7 +174,7 @@
   <div class="header">
     <div class="title-group">
       <h1>토스 실전 운용 <span class="toss-tag">AI 자율</span></h1>
-      <p>토스증권 실전 계좌(17601069723) · 한·미 우량주 퀀트+AI 자율매매 v3.0 (삼전·하닉 수동전용 · 배당/지수코어 보호)</p>
+      <p>토스증권 실전 계좌(17601069723) · 한·미 우량주 퀀트+AI 자율매매 v3.1 (삼전·하닉 수동전용 · 정배열/전량트레일링 강화)</p>
     </div>
     <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
       <div class="status-badge" style="background: var(--pill-bg); border: 1px solid var(--card-border); color: var(--text-main);">
@@ -194,7 +194,7 @@
 
   <!-- Watchdog & External Dead-Server Siren Banner (평상시 기본 숨김 / 버튼 클릭 시 토글) -->
   <div id="watchdogBanner" style="display: none; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; font-size: 12px; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; animation: slideDown 0.25s ease;">
-    <span id="watchdogText">⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.0 가동 중</b> — 국내 100선·미국 30선 퀀트+2사 AI 교차검증 · 삼전·하닉 수동전용 · 360750·KO·SCHD·SGOV 영구보호</span>
+    <span id="watchdogText">⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.1 가동 중</b> — MA20≥MA60 정배열·미국 30선 20일 돌파·전량 트레일링·MA20(-1% KR/-1.5% 4일 US) 조기청산 · 삼전·하닉 수동전용</span>
     <span style="color: #60a5fa; font-size: 11px; cursor: pointer; font-weight: 600;" onclick="toggleWatchdogBanner()">닫기 ✕</span>
   </div>
 
@@ -483,10 +483,10 @@
           <div class="mp-header">
             <div>
               <div class="mp-title">
-                <span>🧭 ${escapeHtml(mp.plan_name || '토스증권 한·미 우량주 AI 자율매매 v3.0')}</span>
-                <span class="mp-status-pill mp-pill-active">v${escapeHtml(mp.schema_version || '3.0.0')}</span>
+                <span>🧭 ${escapeHtml(mp.plan_name || '토스증권 한·미 우량주 AI 자율매매 v3.1')}</span>
+                <span class="mp-status-pill mp-pill-active">v${escapeHtml(mp.schema_version || '3.1.0')}</span>
               </div>
-              <div class="mp-sub">${steps.length === 0 ? '국내 100선·미국 30선 우량주 퀀트+2사 AI 교차검증 자율매매 · 삼성전자·SK하이닉스 수동전용 · 배당/지수코어 영구 보호' : '일시적 반등 시 반도체 분할축소 · 4중 장안정 게이트 통과 시 재진입'}</div>
+              <div class="mp-sub">${steps.length === 0 ? '국내 100선·미국 30선 우량주 퀀트+2사 AI 교차검증 자율매매 · MA20≥MA60 정배열 · 삼전·하닉 수동전용 · 배당/지수코어 영구 보호' : '일시적 반등 시 반도체 분할축소 · 4중 장안정 게이트 통과 시 재진입'}</div>
             </div>
             <span class="mp-status-pill ${watchlistLocked ? 'mp-pill-lock' : 'mp-pill-done'}">
               ${watchlistLocked ? '🔒 감시종목 영구 잠금' : '🔓 우량주 자율 개방'}
@@ -560,17 +560,17 @@
         <div class="mp-card" style="border-left: 3px solid #10b981;">
           <div class="mp-header">
             <div>
-              <div class="mp-title">⚡ 한·미 우량주 2사 AI + 퀀트 자율 운용 규칙 (v3.0)</div>
-              <div class="mp-sub">저가·물타기 마스터플랜을 전면 폐지하고, 이전 한투 계좌와 동일한 초보수적 퀀트+AI 우량주 자율 운용으로 전환했습니다.</div>
+              <div class="mp-title">⚡ 한·미 우량주 2사 AI + 퀀트 자율 운용 규칙 (v3.1)</div>
+              <div class="mp-sub">중기 정배열(MA20≥MA60), 미국 30선 20일 추세돌파, 전량 트레일링 및 MA20 추세이탈 조기 청산으로 백테스트 기반 손익비·방어력을 대폭 강화했습니다.</div>
             </div>
             <span class="mp-status-pill mp-pill-active">🟢 자율매매 가동</span>
           </div>
           <div class="mp-chip-row">
             <span class="mp-chip">🇰🇷 국내 세션: 10:05·11:35·13:35·14:35 (09시 차단)</span>
             <span class="mp-chip">🇺🇸 미국 세션: 23:40·01:35·03:35·05:35 (DST -1h)</span>
-            <span class="mp-chip">🎯 진입: 정량 ≥ 75 · 2사 AI ≥ 75 · 편차 ≤ 15 · RSI &lt; 68</span>
+            <span class="mp-chip">🎯 진입: MA20≥MA60 정배열 · 정량 ≥ 75 · 2사 AI ≥ 75 · 미국 30선 20일 돌파(거래량 110%↑·RSI 50~72)</span>
             <span class="mp-chip">🧠 감사: 중대악재·AI 논리모순 차단 · 거시/어닝 동적 커트라인 (한투 100% 동일)</span>
-            <span class="mp-chip">🛡️ 청산·한도: ATR 손절 · 50% 반절익절 · -2.5%p 트레일링 · 동일 섹터 150만 상한 · 일일 손절 2회 서킷브레이커</span>
+            <span class="mp-chip">🛡️ 청산·한도: 강화 ATR 손절(-4.5~-6.5%) · 100% 전량 트레일링(-2.5%p) · MA20(-1%/2일 KR · -1.5%/4일 US) · 섹터 150만/일일 2회 차단</span>
             <span class="mp-chip">🔒 삼전(005930)·하닉(000660) 주문엔진 하드잠금 (100% 수동전용)</span>
           </div>
         </div>
@@ -926,7 +926,7 @@
             wdBanner.style.borderColor = 'rgba(49, 130, 246, 0.30)';
             const isAuto = d.auto_trade !== false;
             if (isAuto) {
-              wdText.innerHTML = '⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.0 가동 중</b> — 국내 100선·미국 30선 퀀트+2사 AI 교차검증 · 삼전·하닉 수동전용 · 360750·KO·SCHD·SGOV 영구보호';
+              wdText.innerHTML = '⚡ <b>토스증권 한·미 우량주 AI 자율매매 v3.1 가동 중</b> — MA20≥MA60 정배열·미국 30선 20일 돌파·전량 트레일링·MA20(-1% KR/-1.5% 4일 US) 조기청산 · 삼전·하닉 수동전용';
             } else {
               wdText.innerHTML = '🛡️ <b>대화형 수동 승인 대기 모드 (옵션 A)</b> — /toss_auto on 명령 시 언제든 자율매매 재개';
             }
@@ -1320,7 +1320,7 @@
         if (!isManualLocked && ['KO', 'SCHD', 'SGOV', '360750'].includes(normSym(it.symbol)) && decision.includes('매도')) {
           decision = '홀딩 관망';
           score = 65;
-          actionTip = '마스터플랜 v3.0 영구 보호 종목입니다. 자동 매도/손절 없이 계속 홀딩하세요.';
+          actionTip = '마스터플랜 v3.1 영구 보호 종목입니다. 자동 매도/손절 없이 계속 홀딩하세요.';
           reasonText = '[영구 보호 원칙] 장기 코어·배당 자산이므로 단기 등락과 무관하게 매도를 보류하고 장기 보유합니다.';
         }
 
