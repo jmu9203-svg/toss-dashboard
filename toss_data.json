@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-24 10:37:00",
+  "updated_at": "2026-11-24 10:44:23",
   "account_no": "17601069723",
   "battery": "82% (🔋 DISCHARGING)",
   "tot_rate": 0.56,
-  "mkt_val_krw": 1455600,
+  "mkt_val_krw": 1455300,
   "tot_pchs_krw": 1472100,
-  "pnl_krw": -16500,
-  "mkt_val_usd": 1260.2,
+  "pnl_krw": -16800,
+  "mkt_val_usd": 1260.35,
   "tot_pchs_usd": 1229.51,
-  "pnl_usd": 30.69,
+  "pnl_usd": 30.84,
   "krw_cash": 6606436,
   "usd_cash": 1495.23,
   "holding_count": 5,
@@ -19,17 +19,17 @@
       "marketCountry": "KR",
       "currency": "KRW",
       "quantity": 60.0,
-      "lastPrice": 24260.0,
+      "lastPrice": 24255.0,
       "averagePurchasePrice": 24535.0,
-      "profitLossRate": -1.12,
-      "profitLossAmount": -16500.0,
-      "rsi": 40.3,
+      "profitLossRate": -1.14,
+      "profitLossAmount": -16800.0,
+      "rsi": 40.5,
       "investor_summary": "최근(11/23 마감) 순매수: 외국인 +140,248주(3일연속매수🔥), 기관 -742,549주(5일연속매도⚠️) | [5일누적 합계: 외인 +269,508주, 기관 -3,661,889주]",
       "ai_decision": "홀딩 관망",
       "ai_score": 64,
       "ai_action_tip": "현재 60주 보유 중으로 1주 추매 시 평단 인하 폭이 -0.02%(24,535원→24,530원)에 불과하고 이미 충분한 수량을 보유하고 있으므로, 원화 예수금(6,606,436원)을 아끼고 홀딩 관망하세요.",
-      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-20b(60점 관망))] [5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일 작동] 최근 단기 조정(최근 5거래일 -1.2%)으로 Wilder 14일 RSI(40.3)가 조정 구간에 진입했으나, 이미 60주를 보유 중이어서 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -0.02%로 미미하며, 단일 종목 과다 편중 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.",
-      "checked_at": "2026-11-24 10:36:45",
+      "ai_reason": "[🤖 이종 2사 듀얼 앙상블(Google+Groq) 교차검증 [2:0 관망 우세] (평균 62점 · 편차 5점 | Google:3.5-flash-lite(65점 관망), Groq:gpt-oss-20b(60점 관망))] [5단계 퀀트 전략 — 섹터 편중 & 물타기 실효성 가드레일 작동] 최근 단기 조정(최근 5거래일 -1.2%)으로 Wilder 14일 RSI(40.5)가 조정 구간에 진입했으나, 이미 60주를 보유 중이어서 원화 예수금으로 1주를 더 사더라도 평단가 인하 효과가 -0.02%로 미미하며, 단일 종목 과다 편중 리스크가 있어 현금 보존 또는 타 업종(금융·배당주) 분산이 훨씬 유리합니다.",
+      "checked_at": "2026-11-24 10:44:17",
       "ai_models": [
         {
           "provider": "Google",
@@ -53,11 +53,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 0.340143,
-      "lastPrice": 285.85,
+      "lastPrice": 285.6,
       "averagePurchasePrice": 293.699999,
-      "profitLossRate": -2.67,
-      "profitLossAmount": -2.670123,
-      "rsi": 43.6,
+      "profitLossRate": -2.75,
+      "profitLossAmount": -2.755159,
+      "rsi": 27.8,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 62,
@@ -87,11 +87,11 @@
       "marketCountry": "US",
       "currency": "USD",
       "quantity": 4.0,
-      "lastPrice": 96.01,
+      "lastPrice": 96.07,
       "averagePurchasePrice": 88.02,
-      "profitLossRate": 9.07,
-      "profitLossAmount": 31.96,
-      "rsi": 53.4,
+      "profitLossRate": 9.14,
+      "profitLossAmount": 32.2,
+      "rsi": 53.7,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 65,
@@ -125,7 +125,7 @@
       "averagePurchasePrice": 34.3043,
       "profitLossRate": 0.45,
       "profitLossAmount": 1.2456,
-      "rsi": 37.2,
+      "rsi": 44.0,
       "investor_summary": "미국 증시 종목 (글로벌 ETF/배당·대형주 수급 적용)",
       "ai_decision": "홀딩 관망",
       "ai_score": 64,
@@ -188,10 +188,10 @@
     "score": 80,
     "grade": "🟡 보통 (개선 권장)",
     "semi_ratio": 0.0,
-    "kr_eval": 1455600.0,
-    "us_eval": 1260.2,
-    "growth_eval": 97.23,
-    "div_eval": 659.72,
+    "kr_eval": 1455300.0,
+    "us_eval": 1260.35,
+    "growth_eval": 97.14,
+    "div_eval": 659.96,
     "park_eval": 503.25,
     "diagnoses": [
       "✅ 국내 섹터 분산 양호 (반도체 비중 0.0%)",
@@ -771,8 +771,8 @@
     "soxx_ok": true,
     "kr_regime_ok": true,
     "kr_regime_label": "⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +7.43%, 20일선 하회 — 매수 커트라인 +5점 강화)",
-    "stock_price": 192000.0,
-    "stock_ma5": 189470.0,
+    "stock_price": 192100.0,
+    "stock_ma5": 189480.0,
     "stock_ma5_ok": true,
     "foreign_ok": true,
     "foreign_streak_days": 2,
@@ -831,8 +831,8 @@
       "soxx_ok": true,
       "kr_regime_ok": true,
       "kr_regime_label": "⚠️ 약세·조정장 (당일 장중 실시간 코스피200 +7.43%, 20일선 하회 — 매수 커트라인 +5점 강화)",
-      "stock_price": 192000.0,
-      "stock_ma5": 189470.0,
+      "stock_price": 192100.0,
+      "stock_ma5": 189480.0,
       "stock_ma5_ok": true,
       "foreign_ok": true,
       "foreign_streak_days": 2,
@@ -886,8 +886,8 @@
         "rationale": "보유 1주(평단 171만원) 상태에서 110만~115.5만원 구간 아랫꼬리 지지(+1.2% 이상 반등) 확인 시 1주 추매하여 평단가를 143.2만원대로 인하 완료",
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-09",
-        "live_price": 1184000.0,
-        "live_rsi": 44.2
+        "live_price": 1181000.0,
+        "live_rsi": 43.9
       },
       {
         "step_id": "STEP_2_SP500_DCA",
@@ -924,8 +924,8 @@
         ],
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-23",
-        "live_price": 24260.0,
-        "live_rsi": 40.3
+        "live_price": 24255.0,
+        "live_rsi": 40.5
       },
       {
         "step_id": "STEP_3_SEC_STABLE_DCA",
@@ -952,8 +952,8 @@
           "require_ai_ensemble": false
         },
         "rationale": "공포장(VIX>25)에서는 삼성전자 추가매수를 전면 보류하고, 4중 장안정 게이트(VIX<=25 · SOXX 5일선 회복 · KR 락다운 해제 · 삼성전자 5일선 회복 & 외국인 2거래일↑ 순매수) 충족 시에만 비반도체 예약금을 침범하지 않는 잉여 원화(축소 회수금 + 월별 입금 자동 반영)로 200,000원 이하 · RSI<=60 조건에서 1회 50만원 상한·3일 쿨다운·최대 10회 분할 재매수",
-        "live_price": 192800.0,
-        "live_rsi": 42.5,
+        "live_price": 192000.0,
+        "live_rsi": 42.0,
         "estimated_dynamic_qty": 2
       },
       {
@@ -1019,7 +1019,7 @@
         "signal_state": "EXECUTED",
         "last_signaled_date": "2026-11-21",
         "live_price": 34.46,
-        "live_rsi": 37.2
+        "live_rsi": 44.0
       },
       {
         "step_id": "STEP_7_SEC_TRIM",
@@ -1045,8 +1045,8 @@
           "block_if_market_stabilized": true
         },
         "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 22주 중 8주씩 2회(최소 6주 잔류·2거래일 쿨다운) 자동 지정가 분할축소하여 장안정 후 재매수 현금 확보",
-        "live_price": 192800.0,
-        "live_rsi": 42.5
+        "live_price": 192000.0,
+        "live_rsi": 42.0
       },
       {
         "step_id": "STEP_8_HYNIX_TRIM",
@@ -1072,8 +1072,8 @@
           "block_if_market_stabilized": true
         },
         "rationale": "일시적 기술적 반등(전일대비 +2.5%↑ 또는 저점대비 +3.5%↑ & 플러스권) + 20일선(MA20) 하회 + 4중 장안정 미충족 시 보유 2주 중 1주씩 2회(2거래일 쿨다운) 자동 지정가 분할매도",
-        "live_price": 1184000.0,
-        "live_rsi": 44.2
+        "live_price": 1181000.0,
+        "live_rsi": 43.9
       }
     ],
     "quant_swing_slot": {
@@ -1117,8 +1117,8 @@
         "auto_execute": false,
         "action": "NOTIFY_MANUAL_CONFIRM",
         "held_qty": 0.0,
-        "live_price": 1184000.0,
-        "distance_pct": 21.62
+        "live_price": 1181000.0,
+        "distance_pct": 21.93
       },
       {
         "alert_id": "EXIT_SAMSUNG_1",
@@ -1129,8 +1129,8 @@
         "auto_execute": false,
         "action": "NOTIFY_MANUAL_CONFIRM",
         "held_qty": 0.0,
-        "live_price": 192800.0,
-        "distance_pct": 28.63
+        "live_price": 192000.0,
+        "distance_pct": 29.17
       },
       {
         "alert_id": "EXIT_SAMSUNG_2",
@@ -1141,8 +1141,8 @@
         "auto_execute": false,
         "action": "NOTIFY_MANUAL_CONFIRM",
         "held_qty": 0.0,
-        "live_price": 192800.0,
-        "distance_pct": 35.63
+        "live_price": 192000.0,
+        "distance_pct": 36.2
       }
     ],
     "extreme_low_alerts": [
@@ -1156,9 +1156,9 @@
         "action": "NOTIFY_MANUAL_CONFIRM",
         "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 974,000원 이하 극저점 도달 시 수동 검토 알림만 1일 1회 발송",
         "held_qty": 0.0,
-        "live_price": 1184000.0,
-        "live_rsi": 44.2,
-        "distance_pct": -17.74
+        "live_price": 1181000.0,
+        "live_rsi": 43.9,
+        "distance_pct": -17.53
       }
     ],
     "reentry_watch_alerts": [
@@ -1171,8 +1171,8 @@
         "action": "NOTIFY_MANUAL_CONFIRM",
         "rationale": "SK하이닉스 1주 단가가 단일주문 상한(50만원)을 초과하므로 자동매수하지 않고, 4중 장 안정 게이트(VIX<=25 · SOXX 5일선 · KR 락다운 해제 · 하이닉스 5일선 & 외국인 2거래일 순매수) 충족 시 수동 재진입 검토 알림만 1일 1회 발송",
         "held_qty": 0.0,
-        "live_price": 1184000.0,
-        "live_rsi": 44.2
+        "live_price": 1181000.0,
+        "live_rsi": 43.9
       }
     ],
     "sgov_reserve_trigger": {
@@ -1219,9 +1219,9 @@
           "require_ma20_for_trend_entry": true,
           "auto_execute": false,
           "held_qty": 0.0,
-          "live_price": 192000.0,
-          "vs_sold_pct": 1.32,
-          "distance_to_pullback_pct": -5.21
+          "live_price": 192100.0,
+          "vs_sold_pct": 1.37,
+          "distance_to_pullback_pct": -5.26
         },
         {
           "alert_id_pullback": "DIR2_PULLBACK_HYNIX",
@@ -1238,9 +1238,9 @@
           "require_ma20_for_trend_entry": true,
           "auto_execute": false,
           "held_qty": 0.0,
-          "live_price": 1184000.0,
-          "vs_sold_pct": 1.11,
-          "distance_to_pullback_pct": -5.83
+          "live_price": 1181000.0,
+          "vs_sold_pct": 0.85,
+          "distance_to_pullback_pct": -5.59
         }
       ],
       "fomo_locked_today": true
