@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 23:20:43",
+  "updated_at": "2026-11-26 23:36:38",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
   "tot_rate": 0.35,
@@ -333,6 +333,54 @@
       "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 약세·조정장 (당일 마감 기준 코스피200 +0.35%, 20일선 하회 — 매수 커트라인 +5점 강화), -6점) | 20일선 근접 지지권(+0.0%, +2점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | 윗꼬리 매도 저항(-4점) | RSI 37.5 눌림목이나 역배열 주의(+2점) | 메이저 수급 유입(+4점)] 코스피200이 20일선을 하회하는 약세·조정장 속에서 중기 역배열(MA20<MA60) 및 윗꼬리 매도 저항이 겹쳐 떨어지는 칼날 위험이 존재하므로 신규 매수를 전면 보류하고 안전하게 관망합니다. (외국인 수급이 꾸준히 유입되는 국내 1위 금융지주이자 견조한 방어 우량주입니다.)",
       "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
       "checked_at": "2026-11-26 20:48:10",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": 55,
+          "decision": "관망"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq 120B",
+          "score": 55,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세"
+    },
+    {
+      "symbol": "XOM",
+      "name": "엑슨모빌 (XOM)",
+      "marketCountry": "US",
+      "currency": "USD",
+      "sector": "미국소비·헬스케어·에너지",
+      "theme_tag": "글로벌 에너지 대장주",
+      "lastPrice": 158.08,
+      "change_pct": -0.09,
+      "rsi": 35.6,
+      "ma20": 167.56,
+      "ma60": 168.03,
+      "ma20_above_ma60": false,
+      "high_20d_prev": 188.5,
+      "breakout_20d": false,
+      "atr_pct": 2.14,
+      "high_52w": 188.5,
+      "from_high_52w_pct": -16.14,
+      "ai_score": 55,
+      "quant_score": 40,
+      "q_score": 40,
+      "req_buy_threshold": 80,
+      "buy_votes": 0,
+      "hold_votes": 2,
+      "earn_imminent": false,
+      "chasing_risk": false,
+      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
+      "audit_status": "HOLD_DOWNTREND_MA60",
+      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-5.7%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.6 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세·조정장 레짐 속에서 XOM이 20일선 및 60일선 아래의 중기 역배열 상태에 있어 '떨어지는 칼날' 위험이 높으므로 신규 매수를 보류하고 관망합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 35.6 과매도 기술적 반등권 · 거래량 활발(143%)))",
+      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
+      "checked_at": "2026-11-26 23:36:17",
       "ai_models": [
         {
           "provider": "Google",
@@ -686,54 +734,6 @@
       "consensus": "2:0 관망 우세"
     },
     {
-      "symbol": "XOM",
-      "name": "엑슨모빌 (XOM)",
-      "marketCountry": "US",
-      "currency": "USD",
-      "sector": "미국소비·헬스케어·에너지",
-      "theme_tag": "글로벌 에너지 대장주",
-      "lastPrice": 158.08,
-      "change_pct": -0.09,
-      "rsi": 35.6,
-      "ma20": 167.56,
-      "ma60": 168.03,
-      "ma20_above_ma60": false,
-      "high_20d_prev": 188.5,
-      "breakout_20d": false,
-      "atr_pct": 2.14,
-      "high_52w": 188.5,
-      "from_high_52w_pct": -16.14,
-      "ai_score": 54,
-      "quant_score": 40,
-      "q_score": 40,
-      "req_buy_threshold": 80,
-      "buy_votes": 0,
-      "hold_votes": 2,
-      "earn_imminent": false,
-      "chasing_risk": false,
-      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
-      "audit_status": "HOLD_DOWNTREND_MA60",
-      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-5.7%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.6 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세 조정장이라는 거시 리스크와 함께 MA20<MA60 중기 역배열 및 20일선 하회(-5.7%) 상태이므로, RSI 과매도 신호에도 불구하고 '떨어지는 칼날' 위험이 높아 신규 매수를 전면 보류해야 합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 35.6 과매도 기술적 반등권 · 거래량 활발(143%)))",
-      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-26 17:30:49",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 55,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq Qwen",
-          "score": 52,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세"
-    },
-    {
       "symbol": "NVDA",
       "name": "엔비디아 (NVIDIA)",
       "marketCountry": "US",
@@ -813,9 +813,9 @@
       "date": "2026-11-26",
       "is_open": true,
       "is_trading_day": true,
-      "is_in_session": false,
-      "session_status": "🌙 장 마감 (23:30 개장)",
-      "session_color": "#94a3b8",
+      "is_in_session": true,
+      "session_status": "🟢 정규장 거래중",
+      "session_color": "#34d399",
       "reason": "평일 정상 개장일",
       "is_half_day": false,
       "daylight_saving": false,
@@ -919,7 +919,7 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 27.07,
+    "vix": 27.12,
     "max_vix": 25.0,
     "vix_ok": false,
     "soxx_price": 127.98,
@@ -935,12 +935,12 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(27.07>25.0)",
+      "VIX 공포(27.12>25.0)",
       "SOXX 5일선 미회복(127.98<131.63)",
       "005930 MA5 조회실패",
       "외국인 0/2거래일"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(27.07>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+    "summary": "4중 장안정 미충족: VIX 공포(27.12>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
   },
   "master_plan": {
     "schema_version": "3.1.0",
@@ -998,7 +998,7 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 27.07,
+      "vix": 27.12,
       "max_vix": 25.0,
       "vix_ok": false,
       "soxx_price": 127.98,
@@ -1014,12 +1014,12 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(27.07>25.0)",
+        "VIX 공포(27.12>25.0)",
         "SOXX 5일선 미회복(127.98<131.63)",
         "005930 MA5 조회실패",
         "외국인 0/2거래일"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(27.07>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+      "summary": "4중 장안정 미충족: VIX 공포(27.12>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
     },
     "manual_only_tickers": [
       "000660",
