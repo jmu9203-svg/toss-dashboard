@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 21:35:24",
+  "updated_at": "2026-11-26 21:46:56",
   "account_no": "17601069723",
   "battery": "85% (⚡ NOT_CHARGING)",
   "tot_rate": 0.35,
@@ -919,7 +919,7 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 26.84,
+    "vix": 26.93,
     "max_vix": 25.0,
     "vix_ok": false,
     "soxx_price": 127.98,
@@ -935,12 +935,12 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(26.84>25.0)",
+      "VIX 공포(26.93>25.0)",
       "SOXX 5일선 미회복(127.98<131.63)",
       "005930 MA5 조회실패",
       "외국인 0/2거래일"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(26.84>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+    "summary": "4중 장안정 미충족: VIX 공포(26.93>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
   },
   "master_plan": {
     "schema_version": "3.1.0",
@@ -998,7 +998,7 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 26.84,
+      "vix": 26.93,
       "max_vix": 25.0,
       "vix_ok": false,
       "soxx_price": 127.98,
@@ -1014,12 +1014,12 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(26.84>25.0)",
+        "VIX 공포(26.93>25.0)",
         "SOXX 5일선 미회복(127.98<131.63)",
         "005930 MA5 조회실패",
         "외국인 0/2거래일"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(26.84>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+      "summary": "4중 장안정 미충족: VIX 공포(26.93>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
     },
     "manual_only_tickers": [
       "000660",
