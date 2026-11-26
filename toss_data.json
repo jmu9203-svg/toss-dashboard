@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-27 01:28:37",
-  "account_no": "17601069723",
+  "updated_at": "2026-11-27 01:35:54",
+  "account_no": "",
   "battery": "85% (⚡ NOT_CHARGING)",
   "tot_rate": 0.35,
   "mkt_val_krw": 1440600,
@@ -254,6 +254,102 @@
       "consensus": "2:0 관망 우세"
     },
     {
+      "symbol": "XOM",
+      "name": "엑슨모빌 (XOM)",
+      "marketCountry": "US",
+      "currency": "USD",
+      "sector": "미국소비·헬스케어·에너지",
+      "theme_tag": "글로벌 에너지 대장주",
+      "lastPrice": 158.08,
+      "change_pct": -0.09,
+      "rsi": 35.6,
+      "ma20": 167.56,
+      "ma60": 168.03,
+      "ma20_above_ma60": false,
+      "high_20d_prev": 188.5,
+      "breakout_20d": false,
+      "atr_pct": 2.14,
+      "high_52w": 188.5,
+      "from_high_52w_pct": -16.14,
+      "ai_score": 56,
+      "quant_score": 40,
+      "q_score": 40,
+      "req_buy_threshold": 80,
+      "buy_votes": 0,
+      "hold_votes": 2,
+      "earn_imminent": false,
+      "chasing_risk": false,
+      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
+      "audit_status": "HOLD_DOWNTREND_MA60",
+      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-5.7%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.6 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미국 증시 약세 조정장 속에서 XOM이 20일 이동평균선 아래에 위치하고 중기 역배열 및 하락 추세를 보이고 있어, 떨어지는 칼날 위험을 방어하기 위해 투자를 전면 보류하고 관망합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 35.6 과매도 기술적 반등권 · 거래량 활발(143%)))",
+      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
+      "checked_at": "2026-11-27 01:35:16",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": 55,
+          "decision": "관망"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq 120B",
+          "score": 58,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세"
+    },
+    {
+      "symbol": "MRVL",
+      "name": "마벨 테크놀로지 (MRVL)",
+      "marketCountry": "US",
+      "currency": "USD",
+      "sector": "미국반도체·AI하드웨어",
+      "theme_tag": "AI 데이터센터 네트워크",
+      "lastPrice": 130.93,
+      "change_pct": -0.49,
+      "rsi": 35.1,
+      "ma20": 154.97,
+      "ma60": 216.39,
+      "ma20_above_ma60": false,
+      "high_20d_prev": 253.66,
+      "breakout_20d": false,
+      "atr_pct": 10.63,
+      "high_52w": 329.88,
+      "from_high_52w_pct": -60.31,
+      "ai_score": 56,
+      "quant_score": 40,
+      "q_score": 40,
+      "req_buy_threshold": 80,
+      "buy_votes": 0,
+      "hold_votes": 2,
+      "earn_imminent": false,
+      "chasing_risk": false,
+      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
+      "audit_status": "HOLD_DOWNTREND_MA60",
+      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-15.5%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.1 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세 조정장 속에서 MRVL이 20일선 아래에 위치하고 중기 역배열 하락추세를 보이며 거래량도 부진하여 떨어지는 칼날 위험이 있으므로 신규 매수를 보류하고 관망합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 34.9 과매도 기술적 반등권))",
+      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
+      "checked_at": "2026-11-27 01:35:31",
+      "ai_models": [
+        {
+          "provider": "Google",
+          "model": "Gemini 3.5",
+          "score": 55,
+          "decision": "관망"
+        },
+        {
+          "provider": "Groq",
+          "model": "Groq 120B",
+          "score": 58,
+          "decision": "관망"
+        }
+      ],
+      "consensus": "2:0 관망 우세"
+    },
+    {
       "symbol": "105560",
       "name": "KB금융",
       "marketCountry": "KR",
@@ -302,23 +398,23 @@
       "consensus": "2:0 관망 우세"
     },
     {
-      "symbol": "XOM",
-      "name": "엑슨모빌 (XOM)",
+      "symbol": "QCOM",
+      "name": "퀄컴 (QCOM)",
       "marketCountry": "US",
       "currency": "USD",
-      "sector": "미국소비·헬스케어·에너지",
-      "theme_tag": "글로벌 에너지 대장주",
-      "lastPrice": 158.08,
-      "change_pct": -0.09,
-      "rsi": 35.6,
-      "ma20": 167.56,
-      "ma60": 168.03,
+      "sector": "미국반도체·AI하드웨어",
+      "theme_tag": "온디바이스 AI 칩",
+      "lastPrice": 168.66,
+      "change_pct": 2.24,
+      "rsi": 49.6,
+      "ma20": 167.46,
+      "ma60": 176.35,
       "ma20_above_ma60": false,
-      "high_20d_prev": 188.5,
+      "high_20d_prev": 185.59,
       "breakout_20d": false,
-      "atr_pct": 2.14,
-      "high_52w": 188.5,
-      "from_high_52w_pct": -16.14,
+      "atr_pct": 6.13,
+      "high_52w": 259.92,
+      "from_high_52w_pct": -35.11,
       "ai_score": 55,
       "quant_score": 40,
       "q_score": 40,
@@ -330,9 +426,9 @@
       "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
       "audit_status": "HOLD_DOWNTREND_MA60",
       "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-5.7%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.6 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세·조정장 레짐 속에서 XOM이 20일선 및 60일선 아래의 중기 역배열 상태에 있어 '떨어지는 칼날' 위험이 높으므로 신규 매수를 보류하고 관망합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 35.6 과매도 기술적 반등권 · 거래량 활발(143%)))",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 상회 추세 지지(+0.7%, +5점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 49.6 중립 | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 현재 미 증시 약세·조정 상황에 20일선 위에 머물지만 거래량이 평균 대비 91%에 불과하고 MA20이 MA60보다 낮은 역배열이며 정량 점수가 40점에 머물러 리스크가 높아 관망이 필요합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 상회(+0.7%) + RSI 49.7 건강한 눌림목))",
       "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-26 23:36:17",
+      "checked_at": "2026-11-27 01:35:11",
       "ai_models": [
         {
           "provider": "Google",
@@ -378,9 +474,9 @@
       "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
       "audit_status": "HOLD_DOWNTREND_MA60",
       "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-4.9%, -8점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | 거래량 137%·반등 수급 유입(+5점) | RSI 38.3 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세장과 20일선 및 중기 이평선 역배열 상태에서 떨어지는 칼날 위험이 존재하므로, 원금 보호를 위해 신규 매수를 보류하고 안전 관망을 권고합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (RSI 38.3 조정 후 양봉 반등 시도 · 거래량 활발(136%)))",
+      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-4.9%, -8점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | 거래량 137%·반등 수급 유입(+5점) | RSI 38.3 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미 증시 약세·조정장 레짐 속에서 QQQM이 20일선 아래의 중기 역배열 상태에 머물러 있어, 떨어지는 칼날 위험을 방어하기 위해 신규 매수를 보류하고 안전 관망합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (RSI 38.3 조정 후 양봉 반등 시도 · 거래량 활발(136%)))",
       "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-26 23:40:29",
+      "checked_at": "2026-11-27 01:35:38",
       "ai_models": [
         {
           "provider": "Google",
@@ -638,102 +734,6 @@
       "consensus": "2:0 관망 우세"
     },
     {
-      "symbol": "QCOM",
-      "name": "퀄컴 (QCOM)",
-      "marketCountry": "US",
-      "currency": "USD",
-      "sector": "미국반도체·AI하드웨어",
-      "theme_tag": "온디바이스 AI 칩",
-      "lastPrice": 168.66,
-      "change_pct": 2.24,
-      "rsi": 49.6,
-      "ma20": 167.46,
-      "ma60": 176.35,
-      "ma20_above_ma60": false,
-      "high_20d_prev": 185.59,
-      "breakout_20d": false,
-      "atr_pct": 6.13,
-      "high_52w": 259.92,
-      "from_high_52w_pct": -35.11,
-      "ai_score": 54,
-      "quant_score": 40,
-      "q_score": 40,
-      "req_buy_threshold": 80,
-      "buy_votes": 0,
-      "hold_votes": 2,
-      "earn_imminent": false,
-      "chasing_risk": false,
-      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
-      "audit_status": "HOLD_DOWNTREND_MA60",
-      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 상회 추세 지지(+0.7%, +5점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 49.6 중립 | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 미국 증시 약세·조정 상황에 MA20이 MA60보다 낮아 역배열이며 거래량도 20일 평균 대비 110% 미달, RSI 중립 수준으로 리스크가 높아 현재는 관망이 필요합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 상회(+0.7%) + RSI 49.7 건강한 눌림목))",
-      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-26 23:40:11",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 52,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq 120B",
-          "score": 55,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세"
-    },
-    {
-      "symbol": "MRVL",
-      "name": "마벨 테크놀로지 (MRVL)",
-      "marketCountry": "US",
-      "currency": "USD",
-      "sector": "미국반도체·AI하드웨어",
-      "theme_tag": "AI 데이터센터 네트워크",
-      "lastPrice": 130.93,
-      "change_pct": -0.49,
-      "rsi": 35.1,
-      "ma20": 154.97,
-      "ma60": 216.39,
-      "ma20_above_ma60": false,
-      "high_20d_prev": 253.66,
-      "breakout_20d": false,
-      "atr_pct": 10.63,
-      "high_52w": 329.88,
-      "from_high_52w_pct": -60.31,
-      "ai_score": 54,
-      "quant_score": 40,
-      "q_score": 40,
-      "req_buy_threshold": 80,
-      "buy_votes": 0,
-      "hold_votes": 2,
-      "earn_imminent": false,
-      "chasing_risk": false,
-      "badge": "🛡️ 중기 역배열(MA20<MA60) · 관망",
-      "audit_status": "HOLD_DOWNTREND_MA60",
-      "audit_badge": "🛡️ 중기 역배열(MA20<MA60) 하방 추세 ➔ 바닥잡기 매수 차단",
-      "rationale": "[실시간 5대 팩트: 거시 시장 약세조정(⚠️ 미 증시 약세·조정장 (S&P500 -0.29%, 20일선 하회 — 매수 커트라인 +5점), -6점) | 20일선 역배열 하회(-15.5%, -12점) | 🚨 중기 역배열(MA20<MA60 하락추세, -10점) | RSI 35.1 눌림목이나 역배열 주의(+2점) | 미국 20일 신고가 추세돌파 조건 미충족(-6점)] 현재 MRVL은 20일선 아래에 머무르고 MA20<MA60인 역배열 상태이며, 거래량도 평균 대비 낮고 거시 시장이 약세·조정 국면이므로 추가 하락 위험이 커 관망이 필요합니다. (미국 30선 실시간 퀀트 스크리너 선발 종목(1주 50만 원 이하)입니다. (20일선 하회 + RSI 34.9 과매도 기술적 반등권))",
-      "action_tip": "단기 반등과 별개로 20일선이 60일선 아래에 있는 중기 하락 추세이므로 정배열 전환 전까지 신규 매수를 보류하세요.",
-      "checked_at": "2026-11-26 23:40:22",
-      "ai_models": [
-        {
-          "provider": "Google",
-          "model": "Gemini 3.5",
-          "score": 52,
-          "decision": "관망"
-        },
-        {
-          "provider": "Groq",
-          "model": "Groq 120B",
-          "score": 55,
-          "decision": "관망"
-        }
-      ],
-      "consensus": "2:0 관망 우세"
-    },
-    {
       "symbol": "NVDA",
       "name": "엔비디아 (NVIDIA)",
       "marketCountry": "US",
@@ -919,7 +919,7 @@
   "market_stabilization_gate": {
     "symbol": "005930",
     "passed": false,
-    "vix": 26.62,
+    "vix": 26.59,
     "max_vix": 25.0,
     "vix_ok": false,
     "soxx_price": 127.98,
@@ -935,12 +935,12 @@
     "min_foreign_days": 2,
     "foreign_data_ok": true,
     "failed_reasons": [
-      "VIX 공포(26.62>25.0)",
+      "VIX 공포(26.59>25.0)",
       "SOXX 5일선 미회복(127.98<131.63)",
       "005930 MA5 조회실패",
       "외국인 0/2거래일"
     ],
-    "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+    "summary": "4중 장안정 미충족: VIX 공포(26.59>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
   },
   "master_plan": {
     "schema_version": "3.1.0",
@@ -998,7 +998,7 @@
     "market_stabilization": {
       "symbol": "005930",
       "passed": false,
-      "vix": 26.62,
+      "vix": 26.59,
       "max_vix": 25.0,
       "vix_ok": false,
       "soxx_price": 127.98,
@@ -1014,12 +1014,12 @@
       "min_foreign_days": 2,
       "foreign_data_ok": true,
       "failed_reasons": [
-        "VIX 공포(26.62>25.0)",
+        "VIX 공포(26.59>25.0)",
         "SOXX 5일선 미회복(127.98<131.63)",
         "005930 MA5 조회실패",
         "외국인 0/2거래일"
       ],
-      "summary": "4중 장안정 미충족: VIX 공포(26.62>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
+      "summary": "4중 장안정 미충족: VIX 공포(26.59>25.0), SOXX 5일선 미회복(127.98<131.63), 005930 MA5 조회실패, 외국인 0/2거래일"
     },
     "manual_only_tickers": [
       "000660",
