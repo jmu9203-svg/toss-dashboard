@@ -865,8 +865,8 @@
 
         return `
           <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 4px 8px; font-size: 11px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: #c9d1d9;">${icon} ${m.provider}</span>
-            <span style="color: ${mColor}; font-weight: 700;">${m.score}점 <span style="font-size: 10px; font-weight: 600;">${m.decision}</span></span>
+            <span style="color: #c9d1d9;">${icon} ${escapeHtml(m.provider)}</span>
+            <span style="color: ${mColor}; font-weight: 700;">${escapeHtml(m.score)}점 <span style="font-size: 10px; font-weight: 600;">${escapeHtml(m.decision)}</span></span>
           </div>
         `;
       }).join('');
@@ -875,7 +875,7 @@
         <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 8px; padding: 8px 10px; margin: 8px 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
             <span style="font-size: 11px; font-weight: 700; color: #c4b5fd;">🤖 초고속 2사 듀얼 AI 앙상블</span>
-            <span style="font-size: 10px; color: #8b949e;">· ${consensus || '2사 합의'}</span>
+            <span style="font-size: 10px; color: #8b949e;">· ${escapeHtml(consensus || '2사 합의')}</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 6px;">
             ${chipsHtml}
@@ -1074,7 +1074,7 @@
         badgeEl.style.background = isGood ? 'rgba(16,185,129,0.18)' : (isWarn ? 'rgba(251,191,36,0.18)' : 'rgba(239,68,68,0.18)');
         badgeEl.style.borderColor = isGood ? 'rgba(16,185,129,0.4)' : (isWarn ? 'rgba(251,191,36,0.4)' : 'rgba(239,68,68,0.4)');
 
-        const diags = (hInfo.diagnoses || []).map(dg => `• ${dg}`).join('<br>');
+        const diags = (hInfo.diagnoses || []).map(dg => `• ${escapeHtml(dg)}`).join('<br>');
         document.getElementById('healthDiagnoses').innerHTML = diags || '• 포트폴리오 자산 구성 정상';
         document.getElementById('healthDiagnoses').style.color = isGood ? '#93c5fd' : (isWarn ? '#fde68a' : '#fca5a5');
 
@@ -1091,9 +1091,9 @@
       const mp = d.cash_master_plan || {};
       if (mp.krw_verdict && mp.usd_verdict) {
         document.getElementById('mpKrwVerdict').textContent = mp.krw_verdict;
-        document.getElementById('mpKrwDetail').innerHTML = (mp.krw_detail || '').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+        document.getElementById('mpKrwDetail').innerHTML = escapeHtml(mp.krw_detail || '').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
         document.getElementById('mpUsdVerdict').textContent = mp.usd_verdict;
-        document.getElementById('mpUsdDetail').innerHTML = (mp.usd_detail || '').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+        document.getElementById('mpUsdDetail').innerHTML = escapeHtml(mp.usd_detail || '').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
       } else {
         const sgovQ = Math.max(1, Math.floor((uCash * 0.58) / 100.5));
         const sgovAmt = sgovQ * 100;
@@ -1188,8 +1188,8 @@
                 <div>
                   <div class="stock-title" style="flex-wrap: wrap; gap: 6px;">
                     <span class="country-tag" style="background: ${isBuy ? 'rgba(240,68,82,0.15)' : 'rgba(49,130,246,0.15)'}; color: ${sideColor}; font-weight: 700;">${sideKr}</span>
-                    <span class="stock-name">${ord.name || ord.symbol}</span>
-                    <span class="stock-code">${ord.symbol}</span>
+                    <span class="stock-name">${escapeHtml(ord.name || ord.symbol)}</span>
+                    <span class="stock-code">${escapeHtml(ord.symbol)}</span>
                     ${sourceTag}
                   </div>
                   <div class="stock-qty" style="color: var(--text-main); font-size: 13.5px; font-weight: 600; margin-top: 5px;">
@@ -1199,12 +1199,12 @@
                 <div class="stock-val-box">
                   <div class="stock-cur-price">${priceDisplay}</div>
                   ${priceSubLabel}
-                  <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-top: 2px;">${statusKr}</div>
+                  <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-top: 2px;">${escapeHtml(statusKr)}</div>
                 </div>
               </div>
               <div style="font-size: 11px; color: var(--text-sub); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
-                <span>주문번호: <b>#${ord.order_id || '--'}</b></span>
-                <span>체결·접수시각: <b>${rawTime}</b></span>
+                <span>주문번호: <b>#${escapeHtml(ord.order_id || '--')}</b></span>
+                <span>체결·접수시각: <b>${escapeHtml(rawTime)}</b></span>
               </div>
             </div>
           `;
@@ -1249,29 +1249,29 @@
                 <div>
                   <div class="stock-title">
                     ${countryBadge}
-                    <span class="stock-name">${rec.name}</span>
-                    <span class="stock-code">${rec.symbol}</span>
+                    <span class="stock-name">${escapeHtml(rec.name)}</span>
+                    <span class="stock-code">${escapeHtml(rec.symbol)}</span>
                   </div>
-                  <div class="stock-qty" style="color: var(--toss-blue); font-weight: 600; margin-top: 4px;">🏷️ ${rec.sector}</div>
+                  <div class="stock-qty" style="color: var(--toss-blue); font-weight: 600; margin-top: 4px;">🏷️ ${escapeHtml(rec.sector)}</div>
                 </div>
                 <div class="stock-val-box">
-                  <span style="background: rgba(49, 130, 246, 0.15); color: #58a6ff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">${rec.theme_tag}</span>
+                  <span style="background: rgba(49, 130, 246, 0.15); color: #58a6ff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">${escapeHtml(rec.theme_tag)}</span>
                 </div>
               </div>
 
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
-                <span class="ai-badge ${badgeClass}">✨ 초고속 2사 AI 앙상블 평균: ${rec.ai_score}점 (${rec.badge})</span>
-                <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${rec.checked_at || d.updated_at || '최근'}</span>
+                <span class="ai-badge ${badgeClass}">✨ 초고속 2사 AI 앙상블 평균: ${escapeHtml(rec.ai_score)}점 (${escapeHtml(rec.badge)})</span>
+                <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${escapeHtml(rec.checked_at || d.updated_at || '최근')}</span>
               </div>
               ${renderTossModelChips(rec.ai_models, rec.consensus)}
               <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; margin-top: 4px; padding: 5px 10px; background: ${auditBg}; border-radius: 6px; border: 1px solid ${auditBorder};">
-                <span style="color: ${auditTextColor}; font-weight: 600;">${auditText}</span>
+                <span style="color: ${auditTextColor}; font-weight: 600;">${escapeHtml(auditText)}</span>
               </div>
 
               <div class="action-tip-box" style="border-left-color: ${tipBorderColor}; margin-top: 10px;">
                 <div class="action-tip-title" style="color: ${tipBorderColor};">💡 AI 감시 판정 근거 & 포트폴리오 보완 효과</div>
-                <div class="action-tip-text">${rec.rationale}</div>
-                <div class="action-reason" style="color: #58a6ff; font-weight: 600; margin-top: 6px;">📌 토스 앱 실전 팁: ${rec.action_tip}</div>
+                <div class="action-tip-text">${escapeHtml(rec.rationale)}</div>
+                <div class="action-reason" style="color: #58a6ff; font-weight: 600; margin-top: 6px;">📌 토스 앱 실전 팁: ${escapeHtml(rec.action_tip)}</div>
               </div>
             </div>
           `;
@@ -1353,8 +1353,8 @@
               <div>
                 <div class="stock-title">
                   ${countryBadge}
-                  <span class="stock-name">${it.name}</span>
-                  <span class="stock-code">${it.symbol}</span>
+                  <span class="stock-name">${escapeHtml(it.name)}</span>
+                  <span class="stock-code">${escapeHtml(it.symbol)}</span>
                 </div>
                 <div class="stock-qty">${it.quantity}주 보유 (내 평단 ${avgStr})</div>
               </div>
@@ -1368,7 +1368,7 @@
 
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; margin: 6px 0 2px 0;">
               <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
-                <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${decision} (${score}점)</span>
+                <span class="ai-badge ${badgeClass}">🎯 AI 판정: ${escapeHtml(decision)} (${escapeHtml(score)}점)</span>
                 ${isManualLocked
                   ? '<span class="mp-protect-pill" style="background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.45);">🔒 수동전용 잠금 (봇 불간섭)</span>'
                   : (it.auto_sell_protected === true
@@ -1377,19 +1377,19 @@
                       ? '<span class="mp-protect-pill" style="background: rgba(148,163,184,0.16); color: #94a3b8; border: 1px solid rgba(148,163,184,0.35);">🔹 소수점 제외</span>'
                       : '<span class="mp-protect-pill" style="background: rgba(139,92,246,0.16); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.35);">⚡ ATR 자율관리</span>'))}
               </div>
-              <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${it.checked_at || d.updated_at || '최근'}</span>
+              <span style="font-size: 10px; color: #8b949e; background: rgba(255,255,255,0.06); padding: 2px 7px; border-radius: 6px; font-weight: 500;">🕒 AI 분석: ${escapeHtml(it.checked_at || d.updated_at || '최근')}</span>
             </div>
             ${renderTossModelChips(it.ai_models, it.consensus)}
 
             <div class="action-tip-box">
               <div class="action-tip-title">💡 실전 행동 팁</div>
-              <div class="action-tip-text">${actionTip}</div>
-              <div class="action-reason">📌 ${reasonText}</div>
+              <div class="action-tip-text">${escapeHtml(actionTip)}</div>
+              <div class="action-reason">📌 ${escapeHtml(reasonText)}</div>
             </div>
 
             <div class="indicator-row">
               <div class="indicator-pill">Wilder RSI (14): <span class="pill-val">${['SGOV', 'BIL', 'USFR', 'SHV'].includes(it.symbol) ? '<span style="color:#34d399;font-weight:600;">초단기 국채 (변동 없음)</span>' : (it.rsi !== null && it.rsi !== undefined ? `<span class="${it.rsi <= 30 ? 'rsi-oversold' : (it.rsi >= 70 ? 'rsi-overbought' : '')}">${it.rsi} ${it.rsi <= 30 ? '(과매도 🟢)' : (it.rsi >= 70 ? '(과열 ⚠️)' : '(중립)')}</span>` : '--')}</span></div>
-              <div class="indicator-pill">수급: <span class="pill-val">${it.investor_summary || '분석 중'}</span></div>
+              <div class="indicator-pill">수급: <span class="pill-val">${escapeHtml(it.investor_summary || '분석 중')}</span></div>
             </div>
           </div>
         `;
